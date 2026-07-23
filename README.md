@@ -1,6 +1,6 @@
 # Japan Trip Itinerary
 
-A single-page site for planning our Japan trip (Nov 5 – Nov 24), organized day by day with hourly activities, an embedded Google Maps route per day, a reservations checklist, and general trip tips.
+A single-page site for planning our Japan trip (Nov 5 – Nov 25), organized day by day with hourly activities, an embedded Google Maps route per day, a reservations checklist, and general trip tips.
 
 No build tools, no dependencies, no API keys — plain HTML/CSS/JS that runs straight from GitHub Pages.
 
