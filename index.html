@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japan Trip Itinerary</title>
+  <meta name="description" content="Day-by-day itinerary, maps and booking checklist for our Japan trip.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛩️</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__brand">
+        <h1>⛩️ Japan Trip</h1>
+        <span class="dates" id="tripDates"></span>
+      </div>
+      <nav class="top-nav">
+        <button data-view-target="overview" class="is-active">Overview</button>
+        <button data-view-target="day">Day by day</button>
+        <button data-view-target="reservations">Reservations</button>
+        <button data-view-target="tips">Tips</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <!-- OVERVIEW -->
+    <section class="view is-active" data-view="overview">
+      <div class="hero">
+        <h2>Trip overview</h2>
+        <p id="overviewHeroText"></p>
+      </div>
+
+      <div class="stat-row" id="overviewStats"></div>
+
+      <div class="section-heading">
+        <h3>All days</h3>
+      </div>
+      <div class="day-grid" id="dayGrid"></div>
+
+      <div class="section-heading">
+        <h3>Route overview</h3>
+      </div>
+      <div class="overview-map-wrap" id="overviewMap"></div>
+    </section>
+
+    <!-- DAY BY DAY -->
+    <section class="view" data-view="day">
+      <div class="day-layout">
+        <nav class="day-sidebar" id="daySidebar"></nav>
+        <div class="day-content" id="dayContent"></div>
+      </div>
+    </section>
+
+    <!-- RESERVATIONS -->
+    <section class="view" data-view="reservations">
+      <div class="section-heading">
+        <h3>Reservations &amp; bookings checklist</h3>
+      </div>
+      <div class="reservations-toolbar">
+        <span class="count" id="reservationsCount"></span>
+      </div>
+      <div id="reservationsList"></div>
+    </section>
+
+    <!-- TIPS -->
+    <section class="view" data-view="tips">
+      <div class="section-heading">
+        <h3>General trip tips</h3>
+      </div>
+      <div class="tips-grid" id="tipsGrid"></div>
+
+      <div class="section-heading">
+        <h3>Activity categories</h3>
+      </div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Built for our trip · edit <code>assets/data/itinerary.js</code> to update the plan
+  </footer>
+
+  <script src="assets/data/itinerary.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
