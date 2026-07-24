@@ -19,15 +19,19 @@
   <header class="site-header">
     <div class="site-header__inner">
       <div class="site-header__brand">
-        <h1>⛩️ Japan Trip</h1>
+        <h1>⛩️ <span id="tripTitle">Japan Trip</span></h1>
         <span class="dates" id="tripDates"></span>
       </div>
       <nav class="top-nav">
-        <button data-view-target="overview" class="is-active">Overview</button>
-        <button data-view-target="day">Day by day</button>
-        <button data-view-target="reservations">Reservations</button>
-        <button data-view-target="tips">Tips</button>
+        <button data-view-target="overview" class="is-active" data-i18n="navOverview">Overview</button>
+        <button data-view-target="day" data-i18n="navDay">Day by day</button>
+        <button data-view-target="reservations" data-i18n="navReservations">Reservations</button>
+        <button data-view-target="tips" data-i18n="navTips">Tips</button>
       </nav>
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+      </div>
     </div>
   </header>
 
@@ -36,19 +40,19 @@
     <!-- OVERVIEW -->
     <section class="view is-active" data-view="overview">
       <div class="hero">
-        <h2>Trip overview</h2>
+        <h2 data-i18n="heroHeading">Trip overview</h2>
         <p id="overviewHeroText"></p>
       </div>
 
       <div class="stat-row" id="overviewStats"></div>
 
       <div class="section-heading">
-        <h3>All days</h3>
+        <h3 data-i18n="allDaysHeading">All days</h3>
       </div>
       <div class="day-grid" id="dayGrid"></div>
 
       <div class="section-heading">
-        <h3>Route overview</h3>
+        <h3 data-i18n="routeOverviewHeading">Route overview</h3>
       </div>
       <div class="overview-map-wrap" id="overviewMap"></div>
     </section>
@@ -64,7 +68,7 @@
     <!-- RESERVATIONS -->
     <section class="view" data-view="reservations">
       <div class="section-heading">
-        <h3>Reservations &amp; bookings checklist</h3>
+        <h3 data-i18n="reservationsHeading">Reservations &amp; bookings checklist</h3>
       </div>
       <div class="reservations-toolbar">
         <span class="count" id="reservationsCount"></span>
@@ -75,20 +79,20 @@
     <!-- TIPS -->
     <section class="view" data-view="tips">
       <div class="section-heading">
-        <h3>General trip tips</h3>
+        <h3 data-i18n="tipsHeading">General trip tips</h3>
       </div>
       <div class="tips-grid" id="tipsGrid"></div>
 
       <div class="section-heading">
-        <h3>Activity categories</h3>
+        <h3 data-i18n="categoriesHeading">Activity categories</h3>
       </div>
       <div class="legend" id="legend"></div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    Built for our trip · edit <code>assets/data/itinerary.js</code> to update the plan
+  <footer class="site-footer" data-i18n="footer">
+    Built for our trip · edit assets/data/itinerary.js to update the plan
   </footer>
 
   <script

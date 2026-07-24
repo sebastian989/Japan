@@ -6,10 +6,13 @@
   "use strict";
 
   const STORAGE_KEY = "trip-itinerary:booked-v1";
+  const LANG_KEY = "trip-itinerary:lang";
 
   const els = {
     views: document.querySelectorAll(".view"),
     navButtons: document.querySelectorAll(".top-nav button"),
+    langButtons: document.querySelectorAll(".lang-toggle button"),
+    tripTitle: document.getElementById("tripTitle"),
     tripDates: document.getElementById("tripDates"),
     overviewStats: document.getElementById("overviewStats"),
     overviewHeroText: document.getElementById("overviewHeroText"),
@@ -26,12 +29,53 @@
   let currentDayIndex = 0;
   let dayMapInstance = null;
   let overviewMapInstance = null;
+  let currentLang = getInitialLang();
+
+  // ---------- i18n ----------
+
+  function getInitialLang() {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved === "en" || saved === "es") return saved;
+    return navigator.language && navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+  }
+
+  /** Resolves a { en, es } object (or plain string) to the current language. */
+  function t(field) {
+    if (field == null) return "";
+    if (typeof field === "string") return field;
+    return field[currentLang] || field.en || "";
+  }
+
+  function setLanguage(lang) {
+    if (lang !== "en" && lang !== "es") return;
+    currentLang = lang;
+    localStorage.setItem(LANG_KEY, lang);
+    document.documentElement.lang = lang;
+    els.langButtons.forEach((b) => b.classList.toggle("is-active", b.dataset.lang === lang));
+    applyStaticStrings();
+    renderOverview();
+    renderDay();
+    renderReservations();
+    renderTips();
+  }
+
+  function applyStaticStrings() {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (UI_STRINGS[key]) el.textContent = t(UI_STRINGS[key]);
+    });
+  }
+
+  els.langButtons.forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
 
   // ---------- Helpers ----------
 
   function formatDate(dateStr, opts) {
     const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString(undefined, opts || { weekday: "short", month: "short", day: "numeric" });
+    const locale = currentLang === "es" ? "es-ES" : "en-US";
+    return d.toLocaleDateString(locale, opts || { weekday: "short", month: "short", day: "numeric" });
   }
 
   function sortedActivities(day) {
@@ -51,24 +95,34 @@
   }
 
   function reservationId(day, activity) {
-    return `${day.day}-${activity.time}-${activity.name}`;
+    return `${day.day}-${activity.time}-${t(activity.name)}`;
   }
 
   function hasCoords(a) {
     return typeof a.lat === "number" && typeof a.lng === "number";
   }
 
+  /** CARTO's basemaps render place names in Latin script (name:en) rather
+   * than each country's local script, unlike the standard OSM tile set. */
+  function tileLayerUrl() {
+    const isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return isDark
+      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+  }
+
   /**
-   * Renders a Leaflet + OpenStreetMap map into `container`, with a numbered
-   * pin per stop (in order) connected by a route line. No API key and no
-   * sign-in/consent redirect, unlike an unauthenticated Google Maps embed.
-   * Each stop needs { lat, lng, number, popupHtml }.
+   * Renders a Leaflet + OpenStreetMap/CARTO map into `container`, with a
+   * numbered pin per stop (in order) connected by a route line. No API key
+   * and no sign-in/consent redirect, unlike an unauthenticated Google Maps
+   * embed. Each stop needs { lat, lng, number, popupHtml }.
    */
   function renderLeafletMap(container, stops) {
     const map = L.map(container, { scrollWheelZoom: false });
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    L.tileLayer(tileLayerUrl(), {
       maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
     }).addTo(map);
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);
@@ -101,22 +155,24 @@
     const latLngs = map.__fitLatLngs;
     if (!latLngs || !latLngs.length) return;
     if (latLngs.length > 1) {
-      map.fitBounds(latLngs, { padding: [28, 28] });
+      // animate: false avoids a pan animation that can outlive the map if
+      // it's torn down again immediately (e.g. clicking through days fast).
+      map.fitBounds(latLngs, { padding: [28, 28], animate: false });
     } else {
-      map.setView(latLngs[0], 15);
+      map.setView(latLngs[0], 15, { animate: false });
     }
   }
 
   function categoryBadge(category) {
-    const meta = CATEGORIES[category] || { label: category, icon: "\u{1F4CD}" };
-    return `<span class="badge badge--category">${meta.icon} ${meta.label}</span>`;
+    const meta = CATEGORIES[category] || { label: { en: category, es: category }, icon: "\u{1F4CD}" };
+    return `<span class="badge badge--category">${meta.icon} ${t(meta.label)}</span>`;
   }
 
   function reservationBadge(activity) {
     if (!activity.reservation) {
-      return `<span class="badge badge--ok">✓ Walk-in / no booking</span>`;
+      return `<span class="badge badge--ok">${t(UI_STRINGS.walkIn)}</span>`;
     }
-    return `<span class="badge badge--reservation">⚠ Booking needed</span>`;
+    return `<span class="badge badge--reservation">${t(UI_STRINGS.bookingNeeded)}</span>`;
   }
 
   function dayHasReservations(day) {
@@ -124,7 +180,7 @@
   }
 
   function dayIsFilled(day) {
-    return day.city && day.city !== "TBD" && (day.activities || []).length > 0;
+    return t(day.city) && t(day.city) !== "TBD" && (day.activities || []).length > 0;
   }
 
   // ---------- Top-level navigation ----------
@@ -158,8 +214,9 @@
   function renderOverview() {
     const start = formatDate(TRIP.startDate, { month: "long", day: "numeric" });
     const end = formatDate(TRIP.endDate, { month: "long", day: "numeric", year: "numeric" });
+    els.tripTitle.textContent = t(TRIP.title);
     els.tripDates.textContent = `${start} – ${end}`;
-    els.overviewHeroText.textContent = TRIP.heroTip;
+    els.overviewHeroText.textContent = t(TRIP.heroTip);
 
     const totalDays = ITINERARY.length;
     const totalActivities = ITINERARY.reduce((sum, d) => sum + (d.activities || []).length, 0);
@@ -167,25 +224,25 @@
       (sum, d) => sum + (d.activities || []).filter((a) => a.reservation).length,
       0
     );
-    const cities = [...new Set(ITINERARY.map((d) => d.city).filter((c) => c && c !== "TBD"))];
+    const cities = [...new Set(ITINERARY.map((d) => t(d.city)).filter((c) => c && c !== "TBD"))];
 
     els.overviewStats.innerHTML = `
-      <div class="stat-card"><strong>${totalDays}</strong><span>Days</span></div>
-      <div class="stat-card"><strong>${cities.length}</strong><span>Cities/Towns</span></div>
-      <div class="stat-card"><strong>${totalActivities}</strong><span>Planned activities</span></div>
-      <div class="stat-card"><strong>${totalReservations}</strong><span>Need reservations</span></div>
+      <div class="stat-card"><strong>${totalDays}</strong><span>${t(UI_STRINGS.statDays)}</span></div>
+      <div class="stat-card"><strong>${cities.length}</strong><span>${t(UI_STRINGS.statCities)}</span></div>
+      <div class="stat-card"><strong>${totalActivities}</strong><span>${t(UI_STRINGS.statActivities)}</span></div>
+      <div class="stat-card"><strong>${totalReservations}</strong><span>${t(UI_STRINGS.statReservations)}</span></div>
     `;
 
     els.dayGrid.innerHTML = ITINERARY.map((day, idx) => {
       const badges = [];
-      if (dayHasReservations(day)) badges.push(`<span class="badge badge--reservation">⚠ Booking</span>`);
-      if (!dayIsFilled(day)) badges.push(`<span class="badge badge--category">Not planned yet</span>`);
+      if (dayHasReservations(day)) badges.push(`<span class="badge badge--reservation">${t(UI_STRINGS.bookingBadgeShort)}</span>`);
+      if (!dayIsFilled(day)) badges.push(`<span class="badge badge--category">${t(UI_STRINGS.notPlannedYet)}</span>`);
       return `
         <button class="day-card" data-day-index="${idx}">
-          <div class="day-card__num">Day ${day.day}</div>
+          <div class="day-card__num">${t(UI_STRINGS.day)} ${day.day}</div>
           <div class="day-card__date">${formatDate(day.date)}</div>
-          <div class="day-card__city">${escapeHtml(day.city || "TBD")}</div>
-          <div class="day-card__title">${escapeHtml(day.title || "")}</div>
+          <div class="day-card__city">${escapeHtml(t(day.city) || "TBD")}</div>
+          <div class="day-card__title">${escapeHtml(t(day.title) || "")}</div>
           <div class="day-card__badges">${badges.join("")}</div>
         </button>
       `;
@@ -203,19 +260,21 @@
     const cityStops = [];
     const seenCities = new Set();
     ITINERARY.forEach((day) => {
-      if (!day.city || day.city === "TBD" || seenCities.has(day.city)) return;
+      const cityKey = t(day.city);
+      if (!cityKey || cityKey === "TBD" || seenCities.has(cityKey)) return;
       const anchor = sortedActivities(day).find(hasCoords);
       if (!anchor) return;
-      seenCities.add(day.city);
+      seenCities.add(cityKey);
       cityStops.push({
         lat: anchor.lat,
         lng: anchor.lng,
         number: cityStops.length + 1,
-        popupHtml: `<div class="map-popup__time">Day ${day.day}</div><div class="map-popup__name">${escapeHtml(day.city)}</div>`,
+        popupHtml: `<div class="map-popup__time">${t(UI_STRINGS.day)} ${day.day}</div><div class="map-popup__name">${escapeHtml(cityKey)}</div>`,
       });
     });
 
     if (overviewMapInstance) {
+      overviewMapInstance.stop();
       overviewMapInstance.remove();
       overviewMapInstance = null;
     }
@@ -223,7 +282,7 @@
       els.overviewMap.innerHTML = `<div class="map-frame-wrap"><div class="leaflet-map-el" id="overviewMapEl"></div></div>`;
       overviewMapInstance = renderLeafletMap(document.getElementById("overviewMapEl"), cityStops);
     } else {
-      els.overviewMap.innerHTML = `<div class="map-frame-wrap"><div class="map-frame-empty">Add coordinates to your activities to see the route here.</div></div>`;
+      els.overviewMap.innerHTML = `<div class="map-frame-wrap"><div class="map-frame-empty">${t(UI_STRINGS.mapEmptyOverview)}</div></div>`;
     }
   }
 
@@ -235,7 +294,7 @@
         <span class="day-sidebar__num">${day.day}</span>
         <span class="day-sidebar__text">
           <span class="d">${formatDate(day.date)}</span><br>
-          <span class="c">${escapeHtml(day.city || "TBD")}</span>
+          <span class="c">${escapeHtml(t(day.city) || "TBD")}</span>
         </span>
       </button>
     `).join("");
@@ -260,39 +319,40 @@
         lat: a.lat,
         lng: a.lng,
         number: idx + 1,
-        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(a.name)}</div><div class="map-popup__location">${escapeHtml(a.location || "")}</div>`,
+        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(t(a.name))}</div><div class="map-popup__location">${escapeHtml(t(a.location) || "")}</div>`,
       });
     });
 
     const tipsHtml = (day.tips || []).length
-      ? `<ul class="day-tips">${day.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`
+      ? `<ul class="day-tips">${day.tips.map((tip) => `<li>${escapeHtml(t(tip))}</li>`).join("")}</ul>`
       : "";
 
     const mapHtml = stops.length
       ? `<div class="map-frame-wrap"><div class="leaflet-map-el" id="dayMap"></div></div>`
-      : `<div class="map-frame-wrap"><div class="map-frame-empty">Add coordinates to an activity to see it on the map here.</div></div>`;
+      : `<div class="map-frame-wrap"><div class="map-frame-empty">${t(UI_STRINGS.mapEmptyDay)}</div></div>`;
 
     const timelineHtml = acts.length
       ? `<ul class="timeline">${acts.map((a, idx) => activityHtml(day, a, hasCoords(a) ? idx + 1 : null)).join("")}</ul>`
-      : `<div class="empty-day">No activities planned for this day yet. Add them to <code>assets/data/itinerary.js</code>.</div>`;
+      : `<div class="empty-day">${escapeHtml(t(UI_STRINGS.emptyDayPrefix))} <code>assets/data/itinerary.js</code>.</div>`;
 
     els.dayContent.innerHTML = `
       <div class="day-header">
         <div>
-          <h2>Day ${day.day} — ${escapeHtml(day.city || "TBD")}</h2>
-          <div class="day-meta">${formatDate(day.date, { weekday: "long", month: "long", day: "numeric" })}${day.title ? " · " + escapeHtml(day.title) : ""}</div>
+          <h2>${t(UI_STRINGS.day)} ${day.day} — ${escapeHtml(t(day.city) || "TBD")}</h2>
+          <div class="day-meta">${formatDate(day.date, { weekday: "long", month: "long", day: "numeric" })}${day.title ? " · " + escapeHtml(t(day.title)) : ""}</div>
         </div>
         <div class="day-nav-buttons">
-          <button class="btn" id="prevDayBtn" ${currentDayIndex === 0 ? "disabled" : ""}>← Previous</button>
-          <button class="btn" id="nextDayBtn" ${currentDayIndex === ITINERARY.length - 1 ? "disabled" : ""}>Next →</button>
+          <button class="btn" id="prevDayBtn" ${currentDayIndex === 0 ? "disabled" : ""}>${t(UI_STRINGS.previous)}</button>
+          <button class="btn" id="nextDayBtn" ${currentDayIndex === ITINERARY.length - 1 ? "disabled" : ""}>${t(UI_STRINGS.next)}</button>
         </div>
       </div>
-      ${day.summary ? `<div class="day-summary">${escapeHtml(day.summary)}${tipsHtml}</div>` : tipsHtml}
+      ${day.summary ? `<div class="day-summary">${escapeHtml(t(day.summary))}${tipsHtml}</div>` : tipsHtml}
       ${mapHtml}
       ${timelineHtml}
     `;
 
     if (dayMapInstance) {
+      dayMapInstance.stop();
       dayMapInstance.remove();
       dayMapInstance = null;
     }
@@ -316,11 +376,11 @@
 
   function activityHtml(day, a, number) {
     const linkHtml = a.link
-      ? ` · <a href="${escapeAttr(a.link)}" target="_blank" rel="noopener">More info</a>`
+      ? ` · <a href="${escapeAttr(a.link)}" target="_blank" rel="noopener">${t(UI_STRINGS.moreInfo)}</a>`
       : "";
-    const durationHtml = a.duration ? ` · ${escapeHtml(a.duration)}` : "";
+    const durationHtml = a.duration ? ` · ${escapeHtml(t(a.duration))}` : "";
     const pinChip = number
-      ? `<span class="pin-chip" title="Pin ${number} on the map above">${number}</span> `
+      ? `<span class="pin-chip" title="${t(UI_STRINGS.mapPinTitle)} ${number} ${t(UI_STRINGS.onMapAbove)}">${number}</span> `
       : "";
     return `
       <li class="timeline-item">
@@ -328,15 +388,15 @@
         <div class="activity-card">
           <div class="activity-card__head">
             <div>
-              <div class="activity-card__title">${escapeHtml(a.name)}</div>
-              <div class="activity-card__location">${pinChip}\u{1F4CD} ${escapeHtml(a.location || "Location TBD")}${durationHtml}${linkHtml}</div>
+              <div class="activity-card__title">${escapeHtml(t(a.name))}</div>
+              <div class="activity-card__location">${pinChip}\u{1F4CD} ${escapeHtml(t(a.location) || t(UI_STRINGS.locationPlaceholder))}${durationHtml}${linkHtml}</div>
             </div>
             <div class="activity-card__meta">
               ${categoryBadge(a.category)}
               ${reservationBadge(a)}
             </div>
           </div>
-          ${a.tip ? `<div class="activity-card__tip"><strong>Tip:</strong> ${escapeHtml(a.tip)}</div>` : ""}
+          ${a.tip ? `<div class="activity-card__tip"><strong>${t(UI_STRINGS.tipLabel)}</strong> ${escapeHtml(t(a.tip))}</div>` : ""}
         </div>
       </li>
     `;
@@ -361,14 +421,17 @@
       });
     });
 
-    els.reservationsCount.textContent = items.length
-      ? `${items.length} item${items.length === 1 ? "" : "s"} need booking — ${items.filter((i) => booked.has(reservationId(i.day, i.activity))).length} marked as booked`
-      : "No activities currently require a reservation.";
-
     if (!items.length) {
-      els.reservationsList.innerHTML = `<div class="empty-day">Nothing to book yet.</div>`;
+      els.reservationsCount.textContent = t(UI_STRINGS.noReservationsNeeded);
+      els.reservationsList.innerHTML = `<div class="empty-day">${t(UI_STRINGS.nothingToBook)}</div>`;
       return;
     }
+
+    const bookedCount = items.filter((i) => booked.has(reservationId(i.day, i.activity))).length;
+    els.reservationsCount.textContent =
+      currentLang === "es"
+        ? `${items.length} elemento${items.length === 1 ? "" : "s"} por reservar — ${bookedCount} ya reservado${bookedCount === 1 ? "" : "s"}`
+        : `${items.length} item${items.length === 1 ? "" : "s"} need booking — ${bookedCount} marked as booked`;
 
     els.reservationsList.innerHTML = items.map(({ day, activity }) => {
       const id = reservationId(day, activity);
@@ -376,10 +439,10 @@
       return `
         <div class="reservation-row ${isBooked ? "is-done" : ""}" data-id="${escapeAttr(id)}">
           <input type="checkbox" ${isBooked ? "checked" : ""} aria-label="Mark as booked">
-          <div class="reservation-row__date">Day ${day.day} · ${formatDate(day.date)}</div>
+          <div class="reservation-row__date">${t(UI_STRINGS.day)} ${day.day} · ${formatDate(day.date)}</div>
           <div>
-            <div class="reservation-row__name">${escapeHtml(activity.name)}</div>
-            <div class="reservation-row__location">${escapeHtml(activity.location || "")} · ${escapeHtml(activity.time)}</div>
+            <div class="reservation-row__name">${escapeHtml(t(activity.name))}</div>
+            <div class="reservation-row__location">${escapeHtml(t(activity.location) || "")} · ${escapeHtml(activity.time)}</div>
           </div>
           <div>${categoryBadge(activity.category)}</div>
         </div>
@@ -403,11 +466,11 @@
 
   function renderTips() {
     els.tipsGrid.innerHTML = GENERAL_TIPS.map(
-      (t) => `<div class="tip-card"><h4>${escapeHtml(t.title)}</h4><p>${escapeHtml(t.body)}</p></div>`
+      (tip) => `<div class="tip-card"><h4>${escapeHtml(t(tip.title))}</h4><p>${escapeHtml(t(tip.body))}</p></div>`
     ).join("");
 
     els.legend.innerHTML = Object.values(CATEGORIES)
-      .map((c) => `<span class="badge badge--category">${c.icon} ${c.label}</span>`)
+      .map((c) => `<span class="badge badge--category">${c.icon} ${t(c.label)}</span>`)
       .join("");
   }
 
@@ -442,6 +505,9 @@
   }
 
   function init() {
+    document.documentElement.lang = currentLang;
+    els.langButtons.forEach((b) => b.classList.toggle("is-active", b.dataset.lang === currentLang));
+    applyStaticStrings();
     renderOverview();
     renderDay();
     renderReservations();
