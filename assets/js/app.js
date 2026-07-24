@@ -24,6 +24,8 @@
   };
 
   let currentDayIndex = 0;
+  let dayMapInstance = null;
+  let overviewMapInstance = null;
 
   // ---------- Helpers ----------
 
@@ -52,36 +54,44 @@
     return `${day.day}-${activity.time}-${activity.name}`;
   }
 
-  function mapsQueryFor(day, activity) {
-    const parts = [activity.location, day.city, "Japan"].filter(Boolean);
-    return parts.join(", ");
+  function hasCoords(a) {
+    return typeof a.lat === "number" && typeof a.lng === "number";
   }
 
   /**
-   * Builds a Google Maps embed URL. With 2+ distinct locations it draws a
-   * route through them (in time order) via the directions embed; with a
-   * single location it centers a simple place search. No API key required.
+   * Renders a Leaflet + OpenStreetMap map into `container`, with a numbered
+   * pin per stop (in order) connected by a route line. No API key and no
+   * sign-in/consent redirect, unlike an unauthenticated Google Maps embed.
    */
-  function buildMapEmbedUrl(day) {
-    const acts = sortedActivities(day).filter((a) => a.location);
-    if (acts.length === 0) return null;
+  function renderLeafletMap(container, stops) {
+    const map = L.map(container, { scrollWheelZoom: false });
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+    }).addTo(map);
 
-    const seen = new Set();
-    const stops = [];
-    acts.forEach((a) => {
-      const q = mapsQueryFor(day, a);
-      if (!seen.has(q)) {
-        seen.add(q);
-        stops.push(q);
-      }
+    const latLngs = stops.map((s) => [s.lat, s.lng]);
+    stops.forEach((s, i) => {
+      L.marker([s.lat, s.lng], {
+        icon: L.divIcon({
+          className: "",
+          html: `<div class="trip-pin"><span>${i + 1}</span></div>`,
+          iconSize: [26, 26],
+          iconAnchor: [13, 26],
+          popupAnchor: [0, -24],
+        }),
+      })
+        .addTo(map)
+        .bindPopup(s.popupHtml);
     });
 
-    if (stops.length === 1) {
-      return `https://www.google.com/maps?q=${encodeURIComponent(stops[0])}&output=embed`;
+    if (latLngs.length > 1) {
+      L.polyline(latLngs, { color: "#b3423d", weight: 3, opacity: 0.7, dashArray: "6 8" }).addTo(map);
+      map.fitBounds(latLngs, { padding: [28, 28] });
+    } else {
+      map.setView(latLngs[0], 14);
     }
-
-    const path = stops.map((s) => encodeURIComponent(s)).join("/");
-    return `https://www.google.com/maps/dir/${path}?output=embed`;
+    return map;
   }
 
   function categoryBadge(category) {
@@ -112,6 +122,12 @@
     window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
     if (name === "day") location.hash = `day-${ITINERARY[currentDayIndex].day}`;
     else location.hash = name;
+    // Leaflet needs a visible, correctly-sized container — if a map was
+    // created while its tab was hidden, nudge it once the tab is shown.
+    requestAnimationFrame(() => {
+      if (name === "day" && dayMapInstance) dayMapInstance.invalidateSize();
+      if (name === "overview" && overviewMapInstance) overviewMapInstance.invalidateSize();
+    });
   }
 
   els.navButtons.forEach((btn) => {
@@ -164,20 +180,30 @@
       });
     });
 
-    // Overview map: one stop per city (first activity location, or city name)
+    // Overview map: one stop per city, using that day's first geocoded activity
     const cityStops = [];
     const seenCities = new Set();
     ITINERARY.forEach((day) => {
       if (!day.city || day.city === "TBD" || seenCities.has(day.city)) return;
+      const anchor = sortedActivities(day).find(hasCoords);
+      if (!anchor) return;
       seenCities.add(day.city);
-      cityStops.push(`${day.city}, Japan`);
+      cityStops.push({
+        lat: anchor.lat,
+        lng: anchor.lng,
+        popupHtml: `<div class="map-popup__time">Day ${day.day}</div><div class="map-popup__name">${escapeHtml(day.city)}</div>`,
+      });
     });
+
+    if (overviewMapInstance) {
+      overviewMapInstance.remove();
+      overviewMapInstance = null;
+    }
     if (cityStops.length) {
-      const url =
-        cityStops.length === 1
-          ? `https://www.google.com/maps?q=${encodeURIComponent(cityStops[0])}&output=embed`
-          : `https://www.google.com/maps/dir/${cityStops.map(encodeURIComponent).join("/")}?output=embed`;
-      els.overviewMap.innerHTML = `<div class="map-frame-wrap"><iframe src="${url}" loading="lazy" allowfullscreen title="Trip route overview map"></iframe></div>`;
+      els.overviewMap.innerHTML = `<div class="map-frame-wrap"><div class="leaflet-map-el" id="overviewMapEl"></div></div>`;
+      overviewMapInstance = renderLeafletMap(document.getElementById("overviewMapEl"), cityStops);
+    } else {
+      els.overviewMap.innerHTML = `<div class="map-frame-wrap"><div class="map-frame-empty">Add coordinates to your activities to see the route here.</div></div>`;
     }
   }
 
@@ -205,15 +231,19 @@
   function renderDayContent() {
     const day = ITINERARY[currentDayIndex];
     const acts = sortedActivities(day);
-    const mapUrl = buildMapEmbedUrl(day);
+    const stops = acts.filter(hasCoords).map((a) => ({
+      lat: a.lat,
+      lng: a.lng,
+      popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(a.name)}</div><div class="map-popup__location">${escapeHtml(a.location || "")}</div>`,
+    }));
 
     const tipsHtml = (day.tips || []).length
       ? `<ul class="day-tips">${day.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`
       : "";
 
-    const mapHtml = mapUrl
-      ? `<div class="map-frame-wrap"><iframe src="${mapUrl}" loading="lazy" allowfullscreen title="Map for day ${day.day}"></iframe></div>`
-      : `<div class="map-frame-wrap"><div class="map-frame-empty">Add a location to an activity to see it on the map here.</div></div>`;
+    const mapHtml = stops.length
+      ? `<div class="map-frame-wrap"><div class="leaflet-map-el" id="dayMap"></div></div>`
+      : `<div class="map-frame-wrap"><div class="map-frame-empty">Add coordinates to an activity to see it on the map here.</div></div>`;
 
     const timelineHtml = acts.length
       ? `<ul class="timeline">${acts.map((a) => activityHtml(day, a)).join("")}</ul>`
@@ -234,6 +264,14 @@
       ${mapHtml}
       ${timelineHtml}
     `;
+
+    if (dayMapInstance) {
+      dayMapInstance.remove();
+      dayMapInstance = null;
+    }
+    if (stops.length) {
+      dayMapInstance = renderLeafletMap(document.getElementById("dayMap"), stops);
+    }
 
     document.getElementById("prevDayBtn").addEventListener("click", () => {
       if (currentDayIndex > 0) {

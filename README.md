@@ -63,7 +63,9 @@ Just send over your itinerary and it'll get turned into entries like the one abo
 
 ## How the map works
 
-Each day's map is a Google Maps **directions** embed built from that day's activity locations, in time order — no API key required. With only one location for a day, it falls back to a simple pin. The "Route overview" map on the Overview page links the first city of each day together to show the overall trip route.
+Each day's map is rendered with **Leaflet + OpenStreetMap** — free, no API key, and no Google sign-in/consent redirect to fail inside an iframe (which is what causes an unauthenticated Google Maps embed to sometimes show blank). Numbered pins mark that day's activities in time order, connected by a route line; click a pin for details. The "Route overview" map on the Overview page connects one pin per city to show the overall trip route.
+
+To place a pin, an activity needs `lat`/`lng` coordinates (see the field docs at the top of `itinerary.js`) — find them by searching the place on [openstreetmap.org](https://www.openstreetmap.org) and right-clicking it, or by right-clicking the spot on Google Maps and copying the coordinates shown at the top of the menu. An activity without coordinates still shows in the timeline, just without a pin.
 
 ## Project structure
 
