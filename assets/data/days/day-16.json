@@ -1,0 +1,61 @@
+{
+  "day": 16,
+  "date": "2026-11-20",
+  "city": {
+    "en": "Osaka",
+    "es": "Osaka"
+  },
+  "title": {
+    "en": "Nara day trip, then on to Osaka",
+    "es": "Excursión a Nara, y luego a Osaka"
+  },
+  "summary": {
+    "en": "Deer, temples, and a change of base to Osaka.",
+    "es": "Ciervos, templos, y un cambio de base a Osaka."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "08:00",
+      "name": {
+        "en": "Nara day trip: Todai-ji Temple, Deer Park, Kasuga Taisha",
+        "es": "Excursión a Nara: Templo Todai-ji, Parque de los Ciervos, Kasuga Taisha"
+      },
+      "location": {
+        "en": "Nara Park, Nara",
+        "es": "Parque de Nara, Nara"
+      },
+      "lat": 34.6851,
+      "lng": 135.843,
+      "category": "sightseeing",
+      "reservation": false,
+      "duration": {
+        "en": "Half day",
+        "es": "Medio día"
+      },
+      "tip": {
+        "en": "Nara is fully walkable once you're there. Take the JR Nara line. Send bulky luggage ahead to Osaka if needed.",
+        "es": "Nara se recorre caminando una vez ahí. Tomen la línea JR Nara. Envíen el equipaje grande a Osaka si hace falta."
+      }
+    },
+    {
+      "time": "16:00",
+      "name": {
+        "en": "Arrive in Osaka & check in",
+        "es": "Llegada a Osaka y registro"
+      },
+      "location": {
+        "en": "Namba, Osaka",
+        "es": "Namba, Osaka"
+      },
+      "lat": 34.6667,
+      "lng": 135.5008,
+      "category": "lodging",
+      "reservation": true,
+      "tip": {
+        "en": "EXAMPLE — replace with your actual hotel booking details.",
+        "es": "EJEMPLO — reemplacen con los datos reales de la reserva del hotel."
+      }
+    }
+  ]
+}

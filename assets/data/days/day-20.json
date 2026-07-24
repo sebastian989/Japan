@@ -1,0 +1,80 @@
+{
+  "day": 20,
+  "date": "2026-11-24",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Miyajima, then back to Tokyo",
+    "es": "Miyajima, y de vuelta a Tokio"
+  },
+  "summary": {
+    "en": "A morning on Miyajima Island, then the long trip back to Tokyo for the final night.",
+    "es": "Una mañana en la isla de Miyajima, y luego el largo viaje de vuelta a Tokio para la última noche."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "08:00",
+      "name": {
+        "en": "Miyajima Island: floating torii gate & Itsukushima Shrine",
+        "es": "Isla de Miyajima: torii flotante y santuario Itsukushima"
+      },
+      "location": {
+        "en": "Itsukushima Shrine, Miyajima",
+        "es": "Santuario Itsukushima, Miyajima"
+      },
+      "lat": 34.296,
+      "lng": 132.3197,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Take the ferry over to Miyajima — check tide times beforehand, since the famous torii gate only appears to \"float\" at high tide.",
+        "es": "Tomen el ferry hasta Miyajima — revisen antes los horarios de marea, ya que el famoso torii solo parece \"flotar\" en marea alta."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Return to Tokyo",
+        "es": "Regreso a Tokio"
+      },
+      "location": {
+        "en": "Tokyo",
+        "es": "Tokio"
+      },
+      "lat": 35.6812,
+      "lng": 139.7671,
+      "category": "transport",
+      "reservation": false,
+      "duration": {
+        "en": "~4 hr",
+        "es": "~4 h"
+      },
+      "tip": {
+        "en": "Shinkansen from Hiroshima back to Tokyo — a long travel day, so keep the Miyajima morning relaxed and unrushed.",
+        "es": "Shinkansen de Hiroshima de vuelta a Tokio — un día largo de viaje, así que mantengan la mañana en Miyajima relajada y sin apuro."
+      }
+    },
+    {
+      "time": "18:00",
+      "name": {
+        "en": "Check in — Tokyo hotel (near JR station)",
+        "es": "Registro — hotel en Tokio (cerca de estación JR)"
+      },
+      "location": {
+        "en": "Tokyo",
+        "es": "Tokio"
+      },
+      "lat": 35.6812,
+      "lng": 139.7671,
+      "category": "lodging",
+      "reservation": true,
+      "tip": {
+        "en": "EXAMPLE — replace with your actual hotel booking details.",
+        "es": "EJEMPLO — reemplacen con los datos reales de la reserva del hotel."
+      }
+    }
+  ]
+}

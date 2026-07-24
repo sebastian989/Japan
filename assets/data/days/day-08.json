@@ -1,0 +1,85 @@
+{
+  "day": 8,
+  "date": "2026-11-12",
+  "city": {
+    "en": "Takayama",
+    "es": "Takayama"
+  },
+  "title": {
+    "en": "Travel day: on to Takayama",
+    "es": "Día de viaje: hacia Takayama"
+  },
+  "summary": {
+    "en": "Transfer from Hakone to Takayama, then a first wander through the old town.",
+    "es": "Traslado de Hakone a Takayama, y una primera vuelta por el casco antiguo."
+  },
+  "tips": [
+    {
+      "en": "Depends on the exact train, but you'll head back from Hakone-Yumoto to Odawara first to catch the Shinkansen. If the Takayama-bound train is early, ask the ryokan for a quick breakfast and check out before 8 AM.",
+      "es": "Depende del horario exacto del tren, pero primero vuelven de Hakone-Yumoto a Odawara para tomar el Shinkansen. Si el tren a Takayama es temprano, pidan un desayuno rápido en el ryokan y salgan antes de las 8 AM."
+    }
+  ],
+  "activities": [
+    {
+      "time": "08:00",
+      "name": {
+        "en": "Hakone-Yumoto → Odawara",
+        "es": "Hakone-Yumoto → Odawara"
+      },
+      "location": {
+        "en": "Odawara Station, Hakone",
+        "es": "Estación de Odawara, Hakone"
+      },
+      "lat": 35.2564,
+      "lng": 139.1538,
+      "category": "transport",
+      "reservation": false,
+      "tip": {
+        "en": "Short hop on the Hakone Tozan Line/Odakyu back to Odawara to connect with the Shinkansen.",
+        "es": "Tramo corto en la línea Hakone Tozan/Odakyu de vuelta a Odawara para conectar con el Shinkansen."
+      }
+    },
+    {
+      "time": "09:00",
+      "name": {
+        "en": "Travel to Takayama",
+        "es": "Viaje a Takayama"
+      },
+      "location": {
+        "en": "Takayama Station, Takayama",
+        "es": "Estación de Takayama, Takayama"
+      },
+      "lat": 36.1397,
+      "lng": 137.2523,
+      "category": "transport",
+      "reservation": false,
+      "duration": {
+        "en": "~4-5 hr",
+        "es": "~4-5 h"
+      },
+      "tip": {
+        "en": "Shinkansen (Odawara → Nagoya) then the Hida Express (Nagoya → Takayama) — the Hida Express leg is famously scenic, running along a river gorge.",
+        "es": "Shinkansen (Odawara → Nagoya) y luego el Hida Express (Nagoya → Takayama) — el tramo del Hida Express es muy escénico, bordeando un cañón de río."
+      }
+    },
+    {
+      "time": "15:00",
+      "name": {
+        "en": "Historic old town walk: Sanmachi Suji",
+        "es": "Paseo por el casco histórico: Sanmachi Suji"
+      },
+      "location": {
+        "en": "Sanmachi Suji, Takayama",
+        "es": "Sanmachi Suji, Takayama"
+      },
+      "lat": 36.1408,
+      "lng": 137.2519,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Look for sake breweries marked by a ball of cedar leaves (sugidama) hanging over the doorway — most offer a cheap self-guided tasting flight of local varieties.",
+        "es": "Busquen las destilerías de sake identificables por una bola de hojas de cedro (sugidama) colgada en la entrada — la mayoría ofrece catas autoguiadas económicas de variedades locales."
+      }
+    }
+  ]
+}

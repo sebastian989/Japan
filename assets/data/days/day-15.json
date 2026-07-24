@@ -1,0 +1,61 @@
+{
+  "day": 15,
+  "date": "2026-11-19",
+  "city": {
+    "en": "Kyoto",
+    "es": "Kioto"
+  },
+  "title": {
+    "en": "North: Kurama & Kibune",
+    "es": "Norte: Kurama y Kibune"
+  },
+  "summary": {
+    "en": "A light, traditional hiking day connecting mountain temples north of the city.",
+    "es": "Un día de caminata ligera y tradicional que conecta templos de montaña al norte de la ciudad."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:00",
+      "name": {
+        "en": "Day trip to Kurama & Kibune",
+        "es": "Excursión a Kurama y Kibune"
+      },
+      "location": {
+        "en": "Kurama-dera, Kyoto",
+        "es": "Kurama-dera, Kioto"
+      },
+      "lat": 35.1191,
+      "lng": 135.7724,
+      "category": "nature",
+      "reservation": false,
+      "duration": {
+        "en": "Full day",
+        "es": "Día completo"
+      },
+      "tip": {
+        "en": "Take the Eizan train from Demachiyanagi Station.",
+        "es": "Tomen el tren Eizan desde la estación de Demachiyanagi."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Temple-to-temple hiking trail",
+        "es": "Sendero de caminata entre templos"
+      },
+      "location": {
+        "en": "Kibune, Kyoto",
+        "es": "Kibune, Kioto"
+      },
+      "lat": 35.1225,
+      "lng": 135.7639,
+      "category": "nature",
+      "reservation": false,
+      "tip": {
+        "en": "A light, scenic hiking route connecting Kurama and Kibune through the forest — a nice change of pace from the city.",
+        "es": "Una ruta de caminata ligera y escénica que conecta Kurama y Kibune por el bosque — un buen cambio de ritmo respecto a la ciudad."
+      }
+    }
+  ]
+}

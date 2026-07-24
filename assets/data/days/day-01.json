@@ -1,0 +1,81 @@
+{
+  "day": 1,
+  "date": "2026-11-05",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Arrival",
+    "es": "Llegada"
+  },
+  "summary": {
+    "en": "Landing day — clear immigration, get to the hotel in Asakusa/Ueno, and ease into the trip with a relaxed evening walk.",
+    "es": "Día de llegada — pasen migración, vayan al hotel en Asakusa/Ueno, y arranquen el viaje con una caminata relajada por la noche."
+  },
+  "tips": [
+    {
+      "en": "Pick up your JR Pass (if applicable) and a pocket wifi/SIM at the airport before heading into the city.",
+      "es": "Recojan su JR Pass (si aplica) y un pocket wifi/SIM en el aeropuerto antes de ir a la ciudad."
+    }
+  ],
+  "activities": [
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Arrival & transfer to hotel",
+        "es": "Llegada y traslado al hotel"
+      },
+      "location": {
+        "en": "Narita/Haneda Airport, Tokyo",
+        "es": "Aeropuerto de Narita/Haneda, Tokio"
+      },
+      "lat": 35.7647,
+      "lng": 140.3864,
+      "category": "transport",
+      "reservation": false,
+      "tip": {
+        "en": "Take the Narita Express (N'EX) or Keisei Skyliner into the city, then local metro to the hotel.",
+        "es": "Tomen el Narita Express (N'EX) o el Keisei Skyliner hacia la ciudad, y luego el metro local hasta el hotel."
+      }
+    },
+    {
+      "time": "17:00",
+      "name": {
+        "en": "Check in — hotel in Asakusa/Ueno",
+        "es": "Registro — hotel en Asakusa/Ueno"
+      },
+      "location": {
+        "en": "Asakusa, Tokyo",
+        "es": "Asakusa, Tokio"
+      },
+      "lat": 35.7148,
+      "lng": 139.7967,
+      "category": "lodging",
+      "reservation": true,
+      "tip": {
+        "en": "EXAMPLE — replace with your actual hotel name and confirmation number once booked.",
+        "es": "EJEMPLO — reemplacen con el nombre real del hotel y el número de confirmación una vez reservado."
+      }
+    },
+    {
+      "time": "19:00",
+      "name": {
+        "en": "Evening walk: Asakusa & Senso-ji by night",
+        "es": "Caminata nocturna: Asakusa y Senso-ji"
+      },
+      "location": {
+        "en": "Senso-ji Temple, Asakusa",
+        "es": "Templo Senso-ji, Asakusa"
+      },
+      "lat": 35.7148,
+      "lng": 139.7967,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Senso-ji and the Nakamise shopping street are beautifully lit and far less crowded at night. Cap it off with a look at Tokyo Skytree from outside.",
+        "es": "Senso-ji y la calle comercial Nakamise se ven preciosas iluminadas de noche y hay mucha menos gente. Cierren la noche viendo el Tokyo Skytree desde afuera."
+      }
+    }
+  ]
+}

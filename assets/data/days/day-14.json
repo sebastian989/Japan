@@ -1,0 +1,62 @@
+{
+  "day": 14,
+  "date": "2026-11-18",
+  "city": {
+    "en": "Kyoto",
+    "es": "Kioto"
+  },
+  "title": {
+    "en": "West: Arashiyama",
+    "es": "Oeste: Arashiyama"
+  },
+  "summary": {
+    "en": "Bamboo, a riverside temple, and the option to explore by bike.",
+    "es": "Bambú, un templo junto al río, y la opción de explorar en bicicleta."
+  },
+  "tips": [
+    {
+      "en": "You can rent a bicycle in Arashiyama to cover more ground.",
+      "es": "Pueden rentar una bicicleta en Arashiyama para recorrer más terreno."
+    }
+  ],
+  "activities": [
+    {
+      "time": "08:00",
+      "name": {
+        "en": "Arashiyama Bamboo Grove & Tenryu-ji Temple",
+        "es": "Bosque de Bambú de Arashiyama y Templo Tenryu-ji"
+      },
+      "location": {
+        "en": "Arashiyama Bamboo Grove, Kyoto",
+        "es": "Bosque de Bambú de Arashiyama, Kioto"
+      },
+      "lat": 35.017,
+      "lng": 135.672,
+      "category": "nature",
+      "reservation": false,
+      "tip": {
+        "en": "Take the JR Sagano line to Saga-Arashiyama. Go early — the grove gets very crowded by mid-morning.",
+        "es": "Tomen la línea JR Sagano hasta Saga-Arashiyama. Vayan temprano — el bosque se llena mucho a media mañana."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Togetsukyo Bridge",
+        "es": "Puente Togetsukyo"
+      },
+      "location": {
+        "en": "Togetsukyo Bridge, Arashiyama",
+        "es": "Puente Togetsukyo, Arashiyama"
+      },
+      "lat": 35.0094,
+      "lng": 135.6779,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "A relaxed riverside spot to finish the morning — nice for a slow lunch nearby.",
+        "es": "Un lugar relajado junto al río para terminar la mañana — bueno para un almuerzo tranquilo cerca."
+      }
+    }
+  ]
+}

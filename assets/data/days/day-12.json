@@ -1,0 +1,76 @@
+{
+  "day": 12,
+  "date": "2026-11-16",
+  "city": {
+    "en": "Kyoto",
+    "es": "Kioto"
+  },
+  "title": {
+    "en": "Travel day: on to Kyoto",
+    "es": "Día de viaje: hacia Kioto"
+  },
+  "summary": {
+    "en": "Transfer to Kyoto, check in, then an evening in Gion.",
+    "es": "Traslado a Kioto, registro en el hotel, y una noche en Gion."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "10:00",
+      "name": {
+        "en": "Travel to Kyoto",
+        "es": "Viaje a Kioto"
+      },
+      "location": {
+        "en": "Kyoto Station, Kyoto",
+        "es": "Estación de Kioto, Kioto"
+      },
+      "lat": 34.9858,
+      "lng": 135.7588,
+      "category": "transport",
+      "reservation": false,
+      "tip": {
+        "en": "Thunderbird limited express train from Kanazawa to Kyoto.",
+        "es": "Tren rápido Thunderbird de Kanazawa a Kioto."
+      }
+    },
+    {
+      "time": "15:00",
+      "name": {
+        "en": "Check in — Kyoto hotel (central/station area)",
+        "es": "Registro — hotel en Kioto (zona centro/estación)"
+      },
+      "location": {
+        "en": "Kyoto Station area, Kyoto",
+        "es": "Zona de la estación de Kioto, Kioto"
+      },
+      "lat": 34.9858,
+      "lng": 135.7588,
+      "category": "lodging",
+      "reservation": true,
+      "tip": {
+        "en": "EXAMPLE — replace with your actual hotel booking details.",
+        "es": "EJEMPLO — reemplacen con los datos reales de la reserva del hotel."
+      }
+    },
+    {
+      "time": "18:00",
+      "name": {
+        "en": "Gion, Yasaka Shrine & Pontocho",
+        "es": "Gion, santuario Yasaka y Pontocho"
+      },
+      "location": {
+        "en": "Gion, Kyoto",
+        "es": "Gion, Kioto"
+      },
+      "lat": 35.0037,
+      "lng": 135.7788,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Gion is at its best at dusk and into the evening, when the lanterns come on — also your best chance of spotting a geiko or maiko on their way to an appointment.",
+        "es": "Gion está en su mejor momento al atardecer y por la noche, cuando se encienden los faroles — también es la mejor oportunidad de ver a una geiko o maiko de camino a una cita."
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "day": 9,
+  "date": "2026-11-13",
+  "city": {
+    "en": "Takayama",
+    "es": "Takayama"
+  },
+  "title": {
+    "en": "Markets, temples & Hida beef",
+    "es": "Mercados, templos y carne de Hida"
+  },
+  "summary": {
+    "en": "A full day in Takayama: riverside morning market, an Edo-era government house, and the region's famous beef.",
+    "es": "Un día completo en Takayama: mercado matutino junto al río, una casa de gobierno de la era Edo, y la famosa carne de la región."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "07:30",
+      "name": {
+        "en": "Miyagawa morning market & Higashiyama temple walk",
+        "es": "Mercado matutino de Miyagawa y paseo por los templos de Higashiyama"
+      },
+      "location": {
+        "en": "Miyagawa Morning Market, Takayama",
+        "es": "Mercado matutino de Miyagawa, Takayama"
+      },
+      "lat": 36.1436,
+      "lng": 137.2524,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Farmers and artisans set up along the river — a great spot to pick up a Sarubobo, the faceless red good-luck charm. The Higashiyama Walking Course nearby links a dozen-plus temples through a quiet wooded path; the red Nakabashi Bridge close to the market is also worth a photo.",
+        "es": "Agricultores y artesanos ponen sus puestos junto al río — un gran lugar para comprar un Sarubobo, el amuleto rojo sin rostro de la buena suerte. El Higashiyama Walking Course conecta más de una docena de templos por un tranquilo sendero boscoso; el puente rojo Nakabashi, cerca del mercado, también vale una foto."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Takayama Jinya",
+        "es": "Takayama Jinya"
+      },
+      "location": {
+        "en": "Takayama Jinya, Takayama",
+        "es": "Takayama Jinya, Takayama"
+      },
+      "lat": 36.1417,
+      "lng": 137.2497,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "The only surviving shogunate government building left in Japan — tatami halls, administrative offices, and a huge 17th-century rice storehouse.",
+        "es": "El único edificio de gobierno del shogunato que sobrevive en todo Japón — salas de tatami, oficinas administrativas y un enorme almacén de arroz del siglo XVII."
+      }
+    },
+    {
+      "time": "19:00",
+      "name": {
+        "en": "Dinner: Hida beef",
+        "es": "Cena: carne de Hida"
+      },
+      "location": {
+        "en": "Sanmachi Suji, Takayama",
+        "es": "Sanmachi Suji, Takayama"
+      },
+      "lat": 36.1408,
+      "lng": 137.2519,
+      "category": "food",
+      "reservation": false,
+      "tip": {
+        "en": "Hida-gyu is some of Japan's finest wagyu — try it grilled on skewers (kushiyaki), as lightly seared sushi on a rice cracker, or as Hoba Miso (cooked on a magnolia leaf). Also worth trying: Takayama ramen (chuka soba), a light soy-chicken broth with thin, curly noodles.",
+        "es": "El Hida-gyu es uno de los mejores wagyu de Japón — pruébenlo asado en brochetas (kushiyaki), como sushi ligeramente sellado sobre una galleta de arroz, o como Hoba Miso (cocinado sobre una hoja de magnolia). También vale la pena el ramen de Takayama (chuka soba), un caldo ligero de soya y pollo con fideos finos y rizados."
+      }
+    }
+  ]
+}

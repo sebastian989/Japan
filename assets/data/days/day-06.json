@@ -1,0 +1,57 @@
+{
+  "day": 6,
+  "date": "2026-11-10",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Tokyo Bay: teamLab & Odaiba",
+    "es": "Bahía de Tokio: teamLab y Odaiba"
+  },
+  "summary": {
+    "en": "Digital art and the waterfront, last full day based in Tokyo.",
+    "es": "Arte digital y el paseo marítimo, último día completo con base en Tokio."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:30",
+      "name": {
+        "en": "teamLab Planets",
+        "es": "teamLab Planets"
+      },
+      "location": {
+        "en": "teamLab Planets, Tokyo",
+        "es": "teamLab Planets, Tokio"
+      },
+      "lat": 35.6465,
+      "lng": 139.7943,
+      "category": "activity",
+      "reservation": true,
+      "tip": {
+        "en": "Book ahead — timed-entry tickets sell out, especially on weekends. You'll walk through water, so shorts/roll-up trousers help.",
+        "es": "Reserven con anticipación — los boletos de horario programado se agotan, sobre todo los fines de semana. Caminarán por agua, así que conviene llevar shorts o pantalones que se puedan enrollar."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Gundam Statue & Odaiba",
+        "es": "Estatua de Gundam y Odaiba"
+      },
+      "location": {
+        "en": "Odaiba, Tokyo",
+        "es": "Odaiba, Tokio"
+      },
+      "lat": 35.6197,
+      "lng": 139.7756,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Take the metro plus the Yurikamome monorail out to Odaiba — the elevated monorail ride itself has great bay views.",
+        "es": "Tomen el metro más el monorriel Yurikamome hasta Odaiba — el trayecto elevado en monorriel ya tiene de por sí muy buenas vistas de la bahía."
+      }
+    }
+  ]
+}

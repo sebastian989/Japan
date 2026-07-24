@@ -79,32 +79,33 @@ a {
   max-width: 1180px;
   margin: 0 auto;
   padding: 14px 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 10px 16px;
 }
 
 .site-header__brand {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  flex: 1 1 auto;
-  min-width: 200px;
+  min-width: 0;
 }
 
 .site-header__brand h1 {
   font-size: 1.25rem;
   margin: 0;
-}
-
-.site-header__brand .dates {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+/* Nav always spans both columns, becoming its own full-width row — this
+   keeps the header at a fixed two-row shape at every viewport width instead
+   of the nav/brand/toggle fighting for space on one line and overflowing. */
 .top-nav {
+  grid-column: 1 / -1;
   display: flex;
   gap: 4px;
   background: var(--color-bg);
@@ -813,22 +814,16 @@ a {
 }
 
 @media (max-width: 560px) {
-  .site-header__inner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
+  /* 4 pills (with Spanish labels, the longer language) don't reliably fit
+     a narrow phone width — scroll them within their own bar rather than
+     shrinking text or letting them overflow the page horizontally. */
   .top-nav {
-    justify-content: space-between;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
 
   .top-nav button {
-    flex: 1;
-    text-align: center;
-  }
-
-  .lang-toggle {
-    align-self: center;
+    flex: 0 0 auto;
   }
 
   .timeline-item {

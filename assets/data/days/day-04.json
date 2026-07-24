@@ -1,0 +1,62 @@
+{
+  "day": 4,
+  "date": "2026-11-08",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Ikebukuro & Akihabara",
+    "es": "Ikebukuro y Akihabara"
+  },
+  "summary": {
+    "en": "A pop-culture and electronics day.",
+    "es": "Un día de cultura pop y electrónica."
+  },
+  "tips": [
+    {
+      "en": "The best day on the trip for anime/video game shopping.",
+      "es": "El mejor día del viaje para comprar anime y videojuegos."
+    }
+  ],
+  "activities": [
+    {
+      "time": "09:30",
+      "name": {
+        "en": "Ikebukuro: Sunshine City & Pokémon Center",
+        "es": "Ikebukuro: Sunshine City y Pokémon Center"
+      },
+      "location": {
+        "en": "Sunshine City, Ikebukuro",
+        "es": "Sunshine City, Ikebukuro"
+      },
+      "lat": 35.7295,
+      "lng": 139.7196,
+      "category": "shopping",
+      "reservation": false,
+      "tip": {
+        "en": "The JR Yamanote line connects Ikebukuro and Akihabara.",
+        "es": "La línea JR Yamanote conecta Ikebukuro y Akihabara."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Akihabara: Mandarake & electronics stores",
+        "es": "Akihabara: Mandarake y tiendas de electrónica"
+      },
+      "location": {
+        "en": "Akihabara, Tokyo",
+        "es": "Akihabara, Tokio"
+      },
+      "lat": 35.7022,
+      "lng": 139.7745,
+      "category": "shopping",
+      "reservation": false,
+      "tip": {
+        "en": "Mandarake is a multi-floor treasure hunt for manga, figures and retro games.",
+        "es": "Mandarake es una búsqueda del tesoro de varios pisos con manga, figuras y videojuegos retro."
+      }
+    }
+  ]
+}

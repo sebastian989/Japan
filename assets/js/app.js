@@ -1,6 +1,7 @@
 /**
- * Renders the itinerary defined in assets/data/itinerary.js.
- * No build step, no dependencies — plain DOM APIs only.
+ * Renders the itinerary loaded from assets/data/trip.json and
+ * assets/data/days/day-NN.json. No build step, no dependencies — plain
+ * DOM APIs only.
  */
 (function () {
   "use strict";
@@ -8,12 +9,15 @@
   const STORAGE_KEY = "trip-itinerary:booked-v1";
   const LANG_KEY = "trip-itinerary:lang";
 
+  // Populated by loadData() before init() runs.
+  let TRIP, UI_STRINGS, CATEGORIES, GENERAL_TIPS, ITINERARY;
+  let dataReady = false;
+
   const els = {
     views: document.querySelectorAll(".view"),
     navButtons: document.querySelectorAll(".top-nav button"),
     langButtons: document.querySelectorAll(".lang-toggle button"),
     tripTitle: document.getElementById("tripTitle"),
-    tripDates: document.getElementById("tripDates"),
     overviewStats: document.getElementById("overviewStats"),
     overviewHeroText: document.getElementById("overviewHeroText"),
     dayGrid: document.getElementById("dayGrid"),
@@ -67,7 +71,9 @@
   }
 
   els.langButtons.forEach((btn) => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    btn.addEventListener("click", () => {
+      if (dataReady) setLanguage(btn.dataset.lang);
+    });
   });
 
   // ---------- Helpers ----------
@@ -206,16 +212,15 @@
   }
 
   els.navButtons.forEach((btn) => {
-    btn.addEventListener("click", () => setActiveView(btn.dataset.viewTarget));
+    btn.addEventListener("click", () => {
+      if (dataReady) setActiveView(btn.dataset.viewTarget);
+    });
   });
 
   // ---------- Overview ----------
 
   function renderOverview() {
-    const start = formatDate(TRIP.startDate, { month: "long", day: "numeric" });
-    const end = formatDate(TRIP.endDate, { month: "long", day: "numeric", year: "numeric" });
     els.tripTitle.textContent = t(TRIP.title);
-    els.tripDates.textContent = `${start} – ${end}`;
     els.overviewHeroText.textContent = t(TRIP.heroTip);
 
     const totalDays = ITINERARY.length;
@@ -331,9 +336,10 @@
       ? `<div class="map-frame-wrap"><div class="leaflet-map-el" id="dayMap"></div></div>`
       : `<div class="map-frame-wrap"><div class="map-frame-empty">${t(UI_STRINGS.mapEmptyDay)}</div></div>`;
 
+    const dayFileName = `day-${String(day.day).padStart(2, "0")}.json`;
     const timelineHtml = acts.length
       ? `<ul class="timeline">${acts.map((a, idx) => activityHtml(day, a, hasCoords(a) ? idx + 1 : null)).join("")}</ul>`
-      : `<div class="empty-day">${escapeHtml(t(UI_STRINGS.emptyDayPrefix))} <code>assets/data/itinerary.js</code>.</div>`;
+      : `<div class="empty-day">${escapeHtml(t(UI_STRINGS.emptyDayPrefix))} <code>assets/data/days/${dayFileName}</code>.</div>`;
 
     els.dayContent.innerHTML = `
       <div class="day-header">
@@ -505,6 +511,7 @@
   }
 
   function init() {
+    dataReady = true;
     document.documentElement.lang = currentLang;
     els.langButtons.forEach((b) => b.classList.toggle("is-active", b.dataset.lang === currentLang));
     applyStaticStrings();
@@ -515,5 +522,63 @@
     setActiveView(initFromHash());
   }
 
-  document.addEventListener("DOMContentLoaded", init);
+  function fetchJson(url) {
+    return fetch(url).then((res) => {
+      if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+      return res.json();
+    });
+  }
+
+  /** Number of calendar days between two "YYYY-MM-DD" strings, inclusive. */
+  function daysInclusive(startDate, endDate) {
+    const msPerDay = 24 * 60 * 60 * 1000;
+    const start = new Date(startDate + "T00:00:00");
+    const end = new Date(endDate + "T00:00:00");
+    return Math.round((end - start) / msPerDay) + 1;
+  }
+
+  /**
+   * Loads assets/data/trip.json (trip meta, UI strings, categories, general
+   * tips) plus one assets/data/days/day-NN.json per day of the trip, and
+   * assigns them to the module-level data variables `init()` renders from.
+   */
+  function loadData() {
+    return fetchJson("assets/data/trip.json").then((meta) => {
+      TRIP = meta.trip;
+      UI_STRINGS = meta.uiStrings;
+      CATEGORIES = meta.categories;
+      GENERAL_TIPS = meta.generalTips;
+
+      const totalDays = daysInclusive(TRIP.startDate, TRIP.endDate);
+      const dayFiles = [];
+      for (let i = 1; i <= totalDays; i++) {
+        dayFiles.push(`assets/data/days/day-${String(i).padStart(2, "0")}.json`);
+      }
+      return Promise.all(dayFiles.map(fetchJson));
+    }).then((days) => {
+      ITINERARY = days;
+    });
+  }
+
+  function showLoadError(err) {
+    console.error("Failed to load itinerary data:", err);
+    document.querySelector(".layout").innerHTML = `
+      <div class="empty-day" style="margin-top:40px">
+        Could not load the itinerary data (${escapeHtml(err.message)}).<br>
+        If you opened this file directly from disk, run a local server instead
+        (see the README) — loading the JSON files requires <code>http://</code>,
+        not <code>file://</code>. This works automatically on GitHub Pages.
+      </div>
+    `;
+  }
+
+  function boot() {
+    loadData().then(init).catch(showLoadError);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();

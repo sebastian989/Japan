@@ -1,0 +1,61 @@
+{
+  "day": 19,
+  "date": "2026-11-23",
+  "city": {
+    "en": "Hiroshima",
+    "es": "Hiroshima"
+  },
+  "title": {
+    "en": "Travel day: Hiroshima",
+    "es": "Día de viaje: Hiroshima"
+  },
+  "summary": {
+    "en": "Transfer to Hiroshima for an afternoon at the Peace Memorial Park.",
+    "es": "Traslado a Hiroshima para una tarde en el Parque Conmemorativo de la Paz."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:00",
+      "name": {
+        "en": "Travel to Hiroshima",
+        "es": "Viaje a Hiroshima"
+      },
+      "location": {
+        "en": "Hiroshima Station, Hiroshima",
+        "es": "Estación de Hiroshima, Hiroshima"
+      },
+      "lat": 34.3978,
+      "lng": 132.4753,
+      "category": "transport",
+      "reservation": false,
+      "duration": {
+        "en": "~1.5 hr",
+        "es": "~1.5 h"
+      },
+      "tip": {
+        "en": "Shinkansen from Shin-Osaka — about 1.5 hours.",
+        "es": "Shinkansen desde Shin-Osaka — aproximadamente 1.5 horas."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Peace Memorial Park & Museum, Atomic Bomb Dome",
+        "es": "Parque y Museo Conmemorativo de la Paz, Cúpula de la Bomba Atómica"
+      },
+      "location": {
+        "en": "Hiroshima Peace Memorial Park, Hiroshima",
+        "es": "Parque Conmemorativo de la Paz, Hiroshima"
+      },
+      "lat": 34.3955,
+      "lng": 132.4536,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Give yourselves at least 2-3 unhurried hours here — it's a moving visit, not one to rush.",
+        "es": "Dense al menos 2-3 horas sin apuro aquí — es una visita conmovedora, no una para apurar."
+      }
+    }
+  ]
+}

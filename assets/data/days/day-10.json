@@ -1,0 +1,61 @@
+{
+  "day": 10,
+  "date": "2026-11-14",
+  "city": {
+    "en": "Kanazawa",
+    "es": "Kanazawa"
+  },
+  "title": {
+    "en": "Shirakawa-go & on to Kanazawa",
+    "es": "Shirakawa-go y hacia Kanazawa"
+  },
+  "summary": {
+    "en": "A scenic stop in the thatched-roof village of Shirakawa-go on the way to Kanazawa.",
+    "es": "Una parada escénica en el pueblo de techos de paja de Shirakawa-go camino a Kanazawa."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "08:30",
+      "name": {
+        "en": "Nohi highway bus to Shirakawa-go",
+        "es": "Autobús Nohi a Shirakawa-go"
+      },
+      "location": {
+        "en": "Shirakawa-go",
+        "es": "Shirakawa-go"
+      },
+      "lat": 36.2578,
+      "lng": 136.9066,
+      "category": "transport",
+      "reservation": true,
+      "duration": {
+        "en": "~3-4 hr stop",
+        "es": "~3-4 h de parada"
+      },
+      "tip": {
+        "en": "Book the Nohi bus online well in advance — seats sell out, especially in autumn. Get off in Shirakawa-go to walk among the gassho-zukuri thatched-roof farmhouses and have lunch before continuing.",
+        "es": "Reserven el autobús Nohi por internet con bastante anticipación — los asientos se agotan, sobre todo en otoño. Bájense en Shirakawa-go para caminar entre las casas gassho-zukuri de techos de paja y almorzar antes de continuar."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Transfer to Kanazawa",
+        "es": "Traslado a Kanazawa"
+      },
+      "location": {
+        "en": "Kanazawa",
+        "es": "Kanazawa"
+      },
+      "lat": 36.5613,
+      "lng": 136.6562,
+      "category": "transport",
+      "reservation": false,
+      "tip": {
+        "en": "Continue on the next Nohi bus from Shirakawa-go to Kanazawa.",
+        "es": "Sigan en el siguiente autobús Nohi de Shirakawa-go a Kanazawa."
+      }
+    }
+  ]
+}

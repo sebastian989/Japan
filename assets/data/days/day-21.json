@@ -1,0 +1,62 @@
+{
+  "day": 21,
+  "date": "2026-11-25",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Departure",
+    "es": "Salida"
+  },
+  "summary": {
+    "en": "Last-minute shopping, then pack up and head to the airport.",
+    "es": "Compras de último momento, y luego empacar y salir hacia el aeropuerto."
+  },
+  "tips": [
+    {
+      "en": "Ship bulky souvenirs home ahead of time if you're low on luggage space (post office or Takkyubin).",
+      "es": "Envíen a casa los recuerdos voluminosos con anticipación si les falta espacio en la maleta (correo o Takkyubin)."
+    }
+  ],
+  "activities": [
+    {
+      "time": "10:00",
+      "name": {
+        "en": "Last-minute shopping",
+        "es": "Compras de último momento"
+      },
+      "location": {
+        "en": "Ginza, Tokyo",
+        "es": "Ginza, Tokio"
+      },
+      "lat": 35.6716,
+      "lng": 139.7649,
+      "category": "shopping",
+      "reservation": false,
+      "tip": {
+        "en": "Ginza or Shinjuku both work well for a final souvenir run close to the station.",
+        "es": "Ginza o Shinjuku funcionan bien para una última vuelta de recuerdos cerca de la estación."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Pack & transfer to the airport",
+        "es": "Empacar y traslado al aeropuerto"
+      },
+      "location": {
+        "en": "Narita/Haneda Airport, Tokyo",
+        "es": "Aeropuerto de Narita/Haneda, Tokio"
+      },
+      "lat": 35.7647,
+      "lng": 140.3864,
+      "category": "transport",
+      "reservation": false,
+      "tip": {
+        "en": "Double-check your terminal and flight time before heading out. Take the N'EX or Skyliner to the airport.",
+        "es": "Confirmen la terminal y el horario del vuelo antes de salir. Tomen el N'EX o el Skyliner hasta el aeropuerto."
+      }
+    }
+  ]
+}

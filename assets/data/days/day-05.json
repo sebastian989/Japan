@@ -1,0 +1,66 @@
+{
+  "day": 5,
+  "date": "2026-11-09",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Nikko day trip",
+    "es": "Excursión a Nikko"
+  },
+  "summary": {
+    "en": "A full-day excursion out to the shrines of Nikko.",
+    "es": "Una excursión de día completo a los santuarios de Nikko."
+  },
+  "tips": [
+    {
+      "en": "Leave early to make the most of the day — Nikko is roughly 2 hours from Tokyo.",
+      "es": "Salgan temprano para aprovechar el día — Nikko está a unas 2 horas de Tokio."
+    }
+  ],
+  "activities": [
+    {
+      "time": "07:00",
+      "name": {
+        "en": "Day trip to Nikko: Toshogu Shrine",
+        "es": "Excursión a Nikko: Santuario Toshogu"
+      },
+      "location": {
+        "en": "Toshogu Shrine, Nikko",
+        "es": "Santuario Toshogu, Nikko"
+      },
+      "lat": 36.7581,
+      "lng": 139.5994,
+      "category": "sightseeing",
+      "reservation": false,
+      "duration": {
+        "en": "Full day",
+        "es": "Día completo"
+      },
+      "tip": {
+        "en": "Take the Tobu train from Asakusa, or JR Shinkansen plus a local line. Toshogu is Japan's most lavishly decorated shrine complex.",
+        "es": "Tomen el tren Tobu desde Asakusa, o el Shinkansen JR más una línea local. Toshogu es el complejo de santuarios más ricamente decorado de Japón."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Shinkyo Bridge",
+        "es": "Puente Shinkyo"
+      },
+      "location": {
+        "en": "Shinkyo Bridge, Nikko",
+        "es": "Puente Shinkyo, Nikko"
+      },
+      "lat": 36.7503,
+      "lng": 139.5995,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "The bright red sacred bridge at the entrance to Nikko's shrine district — a quick, scenic stop.",
+        "es": "El puente sagrado rojo brillante a la entrada del distrito de santuarios de Nikko — una parada rápida y muy fotogénica."
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "day": 18,
+  "date": "2026-11-22",
+  "city": {
+    "en": "Osaka",
+    "es": "Osaka"
+  },
+  "title": {
+    "en": "Universal Studios Japan",
+    "es": "Universal Studios Japan"
+  },
+  "summary": {
+    "en": "A full day at the park, built around Super Nintendo World.",
+    "es": "Un día completo en el parque, centrado en Super Nintendo World."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:00",
+      "name": {
+        "en": "Universal Studios Japan (Super Nintendo World)",
+        "es": "Universal Studios Japan (Super Nintendo World)"
+      },
+      "location": {
+        "en": "Universal Studios Japan, Osaka",
+        "es": "Universal Studios Japan, Osaka"
+      },
+      "lat": 34.6657,
+      "lng": 135.4323,
+      "category": "activity",
+      "reservation": true,
+      "duration": {
+        "en": "Full day",
+        "es": "Día completo"
+      },
+      "tip": {
+        "en": "Buy park tickets and an Express Pass well in advance — Super Nintendo World's timed entry and the popular rides sell out on peak days. Take the JR Yumesaki line to Universal City.",
+        "es": "Compren las entradas al parque y un Express Pass con bastante anticipación — el acceso programado a Super Nintendo World y las atracciones populares se agotan en días de alta demanda. Tomen la línea JR Yumesaki hasta Universal City."
+      }
+    }
+  ]
+}

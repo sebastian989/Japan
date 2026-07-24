@@ -1,0 +1,62 @@
+{
+  "day": 2,
+  "date": "2026-11-06",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Ueno & Yanaka",
+    "es": "Ueno y Yanaka"
+  },
+  "summary": {
+    "en": "A gentle adjustment day in neighborhoods that sit close together, so there's not much transit involved.",
+    "es": "Un día tranquilo de adaptación en barrios cercanos entre sí, así que hay poco traslado de por medio."
+  },
+  "tips": [
+    {
+      "en": "Good day to recover from jet lag — Ueno and Yanaka are an easy walk/short metro ride apart.",
+      "es": "Buen día para recuperarse del jet lag — Ueno y Yanaka están a poca distancia caminando o en metro."
+    }
+  ],
+  "activities": [
+    {
+      "time": "09:30",
+      "name": {
+        "en": "Ueno Park & Ameyoko Market",
+        "es": "Parque Ueno y mercado Ameyoko"
+      },
+      "location": {
+        "en": "Ueno Park, Tokyo",
+        "es": "Parque Ueno, Tokio"
+      },
+      "lat": 35.7156,
+      "lng": 139.7745,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Ameyoko is a lively old market street just south of Ueno Station — good for street food and browsing.",
+        "es": "Ameyoko es una animada calle de mercado justo al sur de la estación de Ueno — ideal para comida callejera y curiosear."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Yanaka Ginza (old town neighborhood)",
+        "es": "Yanaka Ginza (barrio antiguo)"
+      },
+      "location": {
+        "en": "Yanaka Ginza, Tokyo",
+        "es": "Yanaka Ginza, Tokio"
+      },
+      "lat": 35.728,
+      "lng": 139.767,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "One of the few Tokyo neighborhoods that survived WWII largely intact — an old-fashioned shopping street, cats, and traditional shops. Reachable on foot or by local metro (Ginza/Yamanote line).",
+        "es": "Uno de los pocos barrios de Tokio que sobrevivió casi intacto la Segunda Guerra Mundial — una calle comercial de estilo antiguo, gatos y tiendas tradicionales. Se llega caminando o en metro local (línea Ginza/Yamanote)."
+      }
+    }
+  ]
+}

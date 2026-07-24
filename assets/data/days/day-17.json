@@ -1,0 +1,57 @@
+{
+  "day": 17,
+  "date": "2026-11-21",
+  "city": {
+    "en": "Osaka",
+    "es": "Osaka"
+  },
+  "title": {
+    "en": "Osaka Castle & Dotonbori",
+    "es": "Castillo de Osaka y Dotonbori"
+  },
+  "summary": {
+    "en": "History by day, neon and street food by night.",
+    "es": "Historia de día, neón y comida callejera de noche."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:30",
+      "name": {
+        "en": "Osaka Castle & Shinsekai",
+        "es": "Castillo de Osaka y Shinsekai"
+      },
+      "location": {
+        "en": "Osaka Castle, Osaka",
+        "es": "Castillo de Osaka, Osaka"
+      },
+      "lat": 34.6873,
+      "lng": 135.5259,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "The Midosuji subway line connects Osaka Castle and Shinsekai easily.",
+        "es": "La línea de metro Midosuji conecta fácilmente el Castillo de Osaka y Shinsekai."
+      }
+    },
+    {
+      "time": "19:00",
+      "name": {
+        "en": "Dotonbori at night",
+        "es": "Dotonbori de noche"
+      },
+      "location": {
+        "en": "Dotonbori, Osaka",
+        "es": "Dotonbori, Osaka"
+      },
+      "lat": 34.6687,
+      "lng": 135.5013,
+      "category": "nightlife",
+      "reservation": false,
+      "tip": {
+        "en": "Try takoyaki and okonomiyaki from the street stalls, and get the classic photo at the Glico running-man sign.",
+        "es": "Prueben takoyaki y okonomiyaki en los puestos callejeros, y tómense la clásica foto con el cartel del corredor Glico."
+      }
+    }
+  ]
+}

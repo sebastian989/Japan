@@ -20,7 +20,10 @@
     <div class="site-header__inner">
       <div class="site-header__brand">
         <h1>⛩️ <span id="tripTitle">Japan Trip</span></h1>
-        <span class="dates" id="tripDates"></span>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
       </div>
       <nav class="top-nav">
         <button data-view-target="overview" class="is-active" data-i18n="navOverview">Overview</button>
@@ -28,10 +31,6 @@
         <button data-view-target="reservations" data-i18n="navReservations">Reservations</button>
         <button data-view-target="tips" data-i18n="navTips">Tips</button>
       </nav>
-      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
-        <button data-lang="en">EN</button>
-        <button data-lang="es">ES</button>
-      </div>
     </div>
   </header>
 
@@ -92,7 +91,7 @@
   </main>
 
   <footer class="site-footer" data-i18n="footer">
-    Built for our trip · edit assets/data/itinerary.js to update the plan
+    Built for our trip · edit assets/data/days/*.json to update the plan
   </footer>
 
   <script
@@ -100,7 +99,6 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="assets/data/itinerary.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>

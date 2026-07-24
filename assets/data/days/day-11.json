@@ -1,0 +1,62 @@
+{
+  "day": 11,
+  "date": "2026-11-15",
+  "city": {
+    "en": "Kanazawa",
+    "es": "Kanazawa"
+  },
+  "title": {
+    "en": "Gardens & samurai district",
+    "es": "Jardines y barrio samurái"
+  },
+  "summary": {
+    "en": "One of Japan's most beautiful gardens, plus the old samurai and geisha quarters.",
+    "es": "Uno de los jardines más bellos de Japón, además de los antiguos barrios samurái y de geishas."
+  },
+  "tips": [
+    {
+      "en": "The Loop Bus covers all of today's stops easily.",
+      "es": "El Loop Bus cubre fácilmente todas las paradas de hoy."
+    }
+  ],
+  "activities": [
+    {
+      "time": "09:00",
+      "name": {
+        "en": "Kenrokuen Garden & Kanazawa Castle",
+        "es": "Jardín Kenrokuen y castillo de Kanazawa"
+      },
+      "location": {
+        "en": "Kenrokuen Garden, Kanazawa",
+        "es": "Jardín Kenrokuen, Kanazawa"
+      },
+      "lat": 36.562,
+      "lng": 136.6626,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Considered one of Japan's three most beautiful gardens — go early for the best light and fewer crowds.",
+        "es": "Considerado uno de los tres jardines más bellos de Japón — vayan temprano para la mejor luz y menos gente."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Samurai district (Nagamachi) & geisha district (Higashi Chaya)",
+        "es": "Barrio samurái (Nagamachi) y barrio de geishas (Higashi Chaya)"
+      },
+      "location": {
+        "en": "Higashi Chaya District, Kanazawa",
+        "es": "Barrio de Higashi Chaya, Kanazawa"
+      },
+      "lat": 36.5713,
+      "lng": 136.6642,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Higashi Chaya's teahouse-lined streets are especially atmospheric in the late-afternoon light.",
+        "es": "Las calles de casas de té de Higashi Chaya tienen un ambiente especial con la luz de media tarde."
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "day": 13,
+  "date": "2026-11-17",
+  "city": {
+    "en": "Kyoto",
+    "es": "Kioto"
+  },
+  "title": {
+    "en": "South & East: Fushimi Inari & Higashiyama",
+    "es": "Sur y Este: Fushimi Inari y Higashiyama"
+  },
+  "summary": {
+    "en": "An early start for Fushimi Inari, then the temples and old streets of eastern Kyoto.",
+    "es": "Un madrugón para Fushimi Inari, y luego los templos y calles antiguas del este de Kioto."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "07:00",
+      "name": {
+        "en": "Fushimi Inari Taisha",
+        "es": "Fushimi Inari Taisha"
+      },
+      "location": {
+        "en": "Fushimi Inari Taisha, Kyoto",
+        "es": "Fushimi Inari Taisha, Kioto"
+      },
+      "lat": 34.9671,
+      "lng": 135.7727,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Arrive before 7:30 AM to beat the tour groups and get the torii-gate tunnels largely to yourselves. Take the JR train to Inari Station.",
+        "es": "Lleguen antes de las 7:30 AM para adelantarse a los grupos turísticos y tener los túneles de torii casi para ustedes solos. Tomen el tren JR hasta la estación de Inari."
+      }
+    },
+    {
+      "time": "11:00",
+      "name": {
+        "en": "Kiyomizu-dera Temple",
+        "es": "Templo Kiyomizu-dera"
+      },
+      "location": {
+        "en": "Kiyomizu-dera, Kyoto",
+        "es": "Kiyomizu-dera, Kioto"
+      },
+      "lat": 34.9948,
+      "lng": 135.785,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Bus or taxi from Inari over to Kiyomizu-dera — famous for its wooden stage jutting out over the hillside.",
+        "es": "Bus o taxi desde Inari hasta Kiyomizu-dera — famoso por su plataforma de madera que sobresale sobre la ladera."
+      }
+    },
+    {
+      "time": "14:00",
+      "name": {
+        "en": "Sannenzaka & Ninenzaka streets, Higashiyama",
+        "es": "Calles Sannenzaka y Ninenzaka, Higashiyama"
+      },
+      "location": {
+        "en": "Sannenzaka, Kyoto",
+        "es": "Sannenzaka, Kioto"
+      },
+      "lat": 34.9959,
+      "lng": 135.7802,
+      "category": "shopping",
+      "reservation": false,
+      "tip": {
+        "en": "Preserved sloped streets lined with traditional shops and teahouses — an easy walk down from Kiyomizu-dera.",
+        "es": "Calles empedradas y en pendiente llenas de tiendas y casas de té tradicionales — a un paseo fácil bajando desde Kiyomizu-dera."
+      }
+    }
+  ]
+}

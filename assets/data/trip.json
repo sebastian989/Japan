@@ -1,0 +1,282 @@
+{
+  "trip": {
+    "title": {
+      "en": "Japan Trip",
+      "es": "Viaje a Japón"
+    },
+    "subtitle": {
+      "en": "Our itinerary, day by day",
+      "es": "Nuestro itinerario, día a día"
+    },
+    "startDate": "2026-11-05",
+    "endDate": "2026-11-25",
+    "heroTip": {
+      "en": "Tokyo → Hakone → Takayama → Shirakawa-go → Kanazawa → Kyoto → Nara → Osaka → Hiroshima → Miyajima → Tokyo. Edit assets/data/days/*.json to keep refining it.",
+      "es": "Tokio → Hakone → Takayama → Shirakawa-go → Kanazawa → Kioto → Nara → Osaka → Hiroshima → Miyajima → Tokio. Edita assets/data/days/*.json para seguir ajustándolo."
+    }
+  },
+  "uiStrings": {
+    "navOverview": {
+      "en": "Overview",
+      "es": "Resumen"
+    },
+    "navDay": {
+      "en": "Day by day",
+      "es": "Día a día"
+    },
+    "navReservations": {
+      "en": "Reservations",
+      "es": "Reservas"
+    },
+    "navTips": {
+      "en": "Tips",
+      "es": "Consejos"
+    },
+    "heroHeading": {
+      "en": "Trip overview",
+      "es": "Resumen del viaje"
+    },
+    "statDays": {
+      "en": "Days",
+      "es": "Días"
+    },
+    "statCities": {
+      "en": "Cities/Towns",
+      "es": "Ciudades/Pueblos"
+    },
+    "statActivities": {
+      "en": "Planned activities",
+      "es": "Actividades planeadas"
+    },
+    "statReservations": {
+      "en": "Need reservations",
+      "es": "Necesitan reserva"
+    },
+    "allDaysHeading": {
+      "en": "All days",
+      "es": "Todos los días"
+    },
+    "routeOverviewHeading": {
+      "en": "Route overview",
+      "es": "Resumen de la ruta"
+    },
+    "notPlannedYet": {
+      "en": "Not planned yet",
+      "es": "Aún sin planear"
+    },
+    "addPlansForDay": {
+      "en": "Add plans for this day",
+      "es": "Agrega planes para este día"
+    },
+    "bookingBadgeShort": {
+      "en": "⚠ Booking",
+      "es": "⚠ Reserva"
+    },
+    "bookingNeeded": {
+      "en": "⚠ Booking needed",
+      "es": "⚠ Requiere reserva"
+    },
+    "walkIn": {
+      "en": "✓ Walk-in / no booking",
+      "es": "✓ Sin reserva"
+    },
+    "previous": {
+      "en": "← Previous",
+      "es": "← Anterior"
+    },
+    "next": {
+      "en": "Next →",
+      "es": "Siguiente →"
+    },
+    "emptyDayPrefix": {
+      "en": "No activities planned for this day yet. Add them to",
+      "es": "Aún no hay actividades planeadas para este día. Agrégalas en"
+    },
+    "mapEmptyDay": {
+      "en": "Add coordinates to an activity to see it on the map here.",
+      "es": "Agrega coordenadas a una actividad para verla aquí en el mapa."
+    },
+    "mapEmptyOverview": {
+      "en": "Add coordinates to your activities to see the route here.",
+      "es": "Agrega coordenadas a tus actividades para ver la ruta aquí."
+    },
+    "reservationsHeading": {
+      "en": "Reservations & bookings checklist",
+      "es": "Lista de reservas"
+    },
+    "nothingToBook": {
+      "en": "Nothing to book yet.",
+      "es": "Todavía no hay nada que reservar."
+    },
+    "noReservationsNeeded": {
+      "en": "No activities currently require a reservation.",
+      "es": "Ninguna actividad requiere reserva por ahora."
+    },
+    "tipsHeading": {
+      "en": "General trip tips",
+      "es": "Consejos generales del viaje"
+    },
+    "categoriesHeading": {
+      "en": "Activity categories",
+      "es": "Categorías de actividades"
+    },
+    "footer": {
+      "en": "Built for our trip · edit assets/data/days/*.json to update the plan",
+      "es": "Hecho para nuestro viaje · edita assets/data/days/*.json para actualizar el plan"
+    },
+    "tipLabel": {
+      "en": "Tip:",
+      "es": "Consejo:"
+    },
+    "moreInfo": {
+      "en": "More info",
+      "es": "Más información"
+    },
+    "day": {
+      "en": "Day",
+      "es": "Día"
+    },
+    "locationPlaceholder": {
+      "en": "Location TBD",
+      "es": "Ubicación por definir"
+    },
+    "mapPinTitle": {
+      "en": "Pin",
+      "es": "Punto"
+    },
+    "onMapAbove": {
+      "en": "on the map above",
+      "es": "en el mapa de arriba"
+    }
+  },
+  "categories": {
+    "transport": {
+      "icon": "🚆",
+      "label": {
+        "en": "Transport",
+        "es": "Transporte"
+      }
+    },
+    "food": {
+      "icon": "🍜",
+      "label": {
+        "en": "Food & Drink",
+        "es": "Comida y bebida"
+      }
+    },
+    "sightseeing": {
+      "icon": "⛩️",
+      "label": {
+        "en": "Sightseeing",
+        "es": "Turismo"
+      }
+    },
+    "activity": {
+      "icon": "🎯",
+      "label": {
+        "en": "Activity",
+        "es": "Actividad"
+      }
+    },
+    "shopping": {
+      "icon": "🛍️",
+      "label": {
+        "en": "Shopping",
+        "es": "Compras"
+      }
+    },
+    "lodging": {
+      "icon": "🏨",
+      "label": {
+        "en": "Lodging",
+        "es": "Alojamiento"
+      }
+    },
+    "nightlife": {
+      "icon": "🏮",
+      "label": {
+        "en": "Nightlife",
+        "es": "Vida nocturna"
+      }
+    },
+    "nature": {
+      "icon": "🌸",
+      "label": {
+        "en": "Nature",
+        "es": "Naturaleza"
+      }
+    }
+  },
+  "generalTips": [
+    {
+      "title": {
+        "en": "Get a Suica/Pasmo/Welcome Suica IC card",
+        "es": "Consigan una tarjeta IC Suica/Pasmo/Welcome Suica"
+      },
+      "body": {
+        "en": "Lets you tap in/out of nearly all trains, subways and buses, plus pay at convenience stores and vending machines. Buy at the airport or add it to Apple/Google Wallet before you land.",
+        "es": "Permite pagar con solo tocar en casi todos los trenes, metros y autobuses, además de en tiendas de conveniencia y máquinas expendedoras. Cómprenla en el aeropuerto o agréguenla a Apple/Google Wallet antes de aterrizar."
+      }
+    },
+    {
+      "title": {
+        "en": "Weigh the Japan Rail Pass against a regional pass",
+        "es": "Comparen el Japan Rail Pass con un pase regional"
+      },
+      "body": {
+        "en": "This trip covers Tokyo, Hakone, Takayama, Kanazawa, Kyoto, Osaka and Hiroshima — a lot of long-distance Shinkansen legs, so a JR Pass (or the JR West/Takayama-Hokuriku regional pass covering Nagoya–Takayama–Kanazawa–Kyoto–Osaka) may well pay for itself. Compare the exact route cost before buying.",
+        "es": "Este viaje pasa por Tokio, Hakone, Takayama, Kanazawa, Kioto, Osaka e Hiroshima — muchos tramos largos en Shinkansen, así que un JR Pass (o el pase regional JR West/Takayama-Hokuriku que cubre Nagoya–Takayama–Kanazawa–Kioto–Osaka) puede valer la pena. Comparen el costo exacto de la ruta antes de comprar."
+      }
+    },
+    {
+      "title": {
+        "en": "Book the big-ticket items well ahead",
+        "es": "Reserven con anticipación las actividades más demandadas"
+      },
+      "body": {
+        "en": "Shibuya Sky, teamLab Planets, Universal Studios Japan (especially Super Nintendo World timed entry), and the Nohi highway bus to Shirakawa-go all sell out — book these as soon as dates are fixed, ideally 2-4 weeks ahead.",
+        "es": "Shibuya Sky, teamLab Planets, Universal Studios Japan (sobre todo el acceso programado a Super Nintendo World) y el autobús Nohi a Shirakawa-go se agotan — resérvenlos apenas tengan las fechas fijas, idealmente con 2-4 semanas de anticipación."
+      }
+    },
+    {
+      "title": {
+        "en": "Use Takkyubin to forward your luggage",
+        "es": "Usen Takkyubin para enviar su equipaje por adelantado"
+      },
+      "body": {
+        "en": "You'll change hotels often (Tokyo → Hakone → Takayama → Kanazawa → Kyoto → Osaka → Hiroshima → Tokyo). Send bulky suitcases ahead via Takkyubin (e.g. from Tokyo to Takayama or Kyoto) and travel the trickier legs — especially the Hakone ropeway/boat day — with just a light bag.",
+        "es": "Cambiarán de hotel seguido (Tokio → Hakone → Takayama → Kanazawa → Kioto → Osaka → Hiroshima → Tokio). Envíen las maletas grandes por adelantado con Takkyubin (por ejemplo, de Tokio a Takayama o Kioto) y viajen los tramos más complicados — sobre todo el día del teleférico/barco en Hakone — solo con una mochila ligera."
+      }
+    },
+    {
+      "title": {
+        "en": "Carry cash",
+        "es": "Lleven efectivo"
+      },
+      "body": {
+        "en": "Japan is more card-friendly than it used to be, but small shops, shrines, ryokan, and rural areas (Shirakawa-go, Takayama's markets) may be cash-only. Withdraw yen from 7-Eleven ATMs — they reliably accept foreign cards.",
+        "es": "Japón acepta tarjeta más que antes, pero tiendas pequeñas, santuarios, ryokan y zonas rurales (Shirakawa-go, los mercados de Takayama) pueden ser solo en efectivo. Saquen yenes en los cajeros de 7-Eleven — aceptan tarjetas extranjeras de forma confiable."
+      }
+    },
+    {
+      "title": {
+        "en": "Pack for the weather",
+        "es": "Empaquen para el clima"
+      },
+      "body": {
+        "en": "Nov 5-25 is deep autumn: mild days in Tokyo/Osaka/Hiroshima (~14-19°C / 57-66°F) but noticeably colder mornings and nights in Hakone, Takayama and Kanazawa (~2-8°C / 36-46°F). Layers, a warm jacket for the mountain stops, and a compact umbrella.",
+        "es": "Del 5 al 25 de noviembre es pleno otoño: días templados en Tokio/Osaka/Hiroshima (~14-19°C) pero mañanas y noches notablemente más frías en Hakone, Takayama y Kanazawa (~2-8°C). Lleven capas, una chaqueta abrigada para las paradas de montaña y un paraguas compacto."
+      }
+    },
+    {
+      "title": {
+        "en": "Early starts pay off at the popular sights",
+        "es": "Madrugar vale la pena en los lugares más populares"
+      },
+      "body": {
+        "en": "Fushimi Inari (before 7:30 AM) and Arashiyama Bamboo Grove are dramatically quieter first thing in the morning — build in an early alarm on those specific days rather than everywhere.",
+        "es": "Fushimi Inari (antes de las 7:30 AM) y el Bosque de Bambú de Arashiyama están muchísimo más tranquilos a primera hora de la mañana — programen una alarma temprana solo esos días específicos, no todos los días del viaje."
+      }
+    }
+  ]
+}

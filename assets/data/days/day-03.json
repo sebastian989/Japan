@@ -1,0 +1,57 @@
+{
+  "day": 3,
+  "date": "2026-11-07",
+  "city": {
+    "en": "Tokyo",
+    "es": "Tokio"
+  },
+  "title": {
+    "en": "Harajuku & Shibuya",
+    "es": "Harajuku y Shibuya"
+  },
+  "summary": {
+    "en": "Youth culture and one of Tokyo's best sunset views.",
+    "es": "Cultura juvenil y una de las mejores vistas de atardecer de Tokio."
+  },
+  "tips": [],
+  "activities": [
+    {
+      "time": "09:30",
+      "name": {
+        "en": "Meiji Jingu Shrine & Harajuku (Takeshita Street)",
+        "es": "Santuario Meiji Jingu y Harajuku (calle Takeshita)"
+      },
+      "location": {
+        "en": "Meiji Jingu Shrine, Harajuku",
+        "es": "Santuario Meiji Jingu, Harajuku"
+      },
+      "lat": 35.6764,
+      "lng": 139.6993,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "Take the JR Yamanote line (Ueno → Harajuku → Shibuya) to link today's stops.",
+        "es": "Tomen la línea JR Yamanote (Ueno → Harajuku → Shibuya) para conectar las paradas de hoy."
+      }
+    },
+    {
+      "time": "15:00",
+      "name": {
+        "en": "Shibuya Crossing, Hachiko statue & Shibuya Sky at sunset",
+        "es": "Cruce de Shibuya, estatua de Hachiko y Shibuya Sky al atardecer"
+      },
+      "location": {
+        "en": "Shibuya Sky, Shibuya",
+        "es": "Shibuya Sky, Shibuya"
+      },
+      "lat": 35.658,
+      "lng": 139.7016,
+      "category": "sightseeing",
+      "reservation": true,
+      "tip": {
+        "en": "Book Shibuya Sky several weeks in advance — sunset time slots are the first to sell out.",
+        "es": "Reserven Shibuya Sky con varias semanas de anticipación — los horarios de atardecer son los primeros en agotarse."
+      }
+    }
+  ]
+}
