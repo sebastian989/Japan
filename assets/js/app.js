@@ -108,32 +108,44 @@
     return typeof a.lat === "number" && typeof a.lng === "number";
   }
 
-  /** CARTO's basemaps render place names in Latin script (name:en) rather
-   * than each country's local script, unlike the standard OSM tile set. */
-  function tileLayerUrl() {
-    const isDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return isDark
-      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
-  }
+  // CARTO's light basemap renders place names in Latin script (name:en)
+  // rather than each country's local script, unlike the standard OSM tile
+  // set — used deliberately (always light, regardless of OS theme) so the
+  // map stays legible and consistent.
+  const TILE_LAYER_URL = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 
   /**
    * Renders a Leaflet + OpenStreetMap/CARTO map into `container`, with a
    * numbered pin per stop (in order) connected by a route line. No API key
    * and no sign-in/consent redirect, unlike an unauthenticated Google Maps
    * embed. Each stop needs { lat, lng, number, popupHtml }.
+   *
+   * Pins are added through a marker cluster group rather than straight onto
+   * the map: a day that includes a long inter-city transfer (e.g. Hakone's
+   * Tokyo departure, ~80km from the rest of that day) forces the map to
+   * zoom out far enough that otherwise-separate nearby pins would overlap
+   * pixel-for-pixel — including exact coordinate duplicates (the same hotel
+   * used for two activities). The cluster group groups whatever actually
+   * overlaps on screen at the current zoom into a single expandable bubble
+   * instead of silently stacking markers on top of each other.
    */
   function renderLeafletMap(container, stops) {
     const map = L.map(container, { scrollWheelZoom: false });
-    L.tileLayer(tileLayerUrl(), {
+    L.tileLayer(TILE_LAYER_URL, {
       maxZoom: 19,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
     }).addTo(map);
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);
+
+    const clusterGroup = L.markerClusterGroup({
+      maxClusterRadius: 45,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+    });
     stops.forEach((s) => {
-      L.marker([s.lat, s.lng], {
+      const marker = L.marker([s.lat, s.lng], {
         icon: L.divIcon({
           className: "",
           html: `<div class="trip-pin"><span>${s.number}</span></div>`,
@@ -141,10 +153,11 @@
           iconAnchor: [13, 26],
           popupAnchor: [0, -24],
         }),
-      })
-        .addTo(map)
-        .bindPopup(s.popupHtml);
+      });
+      marker.bindPopup(s.popupHtml);
+      clusterGroup.addLayer(marker);
     });
+    map.addLayer(clusterGroup);
 
     if (latLngs.length > 1) {
       L.polyline(latLngs, { color: "#b3423d", weight: 3, opacity: 0.7, dashArray: "6 8" }).addTo(map);
