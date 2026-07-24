@@ -62,6 +62,7 @@
    * Renders a Leaflet + OpenStreetMap map into `container`, with a numbered
    * pin per stop (in order) connected by a route line. No API key and no
    * sign-in/consent redirect, unlike an unauthenticated Google Maps embed.
+   * Each stop needs { lat, lng, number, popupHtml }.
    */
   function renderLeafletMap(container, stops) {
     const map = L.map(container, { scrollWheelZoom: false });
@@ -71,11 +72,11 @@
     }).addTo(map);
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);
-    stops.forEach((s, i) => {
+    stops.forEach((s) => {
       L.marker([s.lat, s.lng], {
         icon: L.divIcon({
           className: "",
-          html: `<div class="trip-pin"><span>${i + 1}</span></div>`,
+          html: `<div class="trip-pin"><span>${s.number}</span></div>`,
           iconSize: [26, 26],
           iconAnchor: [13, 26],
           popupAnchor: [0, -24],
@@ -87,11 +88,23 @@
 
     if (latLngs.length > 1) {
       L.polyline(latLngs, { color: "#b3423d", weight: 3, opacity: 0.7, dashArray: "6 8" }).addTo(map);
+    }
+    // Stored so the map can be re-fitted once its tab becomes visible — a
+    // map created (or fitBounds'd) while `display:none` measures a 0×0
+    // container and zooms to maxZoom, which invalidateSize() alone can't fix.
+    map.__fitLatLngs = latLngs;
+    refitMap(map);
+    return map;
+  }
+
+  function refitMap(map) {
+    const latLngs = map.__fitLatLngs;
+    if (!latLngs || !latLngs.length) return;
+    if (latLngs.length > 1) {
       map.fitBounds(latLngs, { padding: [28, 28] });
     } else {
-      map.setView(latLngs[0], 14);
+      map.setView(latLngs[0], 15);
     }
-    return map;
   }
 
   function categoryBadge(category) {
@@ -125,8 +138,14 @@
     // Leaflet needs a visible, correctly-sized container — if a map was
     // created while its tab was hidden, nudge it once the tab is shown.
     requestAnimationFrame(() => {
-      if (name === "day" && dayMapInstance) dayMapInstance.invalidateSize();
-      if (name === "overview" && overviewMapInstance) overviewMapInstance.invalidateSize();
+      if (name === "day" && dayMapInstance) {
+        dayMapInstance.invalidateSize();
+        refitMap(dayMapInstance);
+      }
+      if (name === "overview" && overviewMapInstance) {
+        overviewMapInstance.invalidateSize();
+        refitMap(overviewMapInstance);
+      }
     });
   }
 
@@ -191,6 +210,7 @@
       cityStops.push({
         lat: anchor.lat,
         lng: anchor.lng,
+        number: cityStops.length + 1,
         popupHtml: `<div class="map-popup__time">Day ${day.day}</div><div class="map-popup__name">${escapeHtml(day.city)}</div>`,
       });
     });
@@ -231,11 +251,18 @@
   function renderDayContent() {
     const day = ITINERARY[currentDayIndex];
     const acts = sortedActivities(day);
-    const stops = acts.filter(hasCoords).map((a) => ({
-      lat: a.lat,
-      lng: a.lng,
-      popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(a.name)}</div><div class="map-popup__location">${escapeHtml(a.location || "")}</div>`,
-    }));
+    // Numbered by position in the full day timeline (not just the geocoded
+    // subset) so a pin's number always matches that same activity card below.
+    const stops = [];
+    acts.forEach((a, idx) => {
+      if (!hasCoords(a)) return;
+      stops.push({
+        lat: a.lat,
+        lng: a.lng,
+        number: idx + 1,
+        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(a.name)}</div><div class="map-popup__location">${escapeHtml(a.location || "")}</div>`,
+      });
+    });
 
     const tipsHtml = (day.tips || []).length
       ? `<ul class="day-tips">${day.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`
@@ -246,7 +273,7 @@
       : `<div class="map-frame-wrap"><div class="map-frame-empty">Add coordinates to an activity to see it on the map here.</div></div>`;
 
     const timelineHtml = acts.length
-      ? `<ul class="timeline">${acts.map((a) => activityHtml(day, a)).join("")}</ul>`
+      ? `<ul class="timeline">${acts.map((a, idx) => activityHtml(day, a, hasCoords(a) ? idx + 1 : null)).join("")}</ul>`
       : `<div class="empty-day">No activities planned for this day yet. Add them to <code>assets/data/itinerary.js</code>.</div>`;
 
     els.dayContent.innerHTML = `
@@ -287,11 +314,14 @@
     });
   }
 
-  function activityHtml(day, a) {
+  function activityHtml(day, a, number) {
     const linkHtml = a.link
       ? ` · <a href="${escapeAttr(a.link)}" target="_blank" rel="noopener">More info</a>`
       : "";
     const durationHtml = a.duration ? ` · ${escapeHtml(a.duration)}` : "";
+    const pinChip = number
+      ? `<span class="pin-chip" title="Pin ${number} on the map above">${number}</span> `
+      : "";
     return `
       <li class="timeline-item">
         <div class="timeline-item__time">${escapeHtml(a.time)}<span class="timeline-item__dot"></span></div>
@@ -299,7 +329,7 @@
           <div class="activity-card__head">
             <div>
               <div class="activity-card__title">${escapeHtml(a.name)}</div>
-              <div class="activity-card__location">\u{1F4CD} ${escapeHtml(a.location || "Location TBD")}${durationHtml}${linkHtml}</div>
+              <div class="activity-card__location">${pinChip}\u{1F4CD} ${escapeHtml(a.location || "Location TBD")}${durationHtml}${linkHtml}</div>
             </div>
             <div class="activity-card__meta">
               ${categoryBadge(a.category)}
