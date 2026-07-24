@@ -530,44 +530,6 @@ a {
   font-size: 0.82rem;
 }
 
-/* Cluster bubbles (leaflet.markercluster), reskinned from the library's
-   default green/yellow/orange to the site's accent so they read as "part
-   of this map" rather than a generic plugin look. Deeper opacity for
-   bigger clusters gives a rough sense of scale without needing 3 hues. */
-.marker-cluster {
-  background-clip: padding-box;
-}
-
-.marker-cluster div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font: 700 0.78rem/1 var(--font-sans);
-  box-shadow: var(--shadow-sm);
-}
-
-.marker-cluster-small {
-  background: color-mix(in srgb, var(--color-accent) 35%, transparent);
-}
-.marker-cluster-small div {
-  background: color-mix(in srgb, var(--color-accent) 75%, transparent);
-}
-
-.marker-cluster-medium {
-  background: color-mix(in srgb, var(--color-accent) 45%, transparent);
-}
-.marker-cluster-medium div {
-  background: color-mix(in srgb, var(--color-accent) 85%, transparent);
-}
-
-.marker-cluster-large {
-  background: color-mix(in srgb, var(--color-accent-dark) 50%, transparent);
-}
-.marker-cluster-large div {
-  background: var(--color-accent-dark);
-}
-
 /* Numbered chip on each activity card, matching the pin with the same
    number on the map above so the two can be correlated at a glance. */
 .pin-chip {

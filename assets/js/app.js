@@ -114,20 +114,80 @@
   // map stays legible and consistent.
   const TILE_LAYER_URL = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 
+  function buildPinIcon(number, offsetX, offsetY) {
+    return L.divIcon({
+      className: "",
+      html: `<div class="trip-pin"><span>${number}</span></div>`,
+      iconSize: [26, 26],
+      // Shifting iconAnchor/popupAnchor moves where the icon renders on
+      // screen without touching the marker's actual lat/lng — the pin
+      // stays visually "at" its true coordinate except for a small nudge
+      // to keep it from sitting exactly on top of another pin.
+      iconAnchor: [13 - offsetX, 26 - offsetY],
+      popupAnchor: [offsetX, -24 + offsetY],
+    });
+  }
+
+  function pixelFanOffset(indexInGroup) {
+    if (indexInGroup === 0) return { x: 0, y: 0 };
+    const angle = (indexInGroup * 137.5 * Math.PI) / 180; // golden-angle spiral
+    const radius = 14 + indexInGroup * 9;
+    return { x: Math.round(radius * Math.cos(angle)), y: Math.round(radius * Math.sin(angle)) };
+  }
+
+  /**
+   * Nudges pins that currently render within OVERLAP_PX of each other, so
+   * none sit exactly on top of another and become unclickable — without
+   * clustering/grouping them into a single combined marker, and without
+   * changing the true coordinate each pin's popup/route line uses. Whether
+   * two pins overlap depends on the current zoom, so this is re-run on
+   * every zoom/pan instead of computed once.
+   */
+  function deoverlapMarkers(map, entries) {
+    const OVERLAP_PX = 24;
+    const points = entries.map((e) => map.latLngToContainerPoint([e.lat, e.lng]));
+
+    const parent = entries.map((_, i) => i);
+    function find(i) {
+      while (parent[i] !== i) {
+        parent[i] = parent[parent[i]];
+        i = parent[i];
+      }
+      return i;
+    }
+    function union(i, j) {
+      const ri = find(i);
+      const rj = find(j);
+      if (ri !== rj) parent[ri] = rj;
+    }
+    for (let i = 0; i < entries.length; i++) {
+      for (let j = i + 1; j < entries.length; j++) {
+        const dx = points[i].x - points[j].x;
+        const dy = points[i].y - points[j].y;
+        if (Math.sqrt(dx * dx + dy * dy) < OVERLAP_PX) union(i, j);
+      }
+    }
+
+    const groups = new Map();
+    entries.forEach((_, i) => {
+      const root = find(i);
+      if (!groups.has(root)) groups.set(root, []);
+      groups.get(root).push(i);
+    });
+
+    groups.forEach((memberIdxs) => {
+      memberIdxs.forEach((idx, pos) => {
+        const offset = pixelFanOffset(pos);
+        entries[idx].marker.setIcon(buildPinIcon(entries[idx].number, offset.x, offset.y));
+      });
+    });
+  }
+
   /**
    * Renders a Leaflet + OpenStreetMap/CARTO map into `container`, with a
    * numbered pin per stop (in order) connected by a route line. No API key
    * and no sign-in/consent redirect, unlike an unauthenticated Google Maps
    * embed. Each stop needs { lat, lng, number, popupHtml }.
-   *
-   * Pins are added through a marker cluster group rather than straight onto
-   * the map: a day that includes a long inter-city transfer (e.g. Hakone's
-   * Tokyo departure, ~80km from the rest of that day) forces the map to
-   * zoom out far enough that otherwise-separate nearby pins would overlap
-   * pixel-for-pixel — including exact coordinate duplicates (the same hotel
-   * used for two activities). The cluster group groups whatever actually
-   * overlaps on screen at the current zoom into a single expandable bubble
-   * instead of silently stacking markers on top of each other.
    */
   function renderLeafletMap(container, stops) {
     const map = L.map(container, { scrollWheelZoom: false });
@@ -139,25 +199,16 @@
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);
 
-    const clusterGroup = L.markerClusterGroup({
-      maxClusterRadius: 45,
-      spiderfyOnMaxZoom: true,
-      showCoverageOnHover: false,
+    const markerEntries = stops.map((s) => {
+      const marker = L.marker([s.lat, s.lng], { icon: buildPinIcon(s.number, 0, 0) });
+      // autoPan:false — panning the map on every pin click would also
+      // trigger deoverlapMarkers mid-animation, shifting other pins under
+      // the user's cursor; a 320px-tall map doesn't need to auto-recenter
+      // for a small popup anyway.
+      marker.bindPopup(s.popupHtml, { autoPan: false });
+      marker.addTo(map);
+      return { marker, lat: s.lat, lng: s.lng, number: s.number };
     });
-    stops.forEach((s) => {
-      const marker = L.marker([s.lat, s.lng], {
-        icon: L.divIcon({
-          className: "",
-          html: `<div class="trip-pin"><span>${s.number}</span></div>`,
-          iconSize: [26, 26],
-          iconAnchor: [13, 26],
-          popupAnchor: [0, -24],
-        }),
-      });
-      marker.bindPopup(s.popupHtml);
-      clusterGroup.addLayer(marker);
-    });
-    map.addLayer(clusterGroup);
 
     if (latLngs.length > 1) {
       L.polyline(latLngs, { color: "#b3423d", weight: 3, opacity: 0.7, dashArray: "6 8" }).addTo(map);
@@ -166,7 +217,12 @@
     // map created (or fitBounds'd) while `display:none` measures a 0×0
     // container and zooms to maxZoom, which invalidateSize() alone can't fix.
     map.__fitLatLngs = latLngs;
+    map.__markerEntries = markerEntries;
     refitMap(map);
+    if (markerEntries.length > 1) {
+      deoverlapMarkers(map, markerEntries);
+      map.on("zoomend moveend", () => deoverlapMarkers(map, markerEntries));
+    }
     return map;
   }
 
@@ -216,10 +272,12 @@
       if (name === "day" && dayMapInstance) {
         dayMapInstance.invalidateSize();
         refitMap(dayMapInstance);
+        if (dayMapInstance.__markerEntries) deoverlapMarkers(dayMapInstance, dayMapInstance.__markerEntries);
       }
       if (name === "overview" && overviewMapInstance) {
         overviewMapInstance.invalidateSize();
         refitMap(overviewMapInstance);
+        if (overviewMapInstance.__markerEntries) deoverlapMarkers(overviewMapInstance, overviewMapInstance.__markerEntries);
       }
     });
   }

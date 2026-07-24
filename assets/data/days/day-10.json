@@ -45,11 +45,11 @@
         "es": "Traslado a Kanazawa"
       },
       "location": {
-        "en": "Kanazawa",
-        "es": "Kanazawa"
+        "en": "Kanazawa Station, Kanazawa",
+        "es": "Estación de Kanazawa, Kanazawa"
       },
-      "lat": 36.5613,
-      "lng": 136.6562,
+      "lat": 36.5776,
+      "lng": 136.6485,
       "category": "transport",
       "reservation": false,
       "tip": {
