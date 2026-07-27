@@ -53,6 +53,7 @@
       "category": "lodging",
       "reservation": true,
       "reservationLink": "https://www.airbnb.com/l/X6JPKKTM",
+      "booked": true,
       "tip": {
         "en": "Shimanouchi is a quiet backstreet neighborhood of small restaurants and bars, an easy walk north of the Dotonbori canal and close to both Namba and Shinsaibashi stations — a very central base for the rest of the Osaka days.",
         "es": "Shimanouchi es un tranquilo barrio de callecitas con pequeños restaurantes y bares, a poca caminata al norte del canal de Dotonbori y cerca de las estaciones de Namba y Shinsaibashi — una base muy céntrica para el resto de los días en Osaka."

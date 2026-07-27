@@ -12,6 +12,7 @@
   // Populated by loadData() before init() runs.
   let TRIP, UI_STRINGS, CATEGORIES, GENERAL_TIPS, ITINERARY;
   let dataReady = false;
+  let reservationsFilter = "all";
 
   const els = {
     views: document.querySelectorAll(".view"),
@@ -26,6 +27,7 @@
     dayContent: document.getElementById("dayContent"),
     reservationsList: document.getElementById("reservationsList"),
     reservationsCount: document.getElementById("reservationsCount"),
+    reservationsFilter: document.getElementById("reservationsFilter"),
     tipsGrid: document.getElementById("tipsGrid"),
     legend: document.getElementById("legend"),
   };
@@ -511,6 +513,7 @@
     });
 
     if (!items.length) {
+      els.reservationsFilter.innerHTML = "";
       els.reservationsCount.textContent = t(UI_STRINGS.noReservationsNeeded);
       els.reservationsList.innerHTML = `<div class="empty-day">${t(UI_STRINGS.nothingToBook)}</div>`;
       return;
@@ -525,21 +528,62 @@
         ? `${items.length} elemento${items.length === 1 ? "" : "s"} por reservar — ${bookedCount} ya reservado${bookedCount === 1 ? "" : "s"}`
         : `${items.length} item${items.length === 1 ? "" : "s"} need booking — ${bookedCount} marked as booked`;
 
-    els.reservationsList.innerHTML = items.map(({ day, activity }) => {
-      const id = reservationId(day, activity);
-      const bookedNow = isBooked(day, activity);
+    // Filter pills: "All" plus one per category actually present among
+    // reservation items (no point offering an empty "Shopping" filter).
+    const presentCategories = Object.keys(CATEGORIES).filter((cat) => items.some((i) => i.activity.category === cat));
+    if (reservationsFilter !== "all" && !presentCategories.includes(reservationsFilter)) reservationsFilter = "all";
+
+    els.reservationsFilter.innerHTML = [
+      `<button data-cat="all" class="${reservationsFilter === "all" ? "is-active" : ""}">${t(UI_STRINGS.allCategories)}</button>`,
+      ...presentCategories.map((cat) => {
+        const meta = CATEGORIES[cat];
+        return `<button data-cat="${cat}" class="${reservationsFilter === cat ? "is-active" : ""}">${meta.icon} ${t(meta.label)}</button>`;
+      }),
+    ].join("");
+
+    els.reservationsFilter.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        reservationsFilter = btn.dataset.cat;
+        renderReservations();
+      });
+    });
+
+    const filteredItems = reservationsFilter === "all" ? items : items.filter((i) => i.activity.category === reservationsFilter);
+
+    // Grouped by category (in the same order as CATEGORIES) so the list
+    // always reads as organized sections, whether "All" or one category
+    // is selected.
+    const groups = new Map();
+    filteredItems.forEach((item) => {
+      const cat = item.activity.category;
+      if (!groups.has(cat)) groups.set(cat, []);
+      groups.get(cat).push(item);
+    });
+
+    els.reservationsList.innerHTML = Object.keys(CATEGORIES).filter((cat) => groups.has(cat)).map((cat) => {
+      const meta = CATEGORIES[cat];
+      const rows = groups.get(cat).map(({ day, activity }) => {
+        const id = reservationId(day, activity);
+        const bookedNow = isBooked(day, activity);
+        return `
+          <div class="reservation-row ${bookedNow ? "is-done" : ""}" data-id="${escapeAttr(id)}">
+            <input type="checkbox" ${bookedNow ? "checked" : ""} aria-label="Mark as booked">
+            <div class="reservation-row__date">${t(UI_STRINGS.day)} ${day.day} · ${formatDate(day.date)}</div>
+            <div>
+              <div class="reservation-row__name">${escapeHtml(t(activity.name))}</div>
+              <div class="reservation-row__location">${escapeHtml(t(activity.location) || "")} · ${escapeHtml(activity.time)}</div>
+            </div>
+            <div class="reservation-row__meta">
+              ${categoryBadge(activity.category)}
+              ${activity.reservationLink ? `<a href="${escapeAttr(activity.reservationLink)}" target="_blank" rel="noopener">${t(UI_STRINGS.reservationLink)}</a>` : ""}
+            </div>
+          </div>
+        `;
+      }).join("");
       return `
-        <div class="reservation-row ${bookedNow ? "is-done" : ""}" data-id="${escapeAttr(id)}">
-          <input type="checkbox" ${bookedNow ? "checked" : ""} aria-label="Mark as booked">
-          <div class="reservation-row__date">${t(UI_STRINGS.day)} ${day.day} · ${formatDate(day.date)}</div>
-          <div>
-            <div class="reservation-row__name">${escapeHtml(t(activity.name))}</div>
-            <div class="reservation-row__location">${escapeHtml(t(activity.location) || "")} · ${escapeHtml(activity.time)}</div>
-          </div>
-          <div class="reservation-row__meta">
-            ${categoryBadge(activity.category)}
-            ${activity.reservationLink ? `<a href="${escapeAttr(activity.reservationLink)}" target="_blank" rel="noopener">${t(UI_STRINGS.reservationLink)}</a>` : ""}
-          </div>
+        <div class="reservations-group">
+          <h4 class="reservations-group__heading">${meta.icon} ${t(meta.label)}</h4>
+          ${rows}
         </div>
       `;
     }).join("");

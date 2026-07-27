@@ -140,6 +140,10 @@
       "en": "Open in Google Maps",
       "es": "Abrir en Google Maps"
     },
+    "allCategories": {
+      "en": "All",
+      "es": "Todas"
+    },
     "day": {
       "en": "Day",
       "es": "Día"

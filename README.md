@@ -105,6 +105,10 @@ To place a pin, an activity needs `lat`/`lng` coordinates — find them by searc
 
 Every activity with coordinates also gets an "Open in Google Maps" link (on its timeline card and in its map popup), for turn-by-turn directions or just a more detailed look than the embedded map gives.
 
+## The Reservations page
+
+Every activity with `"reservation": true` shows up here, grouped into sections by `category` (Transport, Lodging, etc.) — only categories that actually have a reservation-required item get a section/filter pill, so an empty "Shopping" filter never shows up. The filter pills narrow the list to one category; "All" (the default) shows every section at once.
+
 ## Language switching
 
 The EN/ES toggle in the header re-renders the whole page from `trip.json`'s `uiStrings` and the `{en, es}` fields in each day file — no page reload, no separate URLs. The choice is remembered (`localStorage`) and defaults to Spanish if the visitor's browser is set to a Spanish locale, English otherwise.

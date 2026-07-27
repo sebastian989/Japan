@@ -15,16 +15,16 @@
   },
   "tips": [
     {
-      "en": "Depends on the exact train, but you'll head back from Hakone-Yumoto to Odawara first to catch the Shinkansen. If the Takayama-bound train is early, ask the ryokan for a quick breakfast and check out before 8 AM.",
-      "es": "Depende del horario exacto del tren, pero primero vuelven de Hakone-Yumoto a Odawara para tomar el Shinkansen. Si el tren a Takayama es temprano, pidan un desayuno rápido en el ryokan y salgan antes de las 8 AM."
+      "en": "Depends on the exact train, but you'll take a direct bus from Sengokuhara down to Odawara first to catch the Shinkansen. If the Takayama-bound train is early, ask the ryokan for a quick breakfast and check out before 8 AM.",
+      "es": "Depende del horario exacto del tren, pero primero toman un bus directo desde Sengokuhara hasta Odawara para tomar el Shinkansen. Si el tren a Takayama es temprano, pidan un desayuno rápido en el ryokan y salgan antes de las 8 AM."
     }
   ],
   "activities": [
     {
       "time": "08:00",
       "name": {
-        "en": "Hakone-Yumoto → Odawara",
-        "es": "Hakone-Yumoto → Odawara"
+        "en": "Sengokuhara → Odawara",
+        "es": "Sengokuhara → Odawara"
       },
       "location": {
         "en": "Odawara Station, Hakone",
@@ -34,9 +34,13 @@
       "lng": 139.1538,
       "category": "transport",
       "reservation": false,
+      "duration": {
+        "en": "~50 min",
+        "es": "~50 min"
+      },
       "tip": {
-        "en": "Short hop on the Hakone Tozan Line/Odakyu back to Odawara to connect with the Shinkansen.",
-        "es": "Tramo corto en la línea Hakone Tozan/Odakyu de vuelta a Odawara para conectar con el Shinkansen."
+        "en": "Direct Hakone Tozan/Odakyu highway bus from Sengokuhara to Odawara Station to connect with the Shinkansen — no need to go back via Hakone-Yumoto.",
+        "es": "Bus directo Hakone Tozan/Odakyu de Sengokuhara a la estación de Odawara para conectar con el Shinkansen — no hace falta volver por Hakone-Yumoto."
       }
     },
     {

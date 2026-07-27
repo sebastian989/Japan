@@ -56,6 +56,27 @@
         "en": "Continue on the next Nohi bus from Shirakawa-go to Kanazawa.",
         "es": "Sigan en el siguiente autobús Nohi de Shirakawa-go a Kanazawa."
       }
+    },
+    {
+      "time": "14:30",
+      "name": {
+        "en": "Check in — hotel in Kanazawa",
+        "es": "Registro — hotel en Kanazawa"
+      },
+      "location": {
+        "en": "2-chōme-16-31 Owarichō, Kanazawa, Ishikawa 920-0902",
+        "es": "2-chōme-16-31 Owarichō, Kanazawa, Ishikawa 920-0902"
+      },
+      "lat": 36.5636,
+      "lng": 136.6558,
+      "category": "lodging",
+      "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/D181XRE5",
+      "booked": true,
+      "tip": {
+        "en": "Owaricho is right in the Katamachi/Korinbo nightlife and dining district, an easy walk to Kenrokuen Garden and Higashi Chaya for tomorrow.",
+        "es": "Owaricho está justo en el distrito de vida nocturna y restaurantes de Katamachi/Korinbo, a poca caminata del Jardín Kenrokuen y de Higashi Chaya para mañana."
+      }
     }
   ]
 }

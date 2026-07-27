@@ -10,8 +10,8 @@
     "es": "Hakone Round Course"
   },
   "summary": {
-    "en": "The classic Hakone Round Course: climb from Hakone-Yumoto up to the volcano, then come back down via the lake — no backtracking on any leg.",
-    "es": "El clásico Hakone Round Course: suben desde Hakone-Yumoto hacia el volcán y bajan por el lago, sin retroceder en ningún tramo."
+    "en": "The classic Hakone Round Course: climb from Hakone-Yumoto up to the volcano, then down to the lake, before a short bus north to the ryokan in Sengokuhara.",
+    "es": "El clásico Hakone Round Course: suben desde Hakone-Yumoto hacia el volcán y bajan al lago, antes de un corto bus al norte hacia el ryokan en Sengokuhara."
   },
   "tips": [
     {
@@ -229,20 +229,20 @@
     {
       "time": "16:00",
       "name": {
-        "en": "Bus back toward Gora/Hakone-Yumoto",
-        "es": "Bus de regreso hacia Gora/Hakone-Yumoto"
+        "en": "Bus north to Sengokuhara",
+        "es": "Bus al norte hacia Sengokuhara"
       },
       "location": {
-        "en": "Hakone",
-        "es": "Hakone"
+        "en": "Sengokuhara, Hakone",
+        "es": "Sengokuhara, Hakone"
       },
-      "lat": 35.2323,
-      "lng": 139.1069,
+      "lat": 35.2505,
+      "lng": 139.0201,
       "category": "transport",
       "reservation": false,
       "tip": {
-        "en": "Which bus you take depends on where your ryokan is.",
-        "es": "El bus que tomen depende de dónde esté su ryokan."
+        "en": "The Hakone Tozan/Odakyu bus from Togendai or Moto-Hakone up to Sengokuhara takes about 20-30 minutes — a valley on the northern rim of the Hakone caldera, known for its susuki (pampas grass) fields.",
+        "es": "El bus Hakone Tozan/Odakyu desde Togendai o Moto-Hakone hasta Sengokuhara toma unos 20-30 minutos — un valle en el borde norte de la caldera de Hakone, conocido por sus campos de susuki (pasto plumero)."
       }
     },
     {
@@ -252,16 +252,18 @@
         "es": "Check-in en el ryokan con onsen"
       },
       "location": {
-        "en": "Hakone",
-        "es": "Hakone"
+        "en": "1244-2 Sengokuhara, Hakone 250-0631",
+        "es": "1244-2 Sengokuhara, Hakone 250-0631"
       },
-      "lat": 35.2323,
-      "lng": 139.1069,
+      "lat": 35.2505,
+      "lng": 139.0201,
       "category": "lodging",
       "reservation": true,
+      "reservationLink": "https://secure.booking.com/confirmation.en-us.html?bn=6773195846&pbsource=conf_email_modify&pbtrack=email_mainCTA&source=conf_email&from_conf_email_tracking=1&from_conf_email_source=1&blockout_source=1&from_conf_email_apps=1&mp_blockout_cta_track_non_pbb=non_pbb_button_change_book_cta",
+      "booked": true,
       "tip": {
-        "en": "EXAMPLE — replace with your actual ryokan name and booking details. Leave time for the onsen before dinner.",
-        "es": "EJEMPLO — reemplacen con el nombre real del ryokan y los datos de la reserva. Dejen tiempo para el onsen antes de la cena."
+        "en": "A quieter, more rural corner of Hakone than Hakone-Yumoto — leave time for the onsen before dinner. Note: the reservation link is a Booking.com confirmation-email link, which can require the original booker's email/session to open — keep a screenshot of the confirmation as backup.",
+        "es": "Un rincón de Hakone más tranquilo y rural que Hakone-Yumoto — dejen tiempo para el onsen antes de la cena. Nota: el enlace de reserva es de un correo de confirmación de Booking.com, que puede requerir el correo/sesión de quien reservó para abrirse — guarden una captura de pantalla de la confirmación como respaldo."
       }
     },
     {
@@ -271,11 +273,11 @@
         "es": "Cena kaiseki en el ryokan"
       },
       "location": {
-        "en": "Hakone",
-        "es": "Hakone"
+        "en": "Sengokuhara, Hakone",
+        "es": "Sengokuhara, Hakone"
       },
-      "lat": 35.2323,
-      "lng": 139.1069,
+      "lat": 35.2505,
+      "lng": 139.0201,
       "category": "food",
       "reservation": false,
       "tip": {

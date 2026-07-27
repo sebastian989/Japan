@@ -60,20 +60,22 @@
     {
       "time": "18:00",
       "name": {
-        "en": "Check in — Tokyo hotel (near JR station)",
-        "es": "Registro — hotel en Tokio (cerca de estación JR)"
+        "en": "Check in — hotel in Nihonbashi",
+        "es": "Registro — hotel en Nihonbashi"
       },
       "location": {
-        "en": "Tokyo",
-        "es": "Tokio"
+        "en": "4-9 Nihonbashi Kobunacho, 5F, Chuo Ward, Tokyo 103-0024",
+        "es": "4-9 Nihonbashi Kobunacho, 5F, Chuo Ward, Tokyo 103-0024"
       },
-      "lat": 35.6812,
-      "lng": 139.7671,
+      "lat": 35.6862,
+      "lng": 139.7825,
       "category": "lodging",
       "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/dqRKa6uw",
+      "booked": true,
       "tip": {
-        "en": "EXAMPLE — replace with your actual hotel booking details.",
-        "es": "EJEMPLO — reemplacen con los datos reales de la reserva del hotel."
+        "en": "This is your base for the last two nights (24th-26th) — Nihonbashi/Kobunacho is a quiet, central spot near Suitengumae Station, a short ride from Ginza and Tokyo Station.",
+        "es": "Esta es su base para las últimas dos noches (24 al 26) — Nihonbashi/Kobunacho es una zona tranquila y céntrica cerca de la estación de Suitengumae, a un corto trayecto de Ginza y la estación de Tokio."
       }
     }
   ]
