@@ -108,6 +108,10 @@
     return typeof a.lat === "number" && typeof a.lng === "number";
   }
 
+  function googleMapsUrl(lat, lng) {
+    return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+  }
+
   // CARTO's light basemap renders place names in Latin script (name:en)
   // rather than each country's local script, unlike the standard OSM tile
   // set — used deliberately (always light, regardless of OS theme) so the
@@ -345,7 +349,7 @@
         lat: anchor.lat,
         lng: anchor.lng,
         number: cityStops.length + 1,
-        popupHtml: `<div class="map-popup__time">${t(UI_STRINGS.day)} ${day.day}</div><div class="map-popup__name">${escapeHtml(cityKey)}</div>`,
+        popupHtml: `<div class="map-popup__time">${t(UI_STRINGS.day)} ${day.day}</div><div class="map-popup__name">${escapeHtml(cityKey)}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl(anchor.lat, anchor.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
       });
     });
 
@@ -395,7 +399,7 @@
         lat: a.lat,
         lng: a.lng,
         number: idx + 1,
-        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(t(a.name))}</div><div class="map-popup__location">${escapeHtml(t(a.location) || "")}</div>`,
+        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(t(a.name))}</div><div class="map-popup__location">${escapeHtml(t(a.location) || "")}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl(a.lat, a.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
       });
     });
 
@@ -456,6 +460,9 @@
       ? ` · <a href="${escapeAttr(a.link)}" target="_blank" rel="noopener">${t(UI_STRINGS.moreInfo)}</a>`
       : "";
     const durationHtml = a.duration ? ` · ${escapeHtml(t(a.duration))}` : "";
+    const gmapsHtml = hasCoords(a)
+      ? ` · <a href="${escapeAttr(googleMapsUrl(a.lat, a.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`
+      : "";
     const pinChip = number
       ? `<span class="pin-chip" title="${t(UI_STRINGS.mapPinTitle)} ${number} ${t(UI_STRINGS.onMapAbove)}">${number}</span> `
       : "";
@@ -466,7 +473,7 @@
           <div class="activity-card__head">
             <div>
               <div class="activity-card__title">${escapeHtml(t(a.name))}</div>
-              <div class="activity-card__location">${pinChip}\u{1F4CD} ${escapeHtml(t(a.location) || t(UI_STRINGS.locationPlaceholder))}${durationHtml}${linkHtml}</div>
+              <div class="activity-card__location">${pinChip}\u{1F4CD} ${escapeHtml(t(a.location) || t(UI_STRINGS.locationPlaceholder))}${durationHtml}${linkHtml}${gmapsHtml}</div>
             </div>
             <div class="activity-card__meta">
               ${categoryBadge(a.category)}
@@ -509,7 +516,10 @@
       return;
     }
 
-    const bookedCount = items.filter((i) => booked.has(reservationId(i.day, i.activity))).length;
+    // An activity can arrive pre-marked as booked (activity.booked, set once
+    // it's actually confirmed) in addition to the per-browser checkbox.
+    const isBooked = (day, activity) => activity.booked === true || booked.has(reservationId(day, activity));
+    const bookedCount = items.filter((i) => isBooked(i.day, i.activity)).length;
     els.reservationsCount.textContent =
       currentLang === "es"
         ? `${items.length} elemento${items.length === 1 ? "" : "s"} por reservar — ${bookedCount} ya reservado${bookedCount === 1 ? "" : "s"}`
@@ -517,10 +527,10 @@
 
     els.reservationsList.innerHTML = items.map(({ day, activity }) => {
       const id = reservationId(day, activity);
-      const isBooked = booked.has(id);
+      const bookedNow = isBooked(day, activity);
       return `
-        <div class="reservation-row ${isBooked ? "is-done" : ""}" data-id="${escapeAttr(id)}">
-          <input type="checkbox" ${isBooked ? "checked" : ""} aria-label="Mark as booked">
+        <div class="reservation-row ${bookedNow ? "is-done" : ""}" data-id="${escapeAttr(id)}">
+          <input type="checkbox" ${bookedNow ? "checked" : ""} aria-label="Mark as booked">
           <div class="reservation-row__date">${t(UI_STRINGS.day)} ${day.day} · ${formatDate(day.date)}</div>
           <div>
             <div class="reservation-row__name">${escapeHtml(t(activity.name))}</div>

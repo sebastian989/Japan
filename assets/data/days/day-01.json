@@ -10,8 +10,8 @@
     "es": "Llegada"
   },
   "summary": {
-    "en": "Landing day — clear immigration, get to the hotel in Asakusa/Ueno, and ease into the trip with a relaxed evening walk.",
-    "es": "Día de llegada — pasen migración, vayan al hotel en Asakusa/Ueno, y arranquen el viaje con una caminata relajada por la noche."
+    "en": "Landing day — clear immigration, get to the hotel in Ueno, and ease into the trip with a relaxed evening walk.",
+    "es": "Día de llegada — pasen migración, vayan al hotel en Ueno, y arranquen el viaje con una caminata relajada por la noche."
   },
   "tips": [
     {
@@ -42,20 +42,22 @@
     {
       "time": "17:00",
       "name": {
-        "en": "Check in — hotel in Asakusa/Ueno",
-        "es": "Registro — hotel en Asakusa/Ueno"
+        "en": "Check in — hotel in Ueno",
+        "es": "Registro — hotel en Ueno"
       },
       "location": {
-        "en": "Asakusa, Tokyo",
-        "es": "Asakusa, Tokio"
+        "en": "2-chōme-23-2 Kitaueno, Taito Ward, Tōkyō-to 110-0014",
+        "es": "2-chōme-23-2 Kitaueno, Taito Ward, Tōkyō-to 110-0014"
       },
-      "lat": 35.7148,
-      "lng": 139.7967,
+      "lat": 35.7157,
+      "lng": 139.7788,
       "category": "lodging",
       "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/Tbz2KtvZ",
+      "booked": true,
       "tip": {
-        "en": "EXAMPLE — replace with your actual hotel name and confirmation number once booked.",
-        "es": "EJEMPLO — reemplacen con el nombre real del hotel y el número de confirmación una vez reservado."
+        "en": "This is your base through day 6 — a few minutes' walk north-east of Ueno Station and Ueno Park, and a short train ride or ~25 min walk from Asakusa/Senso-ji.",
+        "es": "Esta es su base hasta el día 6 — a pocos minutos caminando al noreste de la estación de Ueno y el Parque Ueno, y a un corto viaje en tren o ~25 min caminando desde Asakusa/Senso-ji."
       }
     },
     {

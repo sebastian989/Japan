@@ -56,6 +56,27 @@
         "en": "Give yourselves at least 2-3 unhurried hours here — it's a moving visit, not one to rush.",
         "es": "Dense al menos 2-3 horas sin apuro aquí — es una visita conmovedora, no una para apurar."
       }
+    },
+    {
+      "time": "17:00",
+      "name": {
+        "en": "Check in — hotel in Hiroshima",
+        "es": "Registro — hotel en Hiroshima"
+      },
+      "location": {
+        "en": "9-3 Nakajimachō, Naka Ward, Hiroshima 730-0811",
+        "es": "9-3 Nakajimachō, Naka Ward, Hiroshima 730-0811"
+      },
+      "lat": 34.394,
+      "lng": 132.4525,
+      "category": "lodging",
+      "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/9KOzKgcj?s=67&unique_share_id=5cc314dd-2eb3-4ad8-8c83-74b1ad53d28b",
+      "booked": true,
+      "tip": {
+        "en": "Nakajimacho is the neighborhood the Peace Memorial Park itself sits in — you'll be right there, an easy walk from everything you saw this afternoon.",
+        "es": "Nakajimacho es el barrio donde está el propio Parque Conmemorativo de la Paz — estarán justo ahí, a poca caminata de todo lo que vieron esta tarde."
+      }
     }
   ]
 }

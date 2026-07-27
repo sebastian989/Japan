@@ -63,6 +63,27 @@
       }
     },
     {
+      "time": "14:30",
+      "name": {
+        "en": "Check in — hotel in Takayama",
+        "es": "Registro — hotel en Takayama"
+      },
+      "location": {
+        "en": "1-chōme-61 Kandamachi, Takayama, Gifu 506-0006",
+        "es": "1-chōme-61 Kandamachi, Takayama, Gifu 506-0006"
+      },
+      "lat": 36.1381,
+      "lng": 137.253,
+      "category": "lodging",
+      "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/du1UIhoE?s=67&unique_share_id=8305f12c-2b26-48a0-a61b-c71ae2525c64",
+      "booked": true,
+      "tip": {
+        "en": "Kandamachi is a quiet residential street a short walk south-east of Sanmachi Suji's old town — easy walking distance from tonight's and tomorrow's activities.",
+        "es": "Kandamachi es una calle residencial tranquila, a poca caminata al sureste del casco antiguo de Sanmachi Suji — a distancia fácil a pie de las actividades de hoy y mañana."
+      }
+    },
+    {
       "time": "15:00",
       "name": {
         "en": "Historic old town walk: Sanmachi Suji",

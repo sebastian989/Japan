@@ -87,6 +87,7 @@ Notes:
 - `location` should be as specific as possible (e.g. `"Senso-ji Temple, Asakusa"` rather than just `"Tokyo"`) — it's shown under the activity and, if it has `lat`/`lng`, is what places the pin on that day's map.
 - Set `"reservation": true` on anything that needs booking ahead of time (restaurants, teamLab, Ghibli Museum, sumo tickets, etc.) — it'll show a badge on the activity and appear on the **Reservations** page as a checklist item.
 - `link` is a general "more info" URL (official site, tickets page). `reservationLink` is specifically the booking/confirmation link (Airbnb, Booking.com, an OpenTable reservation, etc.) — when set, it shows as its own "Go to reservation" button on the activity and next to the item on the **Reservations** page. An activity can have either, both, or neither.
+- Set `"booked": true` once a `"reservation": true` activity is actually confirmed — it shows as already checked off on the **Reservations** page for everyone viewing the site, not just in your own browser. (The checkbox on that page also lets any visitor check off bookings locally, saved only to their own browser — `"booked": true` is for recording it in the shared data once it's genuinely confirmed.)
 - Leave `"city": { "en": "TBD", "es": "TBD" }` and an empty `"activities"` array for days you haven't planned yet — they show up as "Not planned yet" on the overview.
 - JSON has no comments, so if you want the field docs handy while editing, keep this README open — there's no docstring inside the files themselves.
 
@@ -101,6 +102,8 @@ Numbered pins mark that day's activities in time order, connected by a route lin
 Pins are never grouped/combined — each activity always keeps its own pin at its real coordinate. When two or more pins would render close enough to visually overlap (this recalculates on every zoom/pan, since it depends on the current view — e.g. a day with a long inter-city transfer, like Hakone's Tokyo departure ~80km from the rest of that day, forces the map to zoom out far enough that otherwise-separate local stops get squeezed together, and some activities are genuinely at the exact same coordinate, like a hotel used for both check-in and dinner), the overlapping ones are nudged a few screen pixels apart in a small spiral so every pin stays individually visible and clickable. The nudge is purely cosmetic — it only shifts where the icon renders, not the coordinate its popup and the route line use.
 
 To place a pin, an activity needs `lat`/`lng` coordinates — find them by searching the place on [openstreetmap.org](https://www.openstreetmap.org) and right-clicking it, or by right-clicking the spot on Google Maps and copying the coordinates shown at the top of the menu. An activity without coordinates still shows in the timeline, just without a pin.
+
+Every activity with coordinates also gets an "Open in Google Maps" link (on its timeline card and in its map popup), for turn-by-turn directions or just a more detailed look than the embedded map gives.
 
 ## Language switching
 
