@@ -9,7 +9,7 @@
       "es": "Nuestro itinerario, día a día"
     },
     "startDate": "2026-11-05",
-    "endDate": "2026-11-25",
+    "endDate": "2026-11-26",
     "heroTip": {
       "en": "Tokyo → Hakone → Takayama → Shirakawa-go → Kanazawa → Kyoto → Nara → Osaka → Hiroshima → Miyajima → Tokyo. Edit assets/data/days/*.json to keep refining it.",
       "es": "Tokio → Hakone → Takayama → Shirakawa-go → Kanazawa → Kioto → Nara → Osaka → Hiroshima → Miyajima → Tokio. Edita assets/data/days/*.json para seguir ajustándolo."
@@ -131,6 +131,10 @@
     "moreInfo": {
       "en": "More info",
       "es": "Más información"
+    },
+    "reservationLink": {
+      "en": "Go to reservation",
+      "es": "Ir a la reserva"
     },
     "day": {
       "en": "Day",

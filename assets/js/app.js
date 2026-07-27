@@ -474,6 +474,11 @@
             </div>
           </div>
           ${a.tip ? `<div class="activity-card__tip"><strong>${t(UI_STRINGS.tipLabel)}</strong> ${escapeHtml(t(a.tip))}</div>` : ""}
+          ${
+            a.reservationLink
+              ? `<a class="btn btn--reservation" href="${escapeAttr(a.reservationLink)}" target="_blank" rel="noopener">🔗 ${t(UI_STRINGS.reservationLink)}</a>`
+              : ""
+          }
         </div>
       </li>
     `;
@@ -521,7 +526,10 @@
             <div class="reservation-row__name">${escapeHtml(t(activity.name))}</div>
             <div class="reservation-row__location">${escapeHtml(t(activity.location) || "")} · ${escapeHtml(activity.time)}</div>
           </div>
-          <div>${categoryBadge(activity.category)}</div>
+          <div class="reservation-row__meta">
+            ${categoryBadge(activity.category)}
+            ${activity.reservationLink ? `<a href="${escapeAttr(activity.reservationLink)}" target="_blank" rel="noopener">${t(UI_STRINGS.reservationLink)}</a>` : ""}
+          </div>
         </div>
       `;
     }).join("");

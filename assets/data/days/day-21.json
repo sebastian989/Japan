@@ -6,56 +6,98 @@
     "es": "Tokio"
   },
   "title": {
-    "en": "Departure",
-    "es": "Salida"
+    "en": "Bonus day in Tokyo",
+    "es": "Día extra en Tokio"
   },
   "summary": {
-    "en": "Last-minute shopping, then pack up and head to the airport.",
-    "es": "Compras de último momento, y luego empacar y salir hacia el aeropuerto."
+    "en": "An extra night in Tokyo before flying out — a relaxed day mixing a market breakfast, autumn foliage, and a final night out, covering ground the earlier Tokyo days didn't.",
+    "es": "Una noche extra en Tokio antes de volar — un día relajado que combina un desayuno de mercado, colores de otoño y una última noche de salida, cubriendo lugares que los primeros días en Tokio no alcanzaron."
   },
   "tips": [
     {
-      "en": "Ship bulky souvenirs home ahead of time if you're low on luggage space (post office or Takkyubin).",
-      "es": "Envíen a casa los recuerdos voluminosos con anticipación si les falta espacio en la maleta (correo o Takkyubin)."
+      "en": "This day was added because the return flight is now on the 26th, not the 25th — treat it as flexible. Swap anything here for a rerun of an earlier favorite if you'd rather.",
+      "es": "Este día se agregó porque el vuelo de regreso ahora es el 26, no el 25 — trátenlo como flexible. Cambien cualquier cosa aquí por repetir algo favorito de días anteriores si prefieren."
     }
   ],
   "activities": [
     {
-      "time": "10:00",
+      "time": "08:00",
       "name": {
-        "en": "Last-minute shopping",
-        "es": "Compras de último momento"
+        "en": "Tsukiji Outer Market breakfast",
+        "es": "Desayuno en el mercado de Tsukiji"
       },
       "location": {
-        "en": "Ginza, Tokyo",
-        "es": "Ginza, Tokio"
+        "en": "Tsukiji Outer Market, Tokyo",
+        "es": "Mercado exterior de Tsukiji, Tokio"
       },
-      "lat": 35.6716,
-      "lng": 139.7649,
-      "category": "shopping",
+      "lat": 35.6654,
+      "lng": 139.7707,
+      "category": "food",
       "reservation": false,
       "tip": {
-        "en": "Ginza or Shinjuku both work well for a final souvenir run close to the station.",
-        "es": "Ginza o Shinjuku funcionan bien para una última vuelta de recuerdos cerca de la estación."
+        "en": "The wholesale fish auction moved to Toyosu, but the outer market's food stalls are still excellent — go early for fresh sushi, tamagoyaki skewers, and grilled seafood before the lines build up.",
+        "es": "La subasta mayorista de pescado se mudó a Toyosu, pero los puestos de comida del mercado exterior siguen siendo excelentes — vayan temprano para sushi fresco, brochetas de tamagoyaki y mariscos a la parrilla antes de que se hagan filas."
       }
     },
     {
-      "time": "14:00",
+      "time": "10:30",
       "name": {
-        "en": "Pack & transfer to the airport",
-        "es": "Empacar y traslado al aeropuerto"
+        "en": "Shinjuku Gyoen National Garden",
+        "es": "Jardín Nacional Shinjuku Gyoen"
       },
       "location": {
-        "en": "Narita/Haneda Airport, Tokyo",
-        "es": "Aeropuerto de Narita/Haneda, Tokio"
+        "en": "Shinjuku Gyoen, Tokyo",
+        "es": "Shinjuku Gyoen, Tokio"
       },
-      "lat": 35.7647,
-      "lng": 140.3864,
-      "category": "transport",
+      "lat": 35.6852,
+      "lng": 139.71,
+      "category": "nature",
+      "reservation": false,
+      "duration": {
+        "en": "~2 hr",
+        "es": "~2 h"
+      },
+      "tip": {
+        "en": "Late November is peak autumn color here — the garden mixes Japanese, French, and English styles, and is far more spacious and relaxed than the more crowded Ueno Park.",
+        "es": "Finales de noviembre es la mejor época de colores de otoño aquí — el jardín mezcla estilos japonés, francés e inglés, y es mucho más amplio y tranquilo que el más concurrido Parque Ueno."
+      }
+    },
+    {
+      "time": "13:30",
+      "name": {
+        "en": "Omotesando & Harajuku backstreets (Ura-Hara)",
+        "es": "Omotesando y las callejuelas de Harajuku (Ura-Hara)"
+      },
+      "location": {
+        "en": "Cat Street, Harajuku",
+        "es": "Cat Street, Harajuku"
+      },
+      "lat": 35.669,
+      "lng": 139.7047,
+      "category": "shopping",
       "reservation": false,
       "tip": {
-        "en": "Double-check your terminal and flight time before heading out. Take the N'EX or Skyliner to the airport.",
-        "es": "Confirmen la terminal y el horario del vuelo antes de salir. Tomen el N'EX o el Skyliner hasta el aeropuerto."
+        "en": "A calmer, more upscale contrast to Takeshita Street from day 3 — tree-lined Omotesando has architecture and flagship stores worth seeing even without shopping, and Ura-Hara's backstreets have independent boutiques and cafes.",
+        "es": "Un contraste más tranquilo y elegante frente a la calle Takeshita del día 3 — la arbolada Omotesando tiene arquitectura y tiendas insignia que vale la pena ver aunque no compren nada, y las callejuelas de Ura-Hara tienen boutiques independientes y cafés."
+      }
+    },
+    {
+      "time": "19:00",
+      "name": {
+        "en": "Last night out: Golden Gai & Omoide Yokocho",
+        "es": "Última noche: Golden Gai y Omoide Yokocho"
+      },
+      "location": {
+        "en": "Golden Gai, Shinjuku",
+        "es": "Golden Gai, Shinjuku"
+      },
+      "lat": 35.6938,
+      "lng": 139.7038,
+      "category": "nightlife",
+      "reservation": false,
+      "tip": {
+        "en": "A maze of six narrow alleys packed with over 200 tiny bars, most seating only 5-10 people — many welcome tourists and have English menus, but check for a posted cover charge before sitting down. A fitting last night in Tokyo.",
+        "es": "Un laberinto de seis callejones angostos con más de 200 bares diminutos, la mayoría con capacidad para solo 5-10 personas — muchos reciben turistas y tienen menú en inglés, pero revisen si hay cargo de entrada antes de sentarse. Un cierre perfecto para la última noche en Tokio."
       }
     }
   ]

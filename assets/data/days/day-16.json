@@ -45,16 +45,36 @@
         "es": "Llegada a Osaka y registro"
       },
       "location": {
-        "en": "Namba, Osaka",
-        "es": "Namba, Osaka"
+        "en": "2-chōme-17-23 Shimanouchi, Chuo Ward, Osaka 542-0082",
+        "es": "2-chōme-17-23 Shimanouchi, Chuo Ward, Osaka 542-0082"
       },
-      "lat": 34.6667,
-      "lng": 135.5008,
+      "lat": 34.6705,
+      "lng": 135.5032,
       "category": "lodging",
       "reservation": true,
+      "reservationLink": "https://www.airbnb.com/l/X6JPKKTM",
       "tip": {
-        "en": "EXAMPLE — replace with your actual hotel booking details.",
-        "es": "EJEMPLO — reemplacen con los datos reales de la reserva del hotel."
+        "en": "Shimanouchi is a quiet backstreet neighborhood of small restaurants and bars, an easy walk north of the Dotonbori canal and close to both Namba and Shinsaibashi stations — a very central base for the rest of the Osaka days.",
+        "es": "Shimanouchi es un tranquilo barrio de callecitas con pequeños restaurantes y bares, a poca caminata al norte del canal de Dotonbori y cerca de las estaciones de Namba y Shinsaibashi — una base muy céntrica para el resto de los días en Osaka."
+      }
+    },
+    {
+      "time": "19:00",
+      "name": {
+        "en": "Dinner in Shimanouchi",
+        "es": "Cena en Shimanouchi"
+      },
+      "location": {
+        "en": "Shimanouchi, Osaka",
+        "es": "Shimanouchi, Osaka"
+      },
+      "lat": 34.6705,
+      "lng": 135.5032,
+      "category": "food",
+      "reservation": false,
+      "tip": {
+        "en": "Skip the Dotonbori crowds tonight (you'll be back there day 17) — Shimanouchi's own backstreets are packed with excellent, more local izakaya and small restaurants within a couple of minutes of the hotel.",
+        "es": "Eviten las multitudes de Dotonbori esta noche (volverán ahí el día 17) — las callecitas de Shimanouchi están llenas de excelentes izakayas y restaurantes pequeños y más locales, a un par de minutos del hotel."
       }
     }
   ]

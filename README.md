@@ -1,6 +1,6 @@
 # Japan Trip Itinerary
 
-A single-page site for planning our Japan trip (Nov 5 – Nov 25), organized day by day with hourly activities, a route map per day, a reservations checklist, and general trip tips. Bilingual: English/Spanish, switchable from the header.
+A single-page site for planning our Japan trip (Nov 5 – Nov 26), organized day by day with hourly activities, a route map per day, a reservations checklist, and general trip tips. Bilingual: English/Spanish, switchable from the header.
 
 No build tools, no dependencies, no API keys — plain HTML/CSS/JS that runs straight from GitHub Pages.
 
@@ -30,7 +30,7 @@ assets/data/trip.json           Trip title, date range, UI text, categories, gen
 assets/data/days/day-01.json    Day 1
 assets/data/days/day-02.json    Day 2
 ...
-assets/data/days/day-21.json    Day 21 (last day — count comes from trip.json's date range)
+assets/data/days/day-22.json    Day 22 (last day — count comes from trip.json's date range)
 ```
 
 The app derives how many day files to load from `trip.json`'s `startDate`/`endDate` (inclusive), so if you extend the trip, update those two dates *and* add the matching `day-NN.json` files — numbered to match, zero-padded (`day-07.json`, not `day-7.json`).
@@ -71,7 +71,8 @@ You'll rarely need to touch `uiStrings` or `categories` — `generalTips` (the "
       "reservation": false,
       "duration": { "en": "2 hr", "es": "2 h" },
       "tip": { "en": "Go early (before 9am) to beat the tour buses.", "es": "Vayan temprano (antes de las 9am) para adelantarse a los buses turísticos." },
-      "link": "https://inari.jp/en/"
+      "link": "https://inari.jp/en/",
+      "reservationLink": "https://www.airbnb.com/l/XXXXXXXX"
     }
   ]
 }
@@ -81,10 +82,11 @@ You'll rarely need to touch `uiStrings` or `categories` — `generalTips` (the "
 
 Notes:
 
-- The site is bilingual — any text a visitor sees should be `{ "en": "...", "es": "..." }` rather than a plain string. Fields that are never shown as translated prose (`day`, `date`, `lat`, `lng`, `category`, `reservation`, `link`) stay plain values.
+- The site is bilingual — any text a visitor sees should be `{ "en": "...", "es": "..." }` rather than a plain string. Fields that are never shown as translated prose (`day`, `date`, `lat`, `lng`, `category`, `reservation`, `link`, `reservationLink`) stay plain values.
 - Activities don't need to be pre-sorted — the page sorts them by `time` automatically.
 - `location` should be as specific as possible (e.g. `"Senso-ji Temple, Asakusa"` rather than just `"Tokyo"`) — it's shown under the activity and, if it has `lat`/`lng`, is what places the pin on that day's map.
 - Set `"reservation": true` on anything that needs booking ahead of time (restaurants, teamLab, Ghibli Museum, sumo tickets, etc.) — it'll show a badge on the activity and appear on the **Reservations** page as a checklist item.
+- `link` is a general "more info" URL (official site, tickets page). `reservationLink` is specifically the booking/confirmation link (Airbnb, Booking.com, an OpenTable reservation, etc.) — when set, it shows as its own "Go to reservation" button on the activity and next to the item on the **Reservations** page. An activity can have either, both, or neither.
 - Leave `"city": { "en": "TBD", "es": "TBD" }` and an empty `"activities"` array for days you haven't planned yet — they show up as "Not planned yet" on the overview.
 - JSON has no comments, so if you want the field docs handy while editing, keep this README open — there's no docstring inside the files themselves.
 

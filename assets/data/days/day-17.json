@@ -6,20 +6,25 @@
     "es": "Osaka"
   },
   "title": {
-    "en": "Osaka Castle & Dotonbori",
-    "es": "Castillo de Osaka y Dotonbori"
+    "en": "Best of Osaka, north to south",
+    "es": "Lo mejor de Osaka, de norte a sur"
   },
   "summary": {
-    "en": "History by day, neon and street food by night.",
-    "es": "Historia de día, neón y comida callejera de noche."
+    "en": "A full day routed to avoid backtracking: Osaka Castle in the north-east, then working south through the food markets and retro Shinsekai district, before ending the night in the Shinsaibashi/Dotonbori entertainment cluster — a few minutes from the hotel.",
+    "es": "Un día completo organizado para evitar retrocesos: el Castillo de Osaka al noreste, y luego bajando por los mercados de comida y el distrito retro de Shinsekai, para terminar la noche en el grupo de entretenimiento de Shinsaibashi/Dotonbori — a pocos minutos del hotel."
   },
-  "tips": [],
+  "tips": [
+    {
+      "en": "This route deliberately goes castle → market → Shinsekai → Shinsaibashi/Dotonbori, not back and forth — Shinsekai is genuinely the southernmost stop, and the evening entertainment district (where you're staying) is the natural last leg.",
+      "es": "Esta ruta va deliberadamente castillo → mercado → Shinsekai → Shinsaibashi/Dotonbori, sin ida y vuelta — Shinsekai es en verdad la parada más al sur, y el distrito de entretenimiento nocturno (donde se hospedan) es el tramo final natural."
+    }
+  ],
   "activities": [
     {
-      "time": "09:30",
+      "time": "09:00",
       "name": {
-        "en": "Osaka Castle & Shinsekai",
-        "es": "Castillo de Osaka y Shinsekai"
+        "en": "Osaka Castle & moat gardens",
+        "es": "Castillo de Osaka y jardines del foso"
       },
       "location": {
         "en": "Osaka Castle, Osaka",
@@ -29,9 +34,101 @@
       "lng": 135.5259,
       "category": "sightseeing",
       "reservation": false,
+      "duration": {
+        "en": "~2 hr",
+        "es": "~2 h"
+      },
       "tip": {
-        "en": "The Midosuji subway line connects Osaka Castle and Shinsekai easily.",
-        "es": "La línea de metro Midosuji conecta fácilmente el Castillo de Osaka y Shinsekai."
+        "en": "The keep itself is a rebuilt museum (skippable if you're pressed for time), but the park, moats, and stone walls are the real draw — especially with autumn color in late November. The Tanimachi 4-chome or Osakajokoen stations are the closest.",
+        "es": "La torre principal es un museo reconstruido (se puede omitir si van cortos de tiempo), pero el parque, los fosos y las murallas de piedra son el verdadero atractivo — sobre todo con los colores de otoño a finales de noviembre. Las estaciones más cercanas son Tanimachi 4-chome u Osakajokoen."
+      }
+    },
+    {
+      "time": "11:00",
+      "name": {
+        "en": "Kuromon Ichiba Market",
+        "es": "Mercado Kuromon Ichiba"
+      },
+      "location": {
+        "en": "Kuromon Ichiba Market, Osaka",
+        "es": "Mercado Kuromon Ichiba, Osaka"
+      },
+      "lat": 34.6656,
+      "lng": 135.5065,
+      "category": "food",
+      "reservation": false,
+      "duration": {
+        "en": "~1.5 hr",
+        "es": "~1.5 h"
+      },
+      "tip": {
+        "en": "\"Osaka's kitchen\" — a covered market street of stand-and-eat stalls: skewered wagyu, uni, fresh oysters, tamagoyaki, and grilled king crab legs. Graze your way through instead of a sit-down lunch.",
+        "es": "\"La cocina de Osaka\" — una calle de mercado techada con puestos para comer de pie: brochetas de wagyu, erizo de mar, ostras frescas, tamagoyaki y patas de cangrejo rey a la parrilla. Vayan probando de puesto en puesto en vez de sentarse a almorzar."
+      }
+    },
+    {
+      "time": "13:00",
+      "name": {
+        "en": "Shinsekai & Tsutenkaku Tower",
+        "es": "Shinsekai y la torre Tsutenkaku"
+      },
+      "location": {
+        "en": "Tsutenkaku Tower, Shinsekai, Osaka",
+        "es": "Torre Tsutenkaku, Shinsekai, Osaka"
+      },
+      "lat": 34.6524,
+      "lng": 135.5062,
+      "category": "sightseeing",
+      "reservation": false,
+      "duration": {
+        "en": "~1.5 hr",
+        "es": "~1.5 h"
+      },
+      "tip": {
+        "en": "A retro, unpolished entertainment district built around a early-1900s tower — this is the birthplace of kushikatsu (fried skewers); the rule at most shops is no double-dipping in the shared sauce. Good spot for an afternoon snack rather than a full meal before Kuromon.",
+        "es": "Un distrito de entretenimiento retro y sin pulir construido alrededor de una torre de principios del siglo XX — aquí nació el kushikatsu (brochetas fritas); la regla en casi todos los locales es no volver a mojar en la salsa compartida. Buen lugar para un snack de tarde, no para una comida completa, dado que ya pasaron por Kuromon."
+      }
+    },
+    {
+      "time": "15:00",
+      "name": {
+        "en": "Shinsaibashi-suji & Amerikamura",
+        "es": "Shinsaibashi-suji y Amerikamura"
+      },
+      "location": {
+        "en": "Shinsaibashi-suji Shopping Street, Osaka",
+        "es": "Calle comercial Shinsaibashi-suji, Osaka"
+      },
+      "lat": 34.673,
+      "lng": 135.5,
+      "category": "shopping",
+      "reservation": false,
+      "duration": {
+        "en": "~2 hr",
+        "es": "~2 h"
+      },
+      "tip": {
+        "en": "Shinsaibashi-suji is a long covered arcade of mainstream and department-store shopping; Amerikamura (\"America Town\"), just west of it, is the scruffier youth-fashion and streetwear district with vintage shops and street art — worth a walk through even if you don't buy anything.",
+        "es": "Shinsaibashi-suji es una larga galería techada de compras convencionales y grandes almacenes; Amerikamura (\"America Town\"), justo al oeste, es el distrito más desaliñado de moda juvenil y streetwear, con tiendas vintage y arte urbano — vale la pena recorrerlo aunque no compren nada."
+      }
+    },
+    {
+      "time": "17:30",
+      "name": {
+        "en": "Hozenji Yokocho",
+        "es": "Hozenji Yokocho"
+      },
+      "location": {
+        "en": "Hozenji Yokocho, Osaka",
+        "es": "Hozenji Yokocho, Osaka"
+      },
+      "lat": 34.6688,
+      "lng": 135.5023,
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "A narrow, stone-paved, lantern-lit alley tucked just behind Dotonbori around a small moss-covered temple (Hozenji) — a quiet, atmospheric few minutes before the main event.",
+        "es": "Un callejón angosto, empedrado e iluminado con faroles, escondido justo detrás de Dotonbori alrededor de un pequeño templo cubierto de musgo (Hozenji) — unos minutos tranquilos y con mucho ambiente antes del plato fuerte."
       }
     },
     {
@@ -49,8 +146,8 @@
       "category": "nightlife",
       "reservation": false,
       "tip": {
-        "en": "Try takoyaki and okonomiyaki from the street stalls, and get the classic photo at the Glico running-man sign.",
-        "es": "Prueben takoyaki y okonomiyaki en los puestos callejeros, y tómense la clásica foto con el cartel del corredor Glico."
+        "en": "Try takoyaki and okonomiyaki from the street stalls, and get the classic photo at the Glico running-man sign. You're a short walk from the hotel from here — no need to rush.",
+        "es": "Prueben takoyaki y okonomiyaki en los puestos callejeros, y tómense la clásica foto con el cartel del corredor Glico. Desde aquí el hotel queda a poca caminata — no hay necesidad de apurarse."
       }
     }
   ]
