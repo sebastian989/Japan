@@ -6,60 +6,51 @@
     "es": "Tokio"
   },
   "title": {
-    "en": "Nikko day trip",
-    "es": "Excursión a Nikko"
+    "en": "Harajuku & Shibuya",
+    "es": "Harajuku y Shibuya"
   },
   "summary": {
-    "en": "A full-day excursion out to the shrines of Nikko.",
-    "es": "Una excursión de día completo a los santuarios de Nikko."
+    "en": "Youth culture and one of Tokyo's best sunset views.",
+    "es": "Cultura juvenil y una de las mejores vistas de atardecer de Tokio."
   },
-  "tips": [
-    {
-      "en": "Leave early to make the most of the day — Nikko is roughly 2 hours from Tokyo.",
-      "es": "Salgan temprano para aprovechar el día — Nikko está a unas 2 horas de Tokio."
-    }
-  ],
+  "tips": [],
   "activities": [
     {
-      "time": "07:00",
+      "time": "09:30",
       "name": {
-        "en": "Day trip to Nikko: Toshogu Shrine",
-        "es": "Excursión a Nikko: Santuario Toshogu"
+        "en": "Meiji Jingu Shrine & Harajuku (Takeshita Street)",
+        "es": "Santuario Meiji Jingu y Harajuku (calle Takeshita)"
       },
       "location": {
-        "en": "Toshogu Shrine, Nikko",
-        "es": "Santuario Toshogu, Nikko"
+        "en": "Meiji Jingu Shrine, Harajuku",
+        "es": "Santuario Meiji Jingu, Harajuku"
       },
-      "lat": 36.7581,
-      "lng": 139.5994,
+      "lat": 35.6764,
+      "lng": 139.6993,
       "category": "sightseeing",
       "reservation": false,
-      "duration": {
-        "en": "Full day",
-        "es": "Día completo"
-      },
       "tip": {
-        "en": "Take the Tobu train from Asakusa, or JR Shinkansen plus a local line. Toshogu is Japan's most lavishly decorated shrine complex.",
-        "es": "Tomen el tren Tobu desde Asakusa, o el Shinkansen JR más una línea local. Toshogu es el complejo de santuarios más ricamente decorado de Japón."
+        "en": "Take the JR Yamanote line (Ueno → Harajuku → Shibuya) to link today's stops.",
+        "es": "Tomen la línea JR Yamanote (Ueno → Harajuku → Shibuya) para conectar las paradas de hoy."
       }
     },
     {
-      "time": "13:00",
+      "time": "15:00",
       "name": {
-        "en": "Shinkyo Bridge",
-        "es": "Puente Shinkyo"
+        "en": "Shibuya Crossing, Hachiko statue & Shibuya Sky at sunset",
+        "es": "Cruce de Shibuya, estatua de Hachiko y Shibuya Sky al atardecer"
       },
       "location": {
-        "en": "Shinkyo Bridge, Nikko",
-        "es": "Puente Shinkyo, Nikko"
+        "en": "Shibuya Sky, Shibuya",
+        "es": "Shibuya Sky, Shibuya"
       },
-      "lat": 36.7503,
-      "lng": 139.5995,
+      "lat": 35.658,
+      "lng": 139.7016,
       "category": "sightseeing",
-      "reservation": false,
+      "reservation": true,
       "tip": {
-        "en": "The bright red sacred bridge at the entrance to Nikko's shrine district — a quick, scenic stop.",
-        "es": "El puente sagrado rojo brillante a la entrada del distrito de santuarios de Nikko — una parada rápida y muy fotogénica."
+        "en": "Book Shibuya Sky several weeks in advance — sunset time slots are the first to sell out.",
+        "es": "Reserven Shibuya Sky con varias semanas de anticipación — los horarios de atardecer son los primeros en agotarse."
       }
     }
   ]
