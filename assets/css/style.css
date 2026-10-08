@@ -492,6 +492,20 @@ a {
   background: var(--color-bg);
 }
 
+.day-route-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -6px 0 18px;
+}
+
+.btn--route {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
 .map-frame-empty {
   padding: 40px 20px;
   text-align: center;

@@ -27,6 +27,7 @@
       },
       "lat": 34.6851,
       "lng": 135.843,
+      "mapsQuery": "Todai-ji, Nara",
       "category": "sightseeing",
       "reservation": false,
       "duration": {

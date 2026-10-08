@@ -27,6 +27,7 @@
       },
       "lat": 34.9858,
       "lng": 135.7588,
+      "mapsQuery": "Kyoto Station",
       "category": "transport",
       "reservation": false,
       "tip": {
@@ -46,6 +47,7 @@
       },
       "lat": 34.9858,
       "lng": 135.7588,
+      "mapsQuery": "Kyoto Station",
       "category": "lodging",
       "reservation": true,
       "tip": {

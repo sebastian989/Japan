@@ -71,6 +71,7 @@ You'll rarely need to touch `uiStrings` or `categories` — `generalTips` (the "
       "reservation": false,
       "duration": { "en": "2 hr", "es": "2 h" },
       "tip": { "en": "Go early (before 9am) to beat the tour buses.", "es": "Vayan temprano (antes de las 9am) para adelantarse a los buses turísticos." },
+      "mapsQuery": "Fushimi Inari Taisha",
       "link": "https://inari.jp/en/",
       "reservationLink": "https://www.airbnb.com/l/XXXXXXXX"
     }
@@ -96,6 +97,8 @@ Just send over your itinerary and it'll get turned into files like the ones abov
 ## How the map works
 
 Each day's map is rendered with **Leaflet + Esri's World Street Map tiles** — free, no API key, and no Google sign-in/consent redirect to fail inside an iframe (which is what causes an unauthenticated Google Maps embed to sometimes show blank). The map is always light regardless of the visitor's OS theme (deliberately — a dark map read as broken rather than "in dark mode"), and place labels in Japan show both Japanese and Latin script, unlike plain OSM tiles. (CARTO's basemaps were used originally, but they now require an API key and show an "API KEY REQUIRED" watermark without one.)
+
+Each activity's **Open in Google Maps** link searches Google Maps for the place by name (its English `location`), so it opens the place's own page instead of a bare pin. Set the optional `mapsQuery` field when the location text is vague or wouldn't match well (e.g. `"Narita International Airport"` instead of `"Narita/Haneda Airport, Tokyo"`). Below each day's map, **Open the day's route in Google Maps** opens every stop of the day as a multi-stop route, in timeline order, built from the same search names. Google allows 10 points per route, so a longer day is split into parts, and back-to-back stops at the same place are merged.
 
 Numbered pins mark that day's activities in time order, connected by a route line; each activity in the timeline shows the same number next to its 📍 location so you can match a card to its pin. Click a pin for details. The "Route overview" map on the Overview page connects one pin per city to show the overall trip route.
 

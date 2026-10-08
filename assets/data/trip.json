@@ -159,6 +159,14 @@
     "onMapAbove": {
       "en": "on the map above",
       "es": "en el mapa de arriba"
+    },
+    "openDayRoute": {
+      "en": "Open the day's route in Google Maps",
+      "es": "Abrir la ruta del día en Google Maps"
+    },
+    "routePart": {
+      "en": "part",
+      "es": "parte"
     }
   },
   "categories": {

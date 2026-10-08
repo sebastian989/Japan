@@ -110,8 +110,48 @@
     return typeof a.lat === "number" && typeof a.lng === "number";
   }
 
-  function googleMapsUrl(lat, lng) {
-    return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+  // What to search Google Maps for: an explicit `mapsQuery` override, else
+  // the English location name (Google matches English names best), else the
+  // raw coordinates. A name opens the place's own page (photos, hours,
+  // reviews) instead of a bare dropped pin.
+  function mapsQuery(a) {
+    return a.mapsQuery || (a.location && a.location.en) || `${a.lat},${a.lng}`;
+  }
+
+  function googleMapsUrl(a) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsQuery(a))}`;
+  }
+
+  function distanceMeters(a, b) {
+    const rad = (d) => (d * Math.PI) / 180;
+    const dLat = rad(b.lat - a.lat);
+    const dLng = rad(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * 6371000 * Math.asin(Math.sqrt(h));
+  }
+
+  // Google Maps directions take at most 10 points, so a longer day is split
+  // into consecutive legs that share their boundary stop. Back-to-back stops
+  // at the same place (same search text, or practically the same spot, like
+  // dinner at the ryokan you just checked into) are merged into one point.
+  const ROUTE_MAX_POINTS = 10;
+  const ROUTE_MERGE_METERS = 150;
+
+  function dayRouteUrls(acts) {
+    const points = [];
+    acts.filter(hasCoords).forEach((a) => {
+      const prev = points[points.length - 1];
+      if (prev && (mapsQuery(prev) === mapsQuery(a) || distanceMeters(prev, a) < ROUTE_MERGE_METERS)) return;
+      points.push(a);
+    });
+    if (points.length < 2) return [];
+    const legs = [];
+    for (let i = 0; i < points.length - 1; i += ROUTE_MAX_POINTS - 1) {
+      legs.push(points.slice(i, i + ROUTE_MAX_POINTS));
+    }
+    return legs.map(
+      (leg) => `https://www.google.com/maps/dir/${leg.map((a) => encodeURIComponent(mapsQuery(a))).join("/")}`
+    );
   }
 
   // Esri's World Street Map labels places in Japan in both Japanese and
@@ -352,7 +392,7 @@
         lat: anchor.lat,
         lng: anchor.lng,
         number: cityStops.length + 1,
-        popupHtml: `<div class="map-popup__time">${t(UI_STRINGS.day)} ${day.day}</div><div class="map-popup__name">${escapeHtml(cityKey)}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl(anchor.lat, anchor.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
+        popupHtml: `<div class="map-popup__time">${t(UI_STRINGS.day)} ${day.day}</div><div class="map-popup__name">${escapeHtml(cityKey)}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl({ mapsQuery: `${day.city.en}, Japan` }))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
       });
     });
 
@@ -402,7 +442,7 @@
         lat: a.lat,
         lng: a.lng,
         number: idx + 1,
-        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(t(a.name))}</div><div class="map-popup__location">${escapeHtml(t(a.location) || "")}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl(a.lat, a.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
+        popupHtml: `<div class="map-popup__time">${escapeHtml(a.time)}</div><div class="map-popup__name">${escapeHtml(t(a.name))}</div><div class="map-popup__location">${escapeHtml(t(a.location) || "")}</div><a class="map-popup__gmaps" href="${escapeAttr(googleMapsUrl(a))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`,
       });
     });
 
@@ -410,8 +450,20 @@
       ? `<ul class="day-tips">${day.tips.map((tip) => `<li>${escapeHtml(t(tip))}</li>`).join("")}</ul>`
       : "";
 
+    const routeUrls = dayRouteUrls(acts);
+    const routeHtml = routeUrls.length
+      ? `<div class="day-route-links">${routeUrls
+          .map(
+            (url, i) =>
+              `<a class="btn btn--route" href="${escapeAttr(url)}" target="_blank" rel="noopener">🧭 ${t(UI_STRINGS.openDayRoute)}${
+                routeUrls.length > 1 ? ` (${t(UI_STRINGS.routePart)} ${i + 1}/${routeUrls.length})` : ""
+              }</a>`
+          )
+          .join("")}</div>`
+      : "";
+
     const mapHtml = stops.length
-      ? `<div class="map-frame-wrap"><div class="leaflet-map-el" id="dayMap"></div></div>`
+      ? `<div class="map-frame-wrap"><div class="leaflet-map-el" id="dayMap"></div></div>${routeHtml}`
       : `<div class="map-frame-wrap"><div class="map-frame-empty">${t(UI_STRINGS.mapEmptyDay)}</div></div>`;
 
     const dayFileName = `day-${String(day.day).padStart(2, "0")}.json`;
@@ -464,7 +516,7 @@
       : "";
     const durationHtml = a.duration ? ` · ${escapeHtml(t(a.duration))}` : "";
     const gmapsHtml = hasCoords(a)
-      ? ` · <a href="${escapeAttr(googleMapsUrl(a.lat, a.lng))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`
+      ? ` · <a href="${escapeAttr(googleMapsUrl(a))}" target="_blank" rel="noopener">🗺️ ${t(UI_STRINGS.openInGoogleMaps)}</a>`
       : "";
     const pinChip = number
       ? `<span class="pin-chip" title="${t(UI_STRINGS.mapPinTitle)} ${number} ${t(UI_STRINGS.onMapAbove)}">${number}</span> `

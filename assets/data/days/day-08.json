@@ -32,6 +32,7 @@
       },
       "lat": 35.2564,
       "lng": 139.1538,
+      "mapsQuery": "Odawara Station",
       "category": "transport",
       "reservation": false,
       "duration": {

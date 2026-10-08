@@ -50,6 +50,7 @@
       },
       "lat": 35.1225,
       "lng": 135.7639,
+      "mapsQuery": "Kifune Shrine, Kyoto",
       "category": "nature",
       "reservation": false,
       "tip": {

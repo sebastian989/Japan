@@ -32,6 +32,7 @@
       },
       "lat": 35.7647,
       "lng": 140.3864,
+      "mapsQuery": "Narita International Airport",
       "category": "transport",
       "reservation": false,
       "tip": {

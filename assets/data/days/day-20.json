@@ -46,6 +46,7 @@
       },
       "lat": 35.6812,
       "lng": 139.7671,
+      "mapsQuery": "Tokyo Station",
       "category": "transport",
       "reservation": false,
       "duration": {
