@@ -10,10 +10,15 @@
     "es": "Harajuku y Shibuya"
   },
   "summary": {
-    "en": "Youth culture and one of Tokyo's best sunset views.",
-    "es": "Cultura juvenil y una de las mejores vistas de atardecer de Tokio."
+    "en": "Youth culture, Tokyo's most stylish avenue and one of its best sunset views — all one walk from Harajuku down to Shibuya.",
+    "es": "Cultura juvenil, la avenida más elegante de Tokio y una de sus mejores vistas al atardecer — todo en una sola caminata de Harajuku a Shibuya."
   },
-  "tips": [],
+  "tips": [
+    {
+      "en": "Today is one walking route of about 2-3 km: Meiji Jingu → Takeshita Street → Omotesando → Cat Street → Shibuya. Take the JR Yamanote line from Ueno to Harajuku in the morning and back from Shibuya at night.",
+      "es": "Hoy es una sola ruta a pie de unos 2-3 km: Meiji Jingu → calle Takeshita → Omotesando → Cat Street → Shibuya. Tomen la línea JR Yamanote de Ueno a Harajuku en la mañana y de vuelta desde Shibuya en la noche."
+    }
+  ],
   "activities": [
     {
       "time": "09:30",
@@ -30,8 +35,27 @@
       "category": "sightseeing",
       "reservation": false,
       "tip": {
-        "en": "Take the JR Yamanote line (Ueno → Harajuku → Shibuya) to link today's stops.",
-        "es": "Tomen la línea JR Yamanote (Ueno → Harajuku → Shibuya) para conectar las paradas de hoy."
+        "en": "Start at Meiji Jingu while it's quiet, then cross over to Takeshita Street right outside Harajuku Station.",
+        "es": "Empiecen en Meiji Jingu mientras está tranquilo, y luego crucen a la calle Takeshita, justo afuera de la estación de Harajuku."
+      }
+    },
+    {
+      "time": "12:00",
+      "name": {
+        "en": "Omotesando & Harajuku backstreets (Ura-Hara)",
+        "es": "Omotesando y las callejuelas de Harajuku (Ura-Hara)"
+      },
+      "location": {
+        "en": "Cat Street, Harajuku",
+        "es": "Cat Street, Harajuku"
+      },
+      "lat": 35.669,
+      "lng": 139.7047,
+      "category": "shopping",
+      "reservation": false,
+      "tip": {
+        "en": "A calmer, more upscale contrast to Takeshita Street — walk down tree-lined Omotesando for its architecture and flagship stores, then turn onto Cat Street, whose backstreets of independent boutiques and cafes lead you on foot to Shibuya in about 15 minutes.",
+        "es": "Un contraste más tranquilo y elegante frente a la calle Takeshita — bajen por la arbolada Omotesando para ver su arquitectura y tiendas insignia, y luego tomen Cat Street, cuyas callejuelas de boutiques independientes y cafés los llevan caminando a Shibuya en unos 15 minutos."
       }
     },
     {

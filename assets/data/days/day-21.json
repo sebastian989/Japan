@@ -10,8 +10,8 @@
     "es": "Día extra en Tokio"
   },
   "summary": {
-    "en": "An extra night in Tokyo before flying out — a relaxed day mixing a market breakfast, autumn foliage, and a final night out, covering ground the earlier Tokyo days didn't.",
-    "es": "Una noche extra en Tokio antes de volar — un día relajado que combina un desayuno de mercado, colores de otoño y una última noche de salida, cubriendo lugares que los primeros días en Tokio no alcanzaron."
+    "en": "An extra night in Tokyo before flying out — a relaxed day that moves steadily east to west: a market breakfast, the Imperial Palace gardens, autumn foliage, a free sunset view and a final night out in Shinjuku.",
+    "es": "Una noche extra en Tokio antes de volar — un día relajado que avanza de este a oeste: desayuno de mercado, los jardines del Palacio Imperial, colores de otoño, una vista gratis al atardecer y una última noche de salida en Shinjuku."
   },
   "tips": [
     {
@@ -40,7 +40,30 @@
       }
     },
     {
-      "time": "10:30",
+      "time": "10:00",
+      "name": {
+        "en": "Imperial Palace East Gardens",
+        "es": "Jardines Este del Palacio Imperial"
+      },
+      "location": {
+        "en": "Imperial Palace East Gardens, Tokyo",
+        "es": "Jardines Este del Palacio Imperial, Tokio"
+      },
+      "lat": 35.6852,
+      "lng": 139.7546,
+      "category": "sightseeing",
+      "reservation": false,
+      "duration": {
+        "en": "~1.5 hr",
+        "es": "~1,5 h"
+      },
+      "tip": {
+        "en": "Free entry, about 15 minutes from Tsukiji — enter through the Otemachi Gate. The gardens are closed on Mondays and Fridays, but open on this Wednesday.",
+        "es": "Entrada gratis, a unos 15 minutos de Tsukiji — entren por la puerta de Otemachi. Los jardines cierran lunes y viernes, pero este miércoles están abiertos."
+      }
+    },
+    {
+      "time": "12:30",
       "name": {
         "en": "Shinjuku Gyoen National Garden",
         "es": "Jardín Nacional Shinjuku Gyoen"
@@ -58,27 +81,27 @@
         "es": "~2 h"
       },
       "tip": {
-        "en": "Late November is peak autumn color here — the garden mixes Japanese, French, and English styles, and is far more spacious and relaxed than the more crowded Ueno Park.",
-        "es": "Finales de noviembre es la mejor época de colores de otoño aquí — el jardín mezcla estilos japonés, francés e inglés, y es mucho más amplio y tranquilo que el más concurrido Parque Ueno."
+        "en": "From Otemachi, the Marunouchi line goes straight to Shinjuku-gyoemmae. Late November is peak autumn color here — the garden mixes Japanese, French, and English styles. It closes early in autumn (around 16:00), so don't arrive late.",
+        "es": "Desde Otemachi, la línea Marunouchi va directo a Shinjuku-gyoemmae. Finales de noviembre es la mejor época de colores de otoño aquí — el jardín mezcla estilos japonés, francés e inglés. En otoño cierra temprano (alrededor de las 16:00), así que no lleguen tarde."
       }
     },
     {
-      "time": "13:30",
+      "time": "15:30",
       "name": {
-        "en": "Omotesando & Harajuku backstreets (Ura-Hara)",
-        "es": "Omotesando y las callejuelas de Harajuku (Ura-Hara)"
+        "en": "Sunset at the Tokyo Metropolitan Government Building",
+        "es": "Atardecer en el Edificio del Gobierno Metropolitano de Tokio"
       },
       "location": {
-        "en": "Cat Street, Harajuku",
-        "es": "Cat Street, Harajuku"
+        "en": "Tokyo Metropolitan Government Building, Shinjuku",
+        "es": "Edificio del Gobierno Metropolitano de Tokio, Shinjuku"
       },
-      "lat": 35.669,
-      "lng": 139.7047,
-      "category": "shopping",
+      "lat": 35.6896,
+      "lng": 139.6917,
+      "category": "sightseeing",
       "reservation": false,
       "tip": {
-        "en": "A calmer, more upscale contrast to Takeshita Street from day 5 — tree-lined Omotesando has architecture and flagship stores worth seeing even without shopping, and Ura-Hara's backstreets have independent boutiques and cafes.",
-        "es": "Un contraste más tranquilo y elegante frente a la calle Takeshita del día 5 — la arbolada Omotesando tiene arquitectura y tiendas insignia que vale la pena ver aunque no compren nada, y las callejuelas de Ura-Hara tienen boutiques independientes y cafés."
+        "en": "A free observation deck on the 45th floor, about 20 minutes on foot from Shinjuku Gyoen. Sunset is around 16:30 in late November, and on clear days you can see Mt. Fuji.",
+        "es": "Un mirador gratis en el piso 45, a unos 20 minutos caminando de Shinjuku Gyoen. A fines de noviembre el sol se pone alrededor de las 16:30, y en días despejados se ve el monte Fuji."
       }
     },
     {
