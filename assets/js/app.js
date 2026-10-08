@@ -114,11 +114,12 @@
     return `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
   }
 
-  // CARTO's light basemap renders place names in Latin script (name:en)
-  // rather than each country's local script, unlike the standard OSM tile
-  // set — used deliberately (always light, regardless of OS theme) so the
-  // map stays legible and consistent.
-  const TILE_LAYER_URL = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+  // Esri's World Street Map labels places in Japan in both Japanese and
+  // Latin script (unlike the standard OSM tile set, which is Japanese-only),
+  // needs no API key, and is always light regardless of OS theme. CARTO's
+  // basemaps were used before but now require an API key.
+  const TILE_LAYER_URL =
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
 
   function buildPinIcon(number, offsetX, offsetY) {
     return L.divIcon({
@@ -190,7 +191,7 @@
   }
 
   /**
-   * Renders a Leaflet + OpenStreetMap/CARTO map into `container`, with a
+   * Renders a Leaflet + Esri/OpenStreetMap map into `container`, with a
    * numbered pin per stop (in order) connected by a route line. No API key
    * and no sign-in/consent redirect, unlike an unauthenticated Google Maps
    * embed. Each stop needs { lat, lng, number, popupHtml }.
@@ -200,7 +201,7 @@
     L.tileLayer(TILE_LAYER_URL, {
       maxZoom: 19,
       attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+        'Tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a> &mdash; Esri, HERE, Garmin, USGS, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);

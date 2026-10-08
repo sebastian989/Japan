@@ -95,7 +95,7 @@ Just send over your itinerary and it'll get turned into files like the ones abov
 
 ## How the map works
 
-Each day's map is rendered with **Leaflet + CARTO's light basemap** — free, no API key, and no Google sign-in/consent redirect to fail inside an iframe (which is what causes an unauthenticated Google Maps embed to sometimes show blank). The map always uses CARTO's *light* tiles regardless of the visitor's OS theme (deliberately — a dark map read as broken rather than "in dark mode"), and place labels render in Latin script everywhere (including Japan) instead of the local script, unlike plain OSM tiles.
+Each day's map is rendered with **Leaflet + Esri's World Street Map tiles** — free, no API key, and no Google sign-in/consent redirect to fail inside an iframe (which is what causes an unauthenticated Google Maps embed to sometimes show blank). The map is always light regardless of the visitor's OS theme (deliberately — a dark map read as broken rather than "in dark mode"), and place labels in Japan show both Japanese and Latin script, unlike plain OSM tiles. (CARTO's basemaps were used originally, but they now require an API key and show an "API KEY REQUIRED" watermark without one.)
 
 Numbered pins mark that day's activities in time order, connected by a route line; each activity in the timeline shows the same number next to its 📍 location so you can match a card to its pin. Click a pin for details. The "Route overview" map on the Overview page connects one pin per city to show the overall trip route.
 
