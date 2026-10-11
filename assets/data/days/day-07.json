@@ -25,30 +25,55 @@
   ],
   "activities": [
     {
-      "time": "07:00",
+      "time": "07:36",
       "name": {
-        "en": "Depart Tokyo for Hakone-Yumoto",
-        "es": "Salida de Tokio hacia Hakone-Yumoto"
+        "en": "Shinkansen from Tokyo Station to Odawara",
+        "es": "Shinkansen de Tokyo Station a Odawara"
       },
       "location": {
-        "en": "Shinjuku Station, Tokyo",
-        "es": "Estación de Shinjuku, Tokio"
+        "en": "Tokyo Station, Tokyo",
+        "es": "Estación de Tokio, Tokio"
       },
-      "lat": 35.6896,
-      "lng": 139.7006,
+      "lat": 35.6812,
+      "lng": 139.7671,
+      "mapsQuery": "Tokyo Station",
       "category": "transport",
       "reservation": false,
       "duration": {
-        "en": "~1 hr 25 min",
-        "es": "~1 h 25 min"
+        "en": "~35-40 min",
+        "es": "~35-40 min"
       },
       "tip": {
-        "en": "The Odakyu Romancecar is the direct, comfortable option straight to Hakone-Yumoto.",
-        "es": "El Odakyu Romancecar es la opción directa y cómoda hasta Hakone-Yumoto."
+        "en": "Departure at 07:36 on the Tokaido Shinkansen. From the Ueno hotel, Tokyo Station is about 8 minutes on the JR Yamanote or Keihin-Tohoku line — leave the hotel by around 07:00 to have time to find the Shinkansen platform with luggage and buy a bento.",
+        "es": "Salida a las 07:36 en el Tokaido Shinkansen. Desde el hotel en Ueno, Tokyo Station está a unos 8 minutos en la línea JR Yamanote o Keihin-Tohoku — salgan del hotel a eso de las 07:00 para tener tiempo de encontrar el andén del Shinkansen con las maletas y comprar un bento."
       }
     },
     {
-      "time": "08:30",
+      "time": "08:15",
+      "name": {
+        "en": "Odawara: change to the Hakone Tozan line",
+        "es": "Odawara: cambio a la línea Hakone Tozan"
+      },
+      "location": {
+        "en": "Odawara Station, Odawara",
+        "es": "Estación de Odawara, Odawara"
+      },
+      "lat": 35.2563,
+      "lng": 139.1553,
+      "mapsQuery": "Odawara Station",
+      "category": "transport",
+      "reservation": false,
+      "duration": {
+        "en": "~15 min to Hakone-Yumoto",
+        "es": "~15 min a Hakone-Yumoto"
+      },
+      "tip": {
+        "en": "Buy the Hakone Freepass here at the Odakyu ticket office — it covers the train from Odawara to Hakone-Yumoto plus every train, cable car, ropeway, boat and bus on today's loop. Then take the Hakone Tozan line to Hakone-Yumoto.",
+        "es": "Compren aquí el Hakone Freepass en la taquilla de Odakyu — cubre el tren de Odawara a Hakone-Yumoto y todos los trenes, funiculares, teleféricos, barcos y buses del recorrido de hoy. Luego tomen la línea Hakone Tozan hasta Hakone-Yumoto."
+      }
+    },
+    {
+      "time": "08:45",
       "name": {
         "en": "Arrive in Hakone-Yumoto",
         "es": "Llegada a Hakone-Yumoto"

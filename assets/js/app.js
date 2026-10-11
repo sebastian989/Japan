@@ -145,9 +145,14 @@
       points.push(a);
     });
     if (points.length < 2) return [];
+    // Spread the stops evenly across the fewest legs that fit, rather than
+    // filling the first leg and leaving a stub of one or two stops.
+    const segments = points.length - 1;
+    const legCount = Math.ceil(segments / (ROUTE_MAX_POINTS - 1));
+    const legSegments = Math.ceil(segments / legCount);
     const legs = [];
-    for (let i = 0; i < points.length - 1; i += ROUTE_MAX_POINTS - 1) {
-      legs.push(points.slice(i, i + ROUTE_MAX_POINTS));
+    for (let i = 0; i < segments; i += legSegments) {
+      legs.push(points.slice(i, i + legSegments + 1));
     }
     return legs.map(
       (leg) => `https://www.google.com/maps/dir/${leg.map((a) => encodeURIComponent(mapsQuery(a))).join("/")}`
