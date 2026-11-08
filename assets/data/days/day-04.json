@@ -6,17 +6,17 @@
     "es": "Tokio"
   },
   "title": {
-    "en": "Ikebukuro & Akihabara",
-    "es": "Ikebukuro y Akihabara"
+    "en": "Ikebukuro & Ginza",
+    "es": "Ikebukuro y Ginza"
   },
   "summary": {
-    "en": "A pop-culture and electronics day.",
-    "es": "Un día de cultura pop y electrónica."
+    "en": "Pokémon and pop culture in Ikebukuro, then Ginza's Sunday pedestrian avenue and shopping.",
+    "es": "Pokémon y cultura pop en Ikebukuro, y luego la avenida peatonal de domingo y las compras en Ginza."
   },
   "tips": [
     {
-      "en": "The best day on the trip for anime/video game shopping.",
-      "es": "El mejor día del viaje para comprar anime y videojuegos."
+      "en": "Ueno → Ikebukuro: JR Yamanote line towards Nippori/Ikebukuro (~17 min). Ikebukuro → Ginza: Tokyo Metro Marunouchi line, direct (~18 min). Ginza → Ueno: Tokyo Metro Ginza line, direct (~12 min).",
+      "es": "Ueno → Ikebukuro: línea JR Yamanote dirección Nippori/Ikebukuro (~17 min). Ikebukuro → Ginza: metro línea Marunouchi, directo (~18 min). Ginza → Ueno: metro línea Ginza, directo (~12 min)."
     }
   ],
   "activities": [
@@ -35,27 +35,28 @@
       "category": "shopping",
       "reservation": false,
       "tip": {
-        "en": "The JR Yamanote line connects Ikebukuro and Akihabara.",
-        "es": "La línea JR Yamanote conecta Ikebukuro y Akihabara."
+        "en": "Use Ikebukuro's East Exit and walk ~10 min along Sunshine 60-dori. The Pokémon Center Mega Tokyo is on the 2nd floor of Sunshine City Alpa. The official New Balance store (P'PARCO) and Bic Camera are right by the East Exit.",
+        "es": "Usen la salida este de Ikebukuro y caminen ~10 min por Sunshine 60-dori. El Pokémon Center Mega Tokyo está en el 2.º piso de Sunshine City Alpa. La tienda oficial de New Balance (P'PARCO) y Bic Camera están junto a la salida este."
       }
     },
     {
       "time": "14:00",
       "name": {
-        "en": "Akihabara: Mandarake & electronics stores",
-        "es": "Akihabara: Mandarake y tiendas de electrónica"
+        "en": "Ginza: Sunday pedestrian paradise & shopping",
+        "es": "Ginza: avenida peatonal de domingo y compras"
       },
       "location": {
-        "en": "Akihabara, Tokyo",
-        "es": "Akihabara, Tokio"
+        "en": "Ginza, Tokyo",
+        "es": "Ginza, Tokio"
       },
-      "lat": 35.7022,
-      "lng": 139.7745,
+      "lat": 35.6717,
+      "lng": 139.765,
+      "mapsQuery": "Ginza, Tokyo",
       "category": "shopping",
       "reservation": false,
       "tip": {
-        "en": "Mandarake is a multi-floor treasure hunt for manga, figures and retro games.",
-        "es": "Mandarake es una búsqueda del tesoro de varios pisos con manga, figuras y videojuegos retro."
+        "en": "On Sundays the main avenue, Chuo-dori, closes to cars in the afternoon (roughly 12:00-17:00). Highlights: the 12-floor Uniqlo and GU, Itoya stationery, GINZA SIX (free rooftop garden), the Mitsukoshi food hall (depachika) for edible gifts, Bic Camera Yurakucho for electronics and power banks, and the Hibiya Godzilla statue. Bring your passport for tax-free.",
+        "es": "Los domingos la avenida principal, Chuo-dori, se cierra a los autos en la tarde (más o menos de 12:00 a 17:00). Lo mejor: el Uniqlo de 12 pisos y GU, la papelería Itoya, GINZA SIX (terraza en la azotea gratis), el sótano de comida (depachika) de Mitsukoshi para regalos comestibles, Bic Camera Yurakucho para electrónica y powerbanks, y la estatua de Godzilla de Hibiya. Lleven el pasaporte para el tax free."
       }
     }
   ]
