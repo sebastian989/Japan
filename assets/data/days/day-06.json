@@ -44,7 +44,7 @@
       }
     },
     {
-      "time": "12:00",
+      "time": "11:45",
       "name": {
         "en": "Gundam Statue & Odaiba",
         "es": "Estatua de Gundam y Odaiba"
@@ -63,10 +63,10 @@
       }
     },
     {
-      "time": "15:40",
+      "time": "14:45",
       "name": {
-        "en": "Shibuya Sky at sunset",
-        "es": "Shibuya Sky al atardecer"
+        "en": "Shibuya Sky (14:45 entry) — stay for sunset",
+        "es": "Shibuya Sky (entrada 14:45) — quédense hasta el atardecer"
       },
       "location": {
         "en": "Shibuya Sky, Shibuya",
@@ -77,9 +77,10 @@
       "mapsQuery": "SHIBUYA SKY",
       "category": "sightseeing",
       "reservation": true,
+      "booked": true,
       "tip": {
-        "en": "From Tokyo Teleport (next to the Gundam), the Rinkai line reaches Shibuya in ~30 min — leave Odaiba by about 14:45. Sunset is around 16:35. Tickets only go on sale 2 weeks ahead on the official site (webket); no bags are allowed on the rooftop, so use the lockers, and arrive 10-15 min before your time slot.",
-        "es": "Desde Tokyo Teleport (al lado del Gundam), la línea Rinkai llega a Shibuya en ~30 min — salgan de Odaiba a eso de las 14:45. El sol se pone alrededor de las 16:35. Las entradas salen a la venta solo 2 semanas antes en el sitio oficial (webket); no se permiten bolsos en la azotea, así que usen los lockers, y lleguen 10-15 min antes de su horario."
+        "en": "Your entry slot is 14:45 — arrive 10-15 min early. From Tokyo Teleport (next to the Gundam), the Rinkai line reaches Shibuya in ~30 min, so leave Odaiba by about 13:45. There's no time limit once inside: stay through sunset (around 16:35) to see Tokyo light up. No bags are allowed on the rooftop, so use the lockers.",
+        "es": "Su horario de entrada es a las 14:45 — lleguen 10-15 min antes. Desde Tokyo Teleport (al lado del Gundam), la línea Rinkai llega a Shibuya en ~30 min, así que salgan de Odaiba a eso de las 13:45. Una vez adentro no hay límite de tiempo: quédense hasta el atardecer (alrededor de las 16:35) para ver cómo se ilumina Tokio. No se permiten bolsos en la azotea, así que usen los lockers."
       }
     }
   ]
