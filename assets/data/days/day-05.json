@@ -10,8 +10,8 @@
     "es": "Harajuku y Shibuya"
   },
   "summary": {
-    "en": "Youth culture, Tokyo's most stylish avenue and one of its best sunset views — all one walk from Harajuku down to Shibuya.",
-    "es": "Cultura juvenil, la avenida más elegante de Tokio y una de sus mejores vistas al atardecer — todo en una sola caminata de Harajuku a Shibuya."
+    "en": "Youth culture and Tokyo's most stylish avenue — one walk from Meiji Jingu down to the Shibuya Crossing.",
+    "es": "Cultura juvenil y la avenida más elegante de Tokio — una sola caminata desde Meiji Jingu hasta el cruce de Shibuya."
   },
   "tips": [
     {
@@ -61,20 +61,21 @@
     {
       "time": "15:00",
       "name": {
-        "en": "Shibuya Crossing, Hachiko statue & Shibuya Sky at sunset",
-        "es": "Cruce de Shibuya, estatua de Hachiko y Shibuya Sky al atardecer"
+        "en": "Shibuya Crossing & Hachiko statue",
+        "es": "Cruce de Shibuya y estatua de Hachiko"
       },
       "location": {
-        "en": "Shibuya Sky, Shibuya",
-        "es": "Shibuya Sky, Shibuya"
+        "en": "Shibuya Crossing, Shibuya",
+        "es": "Cruce de Shibuya, Shibuya"
       },
-      "lat": 35.658,
-      "lng": 139.7016,
+      "lat": 35.6595,
+      "lng": 139.7005,
+      "mapsQuery": "Shibuya Scramble Crossing",
       "category": "sightseeing",
-      "reservation": true,
+      "reservation": false,
       "tip": {
-        "en": "Book Shibuya Sky several weeks in advance — sunset time slots are the first to sell out.",
-        "es": "Reserven Shibuya Sky con varias semanas de anticipación — los horarios de atardecer son los primeros en agotarse."
+        "en": "Shibuya Sky moved to tomorrow (day 6) at sunset. For a free view of the crossing from above today, try the Starbucks in the Tsutaya building or the MAGNET by SHIBUYA109 rooftop.",
+        "es": "Shibuya Sky pasó a mañana (día 6) al atardecer. Para ver el cruce desde arriba hoy gratis, prueben el Starbucks del edificio Tsutaya o la azotea de MAGNET by SHIBUYA109."
       }
     }
   ]

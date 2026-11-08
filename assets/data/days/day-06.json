@@ -10,10 +10,19 @@
     "es": "Bahía de Tokio: teamLab y Odaiba"
   },
   "summary": {
-    "en": "Digital art and the waterfront, last full day based in Tokyo.",
-    "es": "Arte digital y el paseo marítimo, último día completo con base en Tokio."
+    "en": "Digital art and the waterfront, then Shibuya Sky at sunset — last full day based in Tokyo.",
+    "es": "Arte digital y el paseo marítimo, y luego Shibuya Sky al atardecer — último día completo con base en Tokio."
   },
-  "tips": [],
+  "tips": [
+    {
+      "en": "Send your big suitcases from the Ueno hotel front desk (or a convenience store) to the Takayama hotel today, for delivery on Thursday the 12th — you'll travel through Hakone with just a small bag.",
+      "es": "Hoy envíen las maletas grandes desde la recepción del hotel de Ueno (o un konbini) al hotel de Takayama, con entrega el jueves 12 — así recorren Hakone solo con un bolso pequeño."
+    },
+    {
+      "en": "Tomorrow's Shinkansen leaves Tokyo Station at 07:36, so don't stay out late in Shibuya tonight.",
+      "es": "Mañana el Shinkansen sale de Tokyo Station a las 07:36, así que no se queden hasta tarde en Shibuya esta noche."
+    }
+  ],
   "activities": [
     {
       "time": "09:30",
@@ -35,7 +44,7 @@
       }
     },
     {
-      "time": "14:00",
+      "time": "12:00",
       "name": {
         "en": "Gundam Statue & Odaiba",
         "es": "Estatua de Gundam y Odaiba"
@@ -49,8 +58,28 @@
       "category": "sightseeing",
       "reservation": false,
       "tip": {
-        "en": "Take the metro plus the Yurikamome monorail out to Odaiba — the elevated monorail ride itself has great bay views.",
-        "es": "Tomen el metro más el monorriel Yurikamome hasta Odaiba — el trayecto elevado en monorriel ya tiene de por sí muy buenas vistas de la bahía."
+        "en": "From teamLab, Shin-Toyosu station is the end of the Yurikamome line — ride it straight to Odaiba (~15 min) with great bay views. Have lunch at DiverCity, where the Gundam statue stands.",
+        "es": "Desde teamLab, la estación Shin-Toyosu es la terminal de la línea Yurikamome — vayan directo a Odaiba (~15 min) con muy buenas vistas de la bahía. Almuercen en DiverCity, donde está la estatua del Gundam."
+      }
+    },
+    {
+      "time": "15:40",
+      "name": {
+        "en": "Shibuya Sky at sunset",
+        "es": "Shibuya Sky al atardecer"
+      },
+      "location": {
+        "en": "Shibuya Sky, Shibuya",
+        "es": "Shibuya Sky, Shibuya"
+      },
+      "lat": 35.658,
+      "lng": 139.7016,
+      "mapsQuery": "SHIBUYA SKY",
+      "category": "sightseeing",
+      "reservation": true,
+      "tip": {
+        "en": "From Tokyo Teleport (next to the Gundam), the Rinkai line reaches Shibuya in ~30 min — leave Odaiba by about 14:45. Sunset is around 16:35. Tickets only go on sale 2 weeks ahead on the official site (webket); no bags are allowed on the rooftop, so use the lockers, and arrive 10-15 min before your time slot.",
+        "es": "Desde Tokyo Teleport (al lado del Gundam), la línea Rinkai llega a Shibuya en ~30 min — salgan de Odaiba a eso de las 14:45. El sol se pone alrededor de las 16:35. Las entradas salen a la venta solo 2 semanas antes en el sitio oficial (webket); no se permiten bolsos en la azotea, así que usen los lockers, y lleguen 10-15 min antes de su horario."
       }
     }
   ]

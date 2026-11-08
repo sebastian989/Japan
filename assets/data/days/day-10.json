@@ -16,7 +16,7 @@
   "tips": [],
   "activities": [
     {
-      "time": "08:30",
+      "time": "07:50",
       "name": {
         "en": "Nohi highway bus to Shirakawa-go",
         "es": "Autobús Nohi a Shirakawa-go"
@@ -34,12 +34,12 @@
         "es": "~3-4 h de parada"
       },
       "tip": {
-        "en": "Book the Nohi bus online well in advance — seats sell out, especially in autumn. Get off in Shirakawa-go to walk among the gassho-zukuri thatched-roof farmhouses and have lunch before continuing.",
-        "es": "Reserven el autobús Nohi por internet con bastante anticipación — los asientos se agotan, sobre todo en otoño. Bájense en Shirakawa-go para caminar entre las casas gassho-zukuri de techos de paja y almorzar antes de continuar."
+        "en": "Nohi bus from the Takayama Nohi Bus Center (next to JR Takayama Station) at 07:50, arriving at Shirakawa-go around 08:40 — before the tour groups. Book both legs on Japan Bus Online; sales open 30 days before the travel date and autumn seats sell out.",
+        "es": "Autobús Nohi desde la terminal Nohi de Takayama (al lado de la estación JR) a las 07:50, con llegada a Shirakawa-go a eso de las 08:40 — antes que los grupos de excursión. Reserven los dos tramos en Japan Bus Online; la venta abre 30 días antes de la fecha y en otoño se agotan."
       }
     },
     {
-      "time": "14:00",
+      "time": "12:20",
       "name": {
         "en": "Transfer to Kanazawa",
         "es": "Traslado a Kanazawa"
@@ -53,8 +53,8 @@
       "category": "transport",
       "reservation": false,
       "tip": {
-        "en": "Continue on the next Nohi bus from Shirakawa-go to Kanazawa.",
-        "es": "Sigan en el siguiente autobús Nohi de Shirakawa-go a Kanazawa."
+        "en": "Nohi bus from Shirakawa-go at 12:20, arriving at Kanazawa Station around 13:35 (a separate ticket from the morning leg). For more time in the village, the 13:50 bus arrives around 15:05. Shirakawa-go has few lockers — consider sending luggage from Takayama to the Kanazawa hotel the day before.",
+        "es": "Autobús Nohi desde Shirakawa-go a las 12:20, con llegada a la estación de Kanazawa a eso de las 13:35 (es un boleto aparte del de la mañana). Si quieren más tiempo en el pueblo, el bus de las 13:50 llega a eso de las 15:05. En Shirakawa-go hay pocos lockers — consideren enviar las maletas desde Takayama al hotel de Kanazawa el día anterior."
       }
     },
     {

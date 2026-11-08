@@ -10,13 +10,13 @@
     "es": "Día extra en Tokio"
   },
   "summary": {
-    "en": "An extra night in Tokyo before flying out — a relaxed day that moves steadily east to west: a market breakfast, the Imperial Palace gardens, autumn foliage, a free sunset view and a final night out in Shinjuku.",
-    "es": "Una noche extra en Tokio antes de volar — un día relajado que avanza de este a oeste: desayuno de mercado, los jardines del Palacio Imperial, colores de otoño, una vista gratis al atardecer y una última noche de salida en Shinjuku."
+    "en": "Last full day in Tokyo, moving east to west: a market breakfast, final shopping in Ginza, autumn colours in Shinjuku Gyoen, a free sunset view, the 3D cat and Godzilla, and a last night out in Golden Gai.",
+    "es": "Último día completo en Tokio, avanzando de este a oeste: desayuno de mercado, compras finales en Ginza, colores de otoño en Shinjuku Gyoen, una vista gratis al atardecer, el gato 3D y Godzilla, y una última noche en Golden Gai."
   },
   "tips": [
     {
-      "en": "This day was added because the return flight is now on the 26th, not the 25th — treat it as flexible. Swap anything here for a rerun of an earlier favorite if you'd rather.",
-      "es": "Este día se agregó porque el vuelo de regreso ahora es el 26, no el 25 — trátenlo como flexible. Cambien cualquier cosa aquí por repetir algo favorito de días anteriores si prefieren."
+      "en": "This is the last day for shopping — tomorrow is only the trip to the airport. Bring your passport for tax-free purchases.",
+      "es": "Este es el último día para compras — mañana es solo el viaje al aeropuerto. Lleven el pasaporte para las compras tax free."
     }
   ],
   "activities": [
@@ -42,28 +42,29 @@
     {
       "time": "10:00",
       "name": {
-        "en": "Imperial Palace East Gardens",
-        "es": "Jardines Este del Palacio Imperial"
+        "en": "Final shopping in Ginza",
+        "es": "Compras finales en Ginza"
       },
       "location": {
-        "en": "Imperial Palace East Gardens, Tokyo",
-        "es": "Jardines Este del Palacio Imperial, Tokio"
+        "en": "Ginza, Tokyo",
+        "es": "Ginza, Tokio"
       },
-      "lat": 35.6852,
-      "lng": 139.7546,
-      "category": "sightseeing",
+      "lat": 35.6717,
+      "lng": 139.765,
+      "mapsQuery": "Ginza, Tokyo",
+      "category": "shopping",
       "reservation": false,
       "duration": {
-        "en": "~1.5 hr",
-        "es": "~1,5 h"
+        "en": "~2.5 hr",
+        "es": "~2,5 h"
       },
       "tip": {
-        "en": "Free entry, about 15 minutes from Tsukiji — enter through the Otemachi Gate. The gardens are closed on Mondays and Fridays, but open on this Wednesday.",
-        "es": "Entrada gratis, a unos 15 minutos de Tsukiji — entren por la puerta de Otemachi. Los jardines cierran lunes y viernes, pero este miércoles están abiertos."
+        "en": "About 10 minutes' walk from Tsukiji. Highlights: the 12-floor Uniqlo flagship and GU, Muji Ginza, Itoya stationery (12 floors), GINZA SIX (free rooftop garden) and the Mitsukoshi/Matsuya food halls (depachika) for edible gifts. Stores open 10:00-11:00. Bic Camera Yurakucho is a 5-minute walk away, and the Hibiya Godzilla statue is nearby too.",
+        "es": "A unos 10 minutos caminando de Tsukiji. Lo mejor: el Uniqlo de 12 pisos y GU, Muji Ginza, la papelería Itoya (12 pisos), GINZA SIX (terraza en la azotea gratis) y los sótanos de comida (depachika) de Mitsukoshi y Matsuya para regalos comestibles. Las tiendas abren entre las 10:00 y las 11:00. Bic Camera Yurakucho está a 5 minutos caminando, y cerca está también la estatua de Godzilla de Hibiya."
       }
     },
     {
-      "time": "12:30",
+      "time": "13:30",
       "name": {
         "en": "Shinjuku Gyoen National Garden",
         "es": "Jardín Nacional Shinjuku Gyoen"
@@ -81,12 +82,12 @@
         "es": "~2 h"
       },
       "tip": {
-        "en": "From Otemachi, the Marunouchi line goes straight to Shinjuku-gyoemmae. Late November is peak autumn color here — the garden mixes Japanese, French, and English styles. It closes early in autumn (around 16:00), so don't arrive late.",
-        "es": "Desde Otemachi, la línea Marunouchi va directo a Shinjuku-gyoemmae. Finales de noviembre es la mejor época de colores de otoño aquí — el jardín mezcla estilos japonés, francés e inglés. En otoño cierra temprano (alrededor de las 16:00), así que no lleguen tarde."
+        "en": "From Ginza, the Marunouchi line goes straight to Shinjuku-gyoemmae (~15 min). Late November is peak autumn colour here — the garden mixes Japanese, French and English styles. It closes early in autumn (around 16:00), so don't arrive late.",
+        "es": "Desde Ginza, la línea Marunouchi va directo a Shinjuku-gyoemmae (~15 min). Finales de noviembre es la mejor época de colores de otoño aquí — el jardín mezcla estilos japonés, francés e inglés. En otoño cierra temprano (alrededor de las 16:00), así que no lleguen tarde."
       }
     },
     {
-      "time": "15:30",
+      "time": "15:45",
       "name": {
         "en": "Sunset at the Tokyo Metropolitan Government Building",
         "es": "Atardecer en el Edificio del Gobierno Metropolitano de Tokio"
@@ -102,6 +103,46 @@
       "tip": {
         "en": "A free observation deck on the 45th floor, about 20 minutes on foot from Shinjuku Gyoen. Sunset is around 16:30 in late November, and on clear days you can see Mt. Fuji.",
         "es": "Un mirador gratis en el piso 45, a unos 20 minutos caminando de Shinjuku Gyoen. A fines de noviembre el sol se pone alrededor de las 16:30, y en días despejados se ve el monte Fuji."
+      }
+    },
+    {
+      "time": "18:00",
+      "name": {
+        "en": "The giant 3D cat (Cross Shinjuku Vision)",
+        "es": "El gato gigante en 3D (Cross Shinjuku Vision)"
+      },
+      "location": {
+        "en": "Cross Shinjuku Vision, Shinjuku East Exit",
+        "es": "Cross Shinjuku Vision, salida este de Shinjuku"
+      },
+      "lat": 35.6926,
+      "lng": 139.7024,
+      "mapsQuery": "Cross Shinjuku Vision 3D Cat",
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "A curved 3D billboard right outside Shinjuku Station's East Exit — the cat appears every few minutes and seems to climb out of the screen.",
+        "es": "Una pantalla curva en 3D justo frente a la salida este de la estación de Shinjuku — el gato aparece cada pocos minutos y parece salirse de la pantalla."
+      }
+    },
+    {
+      "time": "18:30",
+      "name": {
+        "en": "Godzilla head at Hotel Gracery",
+        "es": "La cabeza de Godzilla del Hotel Gracery"
+      },
+      "location": {
+        "en": "Hotel Gracery Shinjuku, Kabukicho",
+        "es": "Hotel Gracery Shinjuku, Kabukicho"
+      },
+      "lat": 35.6953,
+      "lng": 139.7016,
+      "mapsQuery": "Godzilla Head Hotel Gracery Shinjuku",
+      "category": "sightseeing",
+      "reservation": false,
+      "tip": {
+        "en": "A life-size Godzilla head on the hotel's terrace in Kabukicho, 5-8 minutes' walk from the 3D cat — visible from the street, and it periodically roars with lights and smoke. Golden Gai is right next door.",
+        "es": "Una cabeza de Godzilla a tamaño real en la terraza del hotel, en Kabukicho, a 5-8 minutos caminando del gato 3D — se ve desde la calle y cada cierto tiempo ruge con luces y humo. Golden Gai está justo al lado."
       }
     },
     {

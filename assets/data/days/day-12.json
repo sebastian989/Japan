@@ -16,7 +16,27 @@
   "tips": [],
   "activities": [
     {
-      "time": "10:00",
+      "time": "08:30",
+      "name": {
+        "en": "Breakfast at Omicho Market",
+        "es": "Desayuno en el mercado Omicho"
+      },
+      "location": {
+        "en": "Omicho Market, Kanazawa",
+        "es": "Mercado Omicho, Kanazawa"
+      },
+      "lat": 36.5713,
+      "lng": 136.6566,
+      "mapsQuery": "Omicho Market",
+      "category": "food",
+      "reservation": false,
+      "tip": {
+        "en": "Kanazawa's main market, about 10 minutes from the station — fresh seafood bowls (kaisendon) and sushi for breakfast before the train.",
+        "es": "El mercado principal de Kanazawa, a unos 10 minutos de la estación — tazones de mariscos frescos (kaisendon) y sushi para desayunar antes del tren."
+      }
+    },
+    {
+      "time": "10:15",
       "name": {
         "en": "Travel to Kyoto",
         "es": "Viaje a Kioto"
@@ -31,8 +51,8 @@
       "category": "transport",
       "reservation": false,
       "tip": {
-        "en": "Thunderbird limited express train from Kanazawa to Kyoto.",
-        "es": "Tren rápido Thunderbird de Kanazawa a Kioto."
+        "en": "Since 2024 there's no direct Thunderbird from Kanazawa: take the Hokuriku Shinkansen to Tsuruga (~50 min), then the Thunderbird to Kyoto (~50 min), changing inside the same station — about 2 hours in total, sold as one ticket. Reserve seats together; you'll arrive around 12:30 and the hotel will hold your luggage until check-in.",
+        "es": "Desde 2024 ya no hay Thunderbird directo desde Kanazawa: tomen el Shinkansen Hokuriku hasta Tsuruga (~50 min) y ahí el Thunderbird a Kioto (~50 min), con cambio dentro de la misma estación — unas 2 horas en total, en un solo boleto. Reserven asientos juntos; llegan a eso de las 12:30 y el hotel les guarda las maletas hasta el check-in."
       }
     },
     {

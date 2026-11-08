@@ -16,7 +16,7 @@
   "tips": [],
   "activities": [
     {
-      "time": "09:00",
+      "time": "09:20",
       "name": {
         "en": "Travel to Hiroshima",
         "es": "Viaje a Hiroshima"
@@ -34,12 +34,12 @@
         "es": "~1.5 h"
       },
       "tip": {
-        "en": "Shinkansen from Shin-Osaka — about 1.5 hours.",
-        "es": "Shinkansen desde Shin-Osaka — aproximadamente 1.5 horas."
+        "en": "Leave the Shimanouchi hotel around 08:30 (Midosuji subway to Shin-Osaka, ~20 min). Shinkansen to Hiroshima takes about 1 h 30 min. Today is a national holiday in Japan, so trains will be busy — reserve seats together. Consider sending big luggage from the Osaka hotel straight to the Nihonbashi hotel in Tokyo.",
+        "es": "Salgan del hotel de Shimanouchi a eso de las 08:30 (metro Midosuji a Shin-Osaka, ~20 min). El Shinkansen a Hiroshima tarda ~1 h 30 min. Hoy es feriado nacional en Japón, así que los trenes van llenos — reserven asientos juntos. Consideren enviar las maletas grandes desde el hotel de Osaka directo al hotel de Nihonbashi en Tokio."
       }
     },
     {
-      "time": "13:00",
+      "time": "11:30",
       "name": {
         "en": "Peace Memorial Park & Museum, Atomic Bomb Dome",
         "es": "Parque y Museo Conmemorativo de la Paz, Cúpula de la Bomba Atómica"
@@ -53,8 +53,8 @@
       "category": "sightseeing",
       "reservation": false,
       "tip": {
-        "en": "Give yourselves at least 2-3 unhurried hours here — it's a moving visit, not one to rush.",
-        "es": "Dense al menos 2-3 horas sin apuro aquí — es una visita conmovedora, no una para apurar."
+        "en": "Drop your bags at the hotel first (it's right next to the park). Give the museum at least 2 hours — it's a moving visit, not one to rush — and arrive before midday, since it gets crowded on the holiday. Try Hiroshima-style okonomiyaki for lunch afterwards.",
+        "es": "Primero dejen las maletas en el hotel (queda pegado al parque). Dense al menos 2 horas en el museo — es una visita conmovedora, no una para apurar — y lleguen antes del mediodía, porque en el feriado se llena. Después almuercen okonomiyaki al estilo de Hiroshima."
       }
     },
     {
